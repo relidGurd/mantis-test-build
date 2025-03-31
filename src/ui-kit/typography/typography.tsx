@@ -3,7 +3,8 @@ import styles from "./typography.module.css";
 
 type TypographyProps = {
   variant?: "h1" | "h2" | "p" | "span";
-  basicStyle: "" | "" | "";
+  outline?: "regular" | "bold" | "semibold";
+  register?: "12" | "14" | "16" | "18" | "20" | "24" | "32" | "40" | "48";
   className?: string;
   children: React.ReactNode;
 };
@@ -12,10 +13,15 @@ const Typography: React.FC<TypographyProps> = ({
   variant = "p",
   className,
   children,
-  basicStyle,
+  register,
+  outline,
 }) => {
   const Tag = variant;
-  return <Tag className={classNames(className, [basicStyle])}>{children}</Tag>;
+
+  const typographyClass = styles[`text-${register}-${outline}`];
+  return (
+    <Tag className={classNames(typographyClass, className)}>{children}</Tag>
+  );
 };
 
 export default Typography;

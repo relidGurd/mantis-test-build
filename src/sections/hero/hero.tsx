@@ -8,13 +8,10 @@ const Hero = () => {
     <section className={`main-container`}>
       <div className={styles.heroContainer}>
         <div className={styles.hero_description}>
-          <Typography
-            className={styles.gradientTitle}
-            variant="h1"
-            basicStyle="">
-            Лучшие IT-решения для вашего бизнеса
+          <Typography className={styles.gradientTitle} variant="h1">
+            Лучшие IT-решения <br /> для вашего бизнеса
           </Typography>
-          <Typography basicStyle="">
+          <Typography register="18" outline="regular">
             Автоматизируем процессы, обеспечиваем безопасность и упрощаем
             управление с помощью передовых технологий
           </Typography>
@@ -25,28 +22,22 @@ const Hero = () => {
         </div>
         <ul className={styles.hero_advContainer}>
           <li className={styles.hero_advItem}>
-            <Typography variant="span" basicStyle="">
-              200
+            <Typography register="40" outline="bold" variant="span">
+              200+
             </Typography>
-            <Typography variant="span" basicStyle="">
-              Параметр
-            </Typography>
+            <Typography variant="span">Параметр</Typography>
           </li>
           <li className={styles.hero_advItem}>
-            <Typography variant="span" basicStyle="">
-              200
+            <Typography register="40" outline="bold" variant="span">
+              200+
             </Typography>
-            <Typography variant="span" basicStyle="">
-              Параметр
-            </Typography>
+            <Typography variant="span">Параметр</Typography>
           </li>
           <li className={styles.hero_advItem}>
-            <Typography variant="span" basicStyle="">
-              200
+            <Typography register="40" outline="bold" variant="span">
+              200+
             </Typography>
-            <Typography variant="span" basicStyle="">
-              Параметр
-            </Typography>
+            <Typography variant="span">Параметр</Typography>
           </li>
         </ul>
       </div>

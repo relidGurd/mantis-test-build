@@ -91,3 +91,48 @@
 }
 
 /*title*/
+
+.text-32-regular {
+  font-size: var(--title-small);
+  font-weight: var(--font-regular);
+}
+
+.text-32-semibold {
+  font-size: var(--title-small);
+  font-weight: var(--font-semibold);
+}
+
+.text-32-bold {
+  font-size: var(--title-small);
+  font-weight: var(--font-bold);
+}
+
+.text-40-regular {
+  font-size: var(--title-medium);
+  font-weight: var(--font-regular);
+}
+
+.text-40-semibold {
+  font-size: var(--title-medium);
+  font-weight: var(--font-semibold);
+}
+
+.text-40-bold {
+  font-size: var(--title-medium);
+  font-weight: var(--font-bold);
+}
+
+.text-48-regular {
+  font-size: var(--title-big);
+  font-weight: var(--font-regular);
+}
+
+.text-48-semibold {
+  font-size: var(--title-big);
+  font-weight: var(--font-semibold);
+}
+
+.text-48-bold {
+  font-size: var(--title-big);
+  font-weight: var(--font-bold);
+}

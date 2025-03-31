@@ -1,0 +1,31 @@
+.partners_section {
+  padding: 64px 0;
+}
+
+.partners_card {
+  display: flex;
+  align-items: center;
+  padding: 5px 20px;
+  background: var(--gray-gradient);
+  border-radius: 16px;
+}
+
+.partners_swiperContainer {
+  margin-top: 53px;
+}
+
+.partners_cardImageContainer {
+  width: 70px;
+  height: 70px;
+  margin-right: 32px;
+}
+
+.partners_cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.partners_info span {
+  display: block;
+}

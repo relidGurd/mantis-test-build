@@ -10,9 +10,14 @@
   },
   "dependencies": {
     "classnames": "^2.5.1",
+    "formik": "^2.4.6",
+    "motion": "^12.6.2",
     "next": "15.2.3",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-imask": "^7.6.1",
+    "swiper": "^11.2.6",
+    "yup": "^1.6.1"
   },
   "devDependencies": {
     "@types/node": "^20",

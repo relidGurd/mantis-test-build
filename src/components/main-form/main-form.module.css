@@ -1,0 +1,28 @@
+.mainForm {
+  display: flex;
+}
+
+.formContainer {
+  padding: 40px 75px 80px 75px;
+  background: var(--gray-gradient);
+  border-radius: 40px;
+  overflow: hidden;
+  position: relative;
+}
+
+.abstractRound {
+  content: "";
+  position: absolute;
+  right: 0;
+  background-image: url("/abstract.png");
+  width: 667px;
+  height: 710px;
+  background-repeat: no-repeat;
+  top: -20%;
+  bottom: -20%;
+}
+
+.formContainer_inform p:nth-child(2) {
+  width: 75%;
+  margin: 24px 0;
+}

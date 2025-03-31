@@ -4,7 +4,7 @@ import styles from "./button.module.css";
 interface ButtonProps {
   label: string;
   onClick?: () => void;
-  color?: "blackButton" | "greenButton" | "danger";
+  color?: "blackButton" | "greenButton" | "buttonRound";
   size?: "small" | "medium" | "large";
   type?: "button" | "submit" | "reset";
   isLoading?: boolean;
@@ -32,7 +32,8 @@ const Button: React.FC<ButtonProps> = ({
       type={type}
       onClick={onClick}
       className={buttonClass}
-      disabled={isLoading}>
+      disabled={isLoading}
+    >
       {isLoading ? <span>Loading...</span> : label}
     </button>
   );

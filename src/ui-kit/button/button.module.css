@@ -17,3 +17,10 @@
   border: 1px solid var(--white-10);
   padding: 16px;
 }
+
+.buttonRound {
+  background: var(--gray-gradient);
+  font-size: var(--extra-big-txt);
+  border-radius: 40px;
+  padding: 24px 0;
+}

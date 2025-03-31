@@ -1,7 +1,6 @@
-import Image from "next/image";
 import styles from "./page.module.css";
-import Typography from "@/ui-kit/typography/typography";
 import MainPage from "@/pages/main-page/main-page";
+import "swiper/css";
 
 export default function Home() {
   return (
