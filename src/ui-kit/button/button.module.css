@@ -1,0 +1,19 @@
+.basic {
+  text-align: center;
+  font-size: var(--medium-txt);
+  border-radius: 16px;
+}
+
+.blackButton {
+  background-color: transparent; /* bg-blue-500 */
+  color: var(--white-90);
+  border: 1px solid var(--white-10);
+  padding: 16px;
+}
+
+.greenButton {
+  background: var(--green-gradient);
+  color: var(--black-100);
+  border: 1px solid var(--white-10);
+  padding: 16px;
+}

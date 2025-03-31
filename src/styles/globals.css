@@ -1,0 +1,107 @@
+:root {
+  /*font size*/
+
+  --extra-small-txt: 12px;
+  --small-txt: 14px;
+  --extra-medium-txt: 16px;
+  --medium-txt: 18px;
+  --extra-big-txt: 20px;
+  --big-txt: 24px;
+
+  /* title txt sizes*/
+
+  --title-small: 32px;
+  --title-medium: 40px;
+  --title-big: 48px;
+
+  /* font weight */
+
+  --font-bold: 700;
+  --font-regular: 400;
+  --font-semibold: 600;
+
+  /*colors*/
+
+  --theme-bg: #141414;
+
+  --black-100: #121212;
+  --black-90: #2a2a2a;
+  --black-80: #414141;
+  --black-70: #595959;
+  --black-60: #717171;
+  --black-50: #888888;
+  --black-40: #a0a0a0;
+  --black-30: #b8b8b8;
+  --black-20: #d0d0d0;
+  --black-10: #e7e7e7;
+
+  --white-100: rgba(255, 255, 255, 1);
+  --white-90: rgba(255, 255, 255, 0.9);
+  --white-80: rgba(255, 255, 255, 0.8);
+  --white-70: rgba(255, 255, 255, 0.7);
+  --white-60: rgba(255, 255, 255, 0.6);
+  --white-50: rgba(255, 255, 255, 0.5);
+  --white-40: rgba(255, 255, 255, 0.4);
+  --white-30: rgba(255, 255, 255, 0.3);
+  --white-20: rgba(255, 255, 255, 0.2);
+  --white-10: rgba(255, 255, 255, 0.1);
+
+  /*gradients*/
+
+  --green-gradient: linear-gradient(
+    90deg,
+    rgba(140, 189, 131, 1) 0%,
+    rgba(36, 210, 57, 1) 100%
+  );
+}
+
+body {
+  background-color: var(--theme-bg);
+  color: var(--white-100);
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+.main-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+/* Планшеты (768px - 1024px) */
+@media (max-width: 1024px) {
+  .main-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+/* Мобильные устройства (до 767px) */
+@media (max-width: 767px) {
+  .main-container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
