@@ -1,35 +1,31 @@
 "use client";
-import { motion, useInView } from "motion/react";
-import { useRef } from "react";
+import { motion } from "motion/react";
+
 import styles from "./rise-up.module.css";
-import { delay } from "motion";
+
+import { ANIMATION_SETTINGS } from "./animation";
 interface IRiseUpAnimation {
   children: React.ReactNode;
+  className?: string;
+  delay?: number;
 }
 
-const RiseUpAnimation: React.FC<IRiseUpAnimation> = ({ children }) => {
-  const refElement = useRef<HTMLDivElement>(null);
-  const isInView = useInView(refElement, { once: true, amount: 0.5 });
-
-  const animationVariant = {
-    elementHidden: {
-      opacity: 0,
-      y: 100,
-    },
-    elementVisible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: "easeOut", delay: 0.2 },
-    },
+const RiseUpAnimation: React.FC<IRiseUpAnimation> = ({
+  children,
+  delay = ANIMATION_SETTINGS.transition.delay,
+}) => {
+  const animationOptions = {
+    initial: { y: "20%", opacity: 0 },
+    whileInView: { y: 0, opacity: 1 },
+    ...ANIMATION_SETTINGS,
   };
 
   return (
-    <span className={styles.animatedElement} ref={refElement}>
+    <span className={styles.animatedElement}>
       <motion.span
         className={styles.animatedElement}
-        variants={animationVariant}
-        initial="elementHidden"
-        animate={isInView ? "elementVisible" : "elementHidden"}>
+        {...animationOptions}
+        transition={{ ...ANIMATION_SETTINGS.transition, delay: delay }}>
         {children}
       </motion.span>
     </span>
