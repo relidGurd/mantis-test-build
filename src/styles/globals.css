@@ -45,6 +45,8 @@
   --white-30: rgba(255, 255, 255, 0.3);
   --white-20: rgba(255, 255, 255, 0.2);
   --white-10: rgba(255, 255, 255, 0.1);
+  --white-6: rgba(255, 255, 255, 0.06);
+  --white-4: rgba(255, 255, 255, 0.04);
 
   /*gradients*/
 
@@ -64,6 +66,9 @@
 body {
   background-color: var(--theme-bg);
   color: var(--white-100);
+  background-image: url("/bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 button {

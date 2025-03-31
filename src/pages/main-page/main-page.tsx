@@ -22,9 +22,7 @@ const MainPage = () => {
       <RiseUpAnimation>
         <Partners />
       </RiseUpAnimation>
-      <RiseUpAnimation>
-        <Services />
-      </RiseUpAnimation>
+
       <RiseUpAnimation>
         <MainForm />
       </RiseUpAnimation>

@@ -5,6 +5,7 @@ import { IMaskInput } from "react-imask";
 import { useFormik } from "formik";
 import { validationSchema, initialValues } from "./validation";
 import Typography from "@/ui-kit/typography/typography";
+import Button from "@/ui-kit/button/button";
 const MainForm = () => {
   const formik = useFormik({
     initialValues,
@@ -32,14 +33,15 @@ const MainForm = () => {
                   id="name"
                   name="name"
                   type="text"
+                  className={styles.mainForm_Input}
                   placeholder="Ваше имя"
                   value={formik.values.name}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
                 />
-                {formik.touched.name && formik.errors.name ? (
+                {/* {formik.touched.name && formik.errors.name ? (
                   <div>{formik.errors.name}</div>
-                ) : null}
+                ) : null} */}
               </div>
 
               <div className={styles.input_phoneContainer}>
@@ -48,7 +50,7 @@ const MainForm = () => {
                   name="phoneNumber"
                   mask={"+7 000-000-00-00"}
                   unmask={true}
-                  className={styles.mainForm_numberInput}
+                  className={styles.mainForm_Input}
                   value={formik.values.phoneNumber}
                   onAccept={(value) =>
                     formik.setFieldValue("phoneNumber", value)
@@ -56,12 +58,12 @@ const MainForm = () => {
                   onBlur={() => formik.setFieldTouched("phoneNumber", true)}
                   placeholder="+7"
                 />
-                {formik.touched.phoneNumber && formik.errors.phoneNumber ? (
+                {/* {formik.touched.phoneNumber && formik.errors.phoneNumber ? (
                   <div>{formik.errors.phoneNumber}</div>
-                ) : null}
+                ) : null} */}
               </div>
 
-              <button type="submit">Отправить</button>
+              <Button type="submit" label="Связаться" color="greenButton" />
             </div>
             <div>
               <input type="checkbox" />
@@ -69,9 +71,9 @@ const MainForm = () => {
                 Я даю согласие на обработку моих персональных данных
                 и на получение информационно-рекламных рассылок.
               </Typography>
-              {formik.touched.privacyPolicy && formik.errors.privacyPolicy ? (
+              {/* {formik.touched.privacyPolicy && formik.errors.privacyPolicy ? (
                 <div>{formik.errors.privacyPolicy}</div>
-              ) : null}
+              ) : null} */}
             </div>
           </form>
         </div>

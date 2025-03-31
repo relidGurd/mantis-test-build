@@ -46,8 +46,7 @@ const Tab = () => {
                 <Typography
                   variant="span"
                   register="48"
-                  outline="bold"
-                >{`0${el.id}`}</Typography>
+                  outline="bold">{`0${el.id}`}</Typography>
                 <Typography variant="p" outline="semibold" register="32">
                   saw 6x faster builds & deployment.  builds decreased by
                   99.96%. saw 50% reduction in infra admin effort.

@@ -26,3 +26,11 @@
   width: 75%;
   margin: 24px 0;
 }
+
+.mainForm_Input {
+  padding: 18px;
+  background-color: var(--white-6);
+  border: none;
+  border-radius: 16px;
+  margin-right: 16px;
+}
