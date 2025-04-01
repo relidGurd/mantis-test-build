@@ -1,0 +1,66 @@
+.main_header {
+  position: sticky;
+  top: 0;
+  background-color: var(--header-bg);
+  padding: 20px 0;
+  z-index: 100;
+}
+
+.menu_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mainLinks {
+  display: flex;
+  align-items: center;
+}
+
+.headerLogoContainer {
+  display: block;
+  width: 180px;
+  height: auto;
+}
+
+.headerLogoImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.header_linkItem:not(:last-child) {
+  padding-right: 30px;
+}
+
+.headerButton {
+  padding: 16px 24px !important;
+  border-radius: 10px !important;
+}
+
+.header_socialsContainer {
+  display: flex;
+  align-items: center;
+}
+
+.header_socials {
+  display: flex;
+  align-items: center;
+  margin-right: 36px;
+}
+
+.header_socialsIconContainer {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+.header_socialsIconContainer:not(:last-child) {
+  margin-right: 30px;
+}
+
+.header_socialsIcon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}

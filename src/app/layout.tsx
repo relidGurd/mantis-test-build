@@ -3,6 +3,7 @@ import { Jura } from "next/font/google";
 import "@/styles/globals.css";
 import "@/styles/normalize.css";
 import Footer from "@/layouts/footer/footer";
+import Header from "@/layouts/header/header";
 
 export const metadata: Metadata = {
   title: "Mantis",
@@ -19,6 +20,7 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <body className={jura.className}>
+        <Header />
         {children}
         <Footer />
       </body>
