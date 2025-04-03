@@ -1,0 +1,7 @@
+.dropdown_content {
+  position: absolute;
+  bottom: -60px;
+  background-color: var(--header-bg);
+  padding: 16px 32px;
+  border-radius: 0px 0px 40px 40px;
+}

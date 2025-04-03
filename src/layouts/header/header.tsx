@@ -4,6 +4,7 @@ import styles from "./header.module.css";
 import Link from "next/link";
 import Typography from "@/ui-kit/typography/typography";
 import Button from "@/ui-kit/button/button";
+import Dropdown from "@/components/dropdown/dropdown";
 const Header = () => {
   return (
     <header className={styles.main_header}>
@@ -22,9 +23,16 @@ const Header = () => {
             <ul className={styles.mainLinks}>
               <li className={styles.header_linkItem}>
                 <Link href={"/"}>
-                  <Typography variant="span" outline="bold" register="18">
-                    Направления
-                  </Typography>
+                  <Dropdown
+                    button={
+                      <Typography variant="span" outline="bold" register="18">
+                        Направления
+                      </Typography>
+                    }>
+                    <ul>
+                      <li>test</li>
+                    </ul>
+                  </Dropdown>
                 </Link>
               </li>
               <li className={styles.header_linkItem}>
@@ -53,8 +61,7 @@ const Header = () => {
           <div className={styles.header_socialsContainer}>
             <Link
               className={styles.header_socialsIconContainer}
-              href={"https://vk.com"}
-            >
+              href={"https://vk.com"}>
               <Image
                 className={styles.header_socialsIcon}
                 src={"/cart.svg"}
@@ -66,8 +73,7 @@ const Header = () => {
             <div className={styles.header_socials}>
               <Link
                 className={styles.header_socialsIconContainer}
-                href={"https://vk.com"}
-              >
+                href={"https://vk.com"}>
                 <Image
                   className={styles.header_socialsIcon}
                   src={"/vk.svg"}
@@ -78,8 +84,7 @@ const Header = () => {
               </Link>
               <Link
                 className={styles.header_socialsIconContainer}
-                href={"https://vk.com"}
-              >
+                href={"https://vk.com"}>
                 <Image
                   className={styles.header_socialsIcon}
                   src={"/tg.svg"}
