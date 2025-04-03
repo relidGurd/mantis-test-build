@@ -5,12 +5,13 @@ import Link from "next/link";
 import Typography from "@/ui-kit/typography/typography";
 import Button from "@/ui-kit/button/button";
 import Dropdown from "@/components/dropdown/dropdown";
+import { staticUrl } from "@/utils/static-urls";
 const Header = () => {
   return (
     <header className={styles.main_header}>
       <div className="main-container">
         <div className={styles.menu_container}>
-          <Link href={"/"} className={styles.headerLogoContainer}>
+          <Link href={staticUrl.main} className={styles.headerLogoContainer}>
             <Image
               className={styles.headerLogoImage}
               src={"/mantis.svg"}
@@ -22,13 +23,14 @@ const Header = () => {
           <nav>
             <ul className={styles.mainLinks}>
               <li className={styles.header_linkItem}>
-                <Link href={"/"}>
+                <Link href={staticUrl.main}>
                   <Dropdown
                     button={
                       <Typography variant="span" outline="bold" register="18">
                         Направления
                       </Typography>
-                    }>
+                    }
+                  >
                     <ul>
                       <li>test</li>
                     </ul>
@@ -36,14 +38,14 @@ const Header = () => {
                 </Link>
               </li>
               <li className={styles.header_linkItem}>
-                <Link href={"/"}>
+                <Link href={staticUrl.about}>
                   <Typography variant="span" outline="bold" register="18">
                     О нас
                   </Typography>
                 </Link>
               </li>
               <li className={styles.header_linkItem}>
-                <Link href={"/"}>
+                <Link href={staticUrl.cases}>
                   <Typography variant="span" outline="bold" register="18">
                     Кейсы
                   </Typography>
@@ -61,7 +63,8 @@ const Header = () => {
           <div className={styles.header_socialsContainer}>
             <Link
               className={styles.header_socialsIconContainer}
-              href={"https://vk.com"}>
+              href={"https://vk.com"}
+            >
               <Image
                 className={styles.header_socialsIcon}
                 src={"/cart.svg"}
@@ -73,7 +76,8 @@ const Header = () => {
             <div className={styles.header_socials}>
               <Link
                 className={styles.header_socialsIconContainer}
-                href={"https://vk.com"}>
+                href={"https://vk.com"}
+              >
                 <Image
                   className={styles.header_socialsIcon}
                   src={"/vk.svg"}
@@ -84,7 +88,8 @@ const Header = () => {
               </Link>
               <Link
                 className={styles.header_socialsIconContainer}
-                href={"https://vk.com"}>
+                href={"https://vk.com"}
+              >
                 <Image
                   className={styles.header_socialsIcon}
                   src={"/tg.svg"}

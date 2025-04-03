@@ -1,11 +1,10 @@
-"use client";
 import styles from "./dropdown.module.css";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
+
 interface IDropdown {
   button: React.ReactNode;
   children: React.ReactNode;
-  onClick?: () => void;
 }
 
 const Dropdown: React.FC<IDropdown> = ({ button, children }) => {
@@ -25,17 +24,37 @@ const Dropdown: React.FC<IDropdown> = ({ button, children }) => {
     },
   };
 
+  // Закрытие при клике вне Dropdown
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        refElement.current &&
+        !refElement.current.contains(event.target as Node)
+      ) {
+        setIsVisible(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
     <div
-      onClick={() => setIsVisible(true)}
-      className={styles.dropdownContainer}>
-      <div ref={refElement}>{button}</div>
+      ref={refElement}
+      className={styles.dropdownContainer}
+      onMouseLeave={() => setIsVisible(false)}
+    >
+      <div onClick={() => setIsVisible(!visible)}>{button}</div>
       {visible && (
         <motion.div
           variants={motionDropdown}
           initial="hidden"
           animate={visible ? "visible" : "hidden"}
-          className={styles.dropdown_content}>
+          className={styles.dropdown_content}
+        >
           {children}
         </motion.div>
       )}

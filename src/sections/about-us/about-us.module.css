@@ -2,7 +2,6 @@
   display: grid;
   grid-template-columns: 0.6fr 1fr;
   gap: 175px;
-  padding: 80px 0;
 }
 
 .aboutUsContainer div {

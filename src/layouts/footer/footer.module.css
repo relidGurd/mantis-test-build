@@ -1,3 +1,31 @@
 .footerContainer {
   padding: 60px 0;
 }
+
+.footer_content {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 16px;
+  padding-bottom: 40px;
+}
+
+.footer_logoSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer_menus {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.footer_menuSection:not(:last-child) {
+  margin-right: 40px;
+}
+
+.footer_socials {
+  padding-top: 40px;
+  border-top: 2px solid var(--white-10);
+  display: flex;
+  justify-content: space-between;
+}

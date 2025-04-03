@@ -4,6 +4,7 @@ import "@/styles/globals.css";
 import "@/styles/normalize.css";
 import Footer from "@/layouts/footer/footer";
 import Header from "@/layouts/header/header";
+import "swiper/css";
 
 export const metadata: Metadata = {
   title: "Mantis",
