@@ -11,7 +11,11 @@ const Hero = () => {
           <Typography className={styles.gradientTitle} variant="h1">
             Лучшие IT-решения <br /> для вашего бизнеса
           </Typography>
-          <Typography register="18" outline="regular">
+          <Typography
+            className={styles.hero_text}
+            register="18"
+            outline="regular"
+          >
             Автоматизируем процессы, обеспечиваем безопасность и упрощаем
             управление с помощью передовых технологий
           </Typography>
@@ -25,19 +29,40 @@ const Hero = () => {
             <Typography register="40" outline="bold" variant="span">
               200+
             </Typography>
-            <Typography variant="span">Параметр</Typography>
+            <Typography
+              outline="regular"
+              register="18"
+              className={styles.hero_advText}
+              variant="span"
+            >
+              Параметр
+            </Typography>
           </li>
           <li className={styles.hero_advItem}>
             <Typography register="40" outline="bold" variant="span">
               200+
             </Typography>
-            <Typography variant="span">Параметр</Typography>
+            <Typography
+              outline="regular"
+              register="18"
+              className={styles.hero_advText}
+              variant="span"
+            >
+              Параметр
+            </Typography>
           </li>
           <li className={styles.hero_advItem}>
             <Typography register="40" outline="bold" variant="span">
               200+
             </Typography>
-            <Typography variant="span">Параметр</Typography>
+            <Typography
+              outline="regular"
+              register="18"
+              className={styles.hero_advText}
+              variant="span"
+            >
+              Параметр
+            </Typography>
           </li>
         </ul>
       </div>

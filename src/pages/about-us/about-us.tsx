@@ -6,6 +6,8 @@ import AboutStages from "./about-stages/about-stages";
 import Partners from "@/sections/partners/partners";
 import AboutForWho from "./for-who/for-who";
 import { image } from "motion/react-client";
+import AboutSteps from "./about-steps/about-steps";
+import AboutTeam from "./about-team/about-team";
 
 const exampleStages = [
   {
@@ -104,6 +106,8 @@ export default function AboutPage() {
         title="Преимущества покупки у нас"
         data={exampleAdvantages}
       />
+      <AboutSteps />
+      <AboutTeam />
       <Partners />
     </>
   );

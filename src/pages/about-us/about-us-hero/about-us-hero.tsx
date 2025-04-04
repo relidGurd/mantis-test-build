@@ -56,8 +56,14 @@ const AboutUsHero = () => {
               адаптированные и протестированные продукты.
             </Typography>
           </div>
-          <div>
-            <Image src={"/"} width={250} height={250} alt="" />
+          <div className={styles.aboutus_heroImageContainer}>
+            <Image
+              className={styles.aboutus_heroImage}
+              src={"/demo.png"}
+              width={1250}
+              height={650}
+              alt=""
+            />
           </div>
         </div>
       </div>

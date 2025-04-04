@@ -49,3 +49,39 @@
   flex-direction: column;
   align-items: center;
 }
+
+.hero_text {
+  color: var(--gray-100);
+  margin-top: 20px;
+}
+
+.hero_advText {
+  color: var(--gray-100);
+}
+
+@media screen and (max-width: 1440px) {
+  .gradientTitle {
+    font-size: 80px;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .gradientTitle {
+    font-size: 24px;
+  }
+
+  .hero_buttonsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero_buttonsContainer button:nth-child(1) {
+    margin-bottom: 20px;
+  }
+
+  .hero_advContainer {
+    display: flex;
+    flex-direction: column;
+  }
+}

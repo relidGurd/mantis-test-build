@@ -1,0 +1,36 @@
+.about_teamSection {
+  background: var(--linear-40);
+}
+
+.about_teamItem {
+  background: var(--linear-40);
+  border-radius: 40px;
+  overflow: hidden;
+}
+
+.about_teamList {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  margin-top: 60px;
+  gap: 40px;
+}
+
+.about_teamImageContainer {
+  width: 100%;
+  height: 320px;
+}
+
+.about_teamImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about_teamItem__info {
+  padding: 24px;
+}
+
+.about_teamItem_title {
+  display: block;
+  margin-bottom: 8px;
+}

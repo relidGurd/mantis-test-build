@@ -24,6 +24,8 @@
   --header-bg: #1a1a1a;
   --theme-bg: #141414;
 
+  --gray-100: #999999;
+
   --black-100: #121212;
   --black-90: #2a2a2a;
   --black-80: #414141;
@@ -57,6 +59,12 @@
   );
 
   --gray-gradient: linear-gradient(
+    40deg,
+    rgba(255, 242, 242, 0.03) 0%,
+    rgba(255, 250, 250, 0.07) 100%
+  );
+
+  --linear-40: linear-gradient(
     40deg,
     rgba(255, 242, 242, 0.03) 0%,
     rgba(255, 250, 250, 0.07) 100%

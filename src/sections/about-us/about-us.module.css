@@ -18,3 +18,28 @@
   background-clip: text;
   color: transparent;
 }
+
+@media screen and (max-width: 1980px) {
+  .aboutUsContainer {
+    display: grid;
+    grid-template-columns: 0.6fr 1fr;
+    gap: 80px;
+  }
+
+  .aboutUsContainer_title {
+    font-size: 200px;
+  }
+}
+
+@media screen and (max-width: 1770px) {
+  .aboutUsContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .aboutUsContainer_title {
+    font-size: 200px;
+  }
+}
