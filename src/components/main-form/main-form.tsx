@@ -65,9 +65,13 @@ const MainForm = () => {
 
               <Button type="submit" label="Связаться" color="greenButton" />
             </div>
-            <div>
-              <input type="checkbox" />
-              <Typography variant="span" register="16" outline="regular">
+            <div className={styles.mainform_checkbox}>
+              <input className={styles.mainform_checkboxItem} type="checkbox" />
+              <Typography
+                className={styles.mainform_checkboxText}
+                variant="span"
+                register="16"
+                outline="regular">
                 Я даю согласие на обработку моих персональных данных
                 и на получение информационно-рекламных рассылок.
               </Typography>

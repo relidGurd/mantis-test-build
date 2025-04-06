@@ -63,8 +63,7 @@ const Tab = () => {
                 <Typography
                   variant="span"
                   register="48"
-                  outline="bold"
-                >{`0${el.id}`}</Typography>
+                  outline="bold">{`0${el.id}`}</Typography>
                 <Typography variant="p" outline="semibold" register="32">
                   saw 6x faster builds & deployment.  builds decreased by
                   99.96%. saw 50% reduction in infra admin effort.
@@ -88,16 +87,14 @@ const Tab = () => {
               initial="init"
               animate={activeIndex === index ? "visible" : "init"}
               className={styles.information_mobile}
-              transition={{ ...motionTab.transition }}
-            >
+              transition={{ ...motionTab.transition }}>
               {activeIndex === index && (
                 <div>
                   <Typography
                     variant="span"
                     register="48"
-                    outline="bold"
-                  >{`0${el.id}`}</Typography>
-                  <Typography variant="p" outline="semibold" register="32">
+                    outline="bold">{`0${el.id}`}</Typography>
+                  <Typography variant="p" outline="regular" register="16">
                     saw 6x faster builds & deployment.  builds decreased by
                     99.96%. saw 50% reduction in infra admin effort.
                   </Typography>

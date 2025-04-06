@@ -42,4 +42,12 @@
   .aboutUsContainer_title {
     font-size: 200px;
   }
+
+  .aboutUsContainer_title {
+    font-size: 80px;
+  }
+
+  .aboutUsContainer {
+    gap: 0;
+  }
 }

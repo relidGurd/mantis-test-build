@@ -1,3 +1,8 @@
+.about_heroTitle {
+  margin-bottom: 80px !important;
+  text-align: center;
+}
+
 .aboutus_hero {
   display: grid;
   grid-template-rows: auto auto;
@@ -11,7 +16,7 @@
 }
 
 .about_textMargin {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 .about_videoContainer {

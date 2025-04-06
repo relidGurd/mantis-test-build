@@ -25,3 +25,8 @@
 .partners_info span {
   display: block;
 }
+
+.partners_info span:nth-child(2) {
+  margin-top: 6px;
+  color: var(--white-80);
+}

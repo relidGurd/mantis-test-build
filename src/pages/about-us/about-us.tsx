@@ -96,9 +96,6 @@ const exampleAdvantages = [
 export default function AboutPage() {
   return (
     <>
-      <div className="main-container">
-        <Typography variant="h1">О нас</Typography>
-      </div>
       <AboutUsHero />
       <AboutStages title="Этапы работ" data={exampleStages} />
       <AboutForWho />

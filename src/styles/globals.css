@@ -58,6 +58,12 @@
     rgba(36, 210, 57, 1) 100%
   );
 
+  --purple-gradient: linear-gradient(
+    90deg,
+    rgba(77, 173, 239, 1) 0%,
+    rgba(63, 91, 181, 1) 100%
+  );
+
   --gray-gradient: linear-gradient(
     40deg,
     rgba(255, 242, 242, 0.03) 0%,

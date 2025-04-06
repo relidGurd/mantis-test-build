@@ -13,7 +13,7 @@
 .abstractRound {
   content: "";
   position: absolute;
-  right: 0;
+  right: -10%;
   background-image: url("/abstract.png");
   width: 667px;
   height: 710px;
@@ -22,8 +22,11 @@
   bottom: -20%;
 }
 
+.formContainer_inform {
+  width: 55%;
+}
+
 .formContainer_inform p:nth-child(2) {
-  width: 75%;
   margin: 24px 0;
 }
 
@@ -33,4 +36,46 @@
   border: none;
   border-radius: 16px;
   margin-right: 16px;
+  color: white;
+}
+
+.mainform_checkbox {
+  margin-top: 24px;
+}
+
+.mainform_checkboxText {
+  margin-left: 8px;
+}
+
+.mainform_checkboxItem:checked {
+  accent-color: #4caf50; /* Зелёный цвет */
+}
+
+.mainform_checkboxItem {
+  background-color: var(--black-70); /* Зелёный цвет */
+}
+
+@media screen and (max-width: 1400px) {
+  .formContainer {
+    padding: 40px 24px;
+  }
+
+  .formContainer_inform {
+    width: 100%;
+  }
+
+  .abstractRound {
+    display: none;
+  }
+
+  .mainForm {
+    flex-direction: column;
+  }
+
+  .mainForm_Input {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    margin-bottom: 16px;
+  }
 }

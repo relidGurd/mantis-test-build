@@ -29,8 +29,7 @@ const Header = () => {
                       <Typography variant="span" outline="bold" register="18">
                         Направления
                       </Typography>
-                    }
-                  >
+                    }>
                     <ul>
                       <li>test</li>
                     </ul>
@@ -63,8 +62,7 @@ const Header = () => {
           <div className={styles.header_socialsContainer}>
             <Link
               className={styles.header_socialsIconContainer}
-              href={"https://vk.com"}
-            >
+              href={"https://vk.com"}>
               <Image
                 className={styles.header_socialsIcon}
                 src={"/cart.svg"}
@@ -76,8 +74,7 @@ const Header = () => {
             <div className={styles.header_socials}>
               <Link
                 className={styles.header_socialsIconContainer}
-                href={"https://vk.com"}
-              >
+                href={"https://vk.com"}>
                 <Image
                   className={styles.header_socialsIcon}
                   src={"/vk.svg"}
@@ -88,8 +85,7 @@ const Header = () => {
               </Link>
               <Link
                 className={styles.header_socialsIconContainer}
-                href={"https://vk.com"}
-              >
+                href={"https://vk.com"}>
                 <Image
                   className={styles.header_socialsIcon}
                   src={"/tg.svg"}
@@ -107,6 +103,39 @@ const Header = () => {
               />
             </div>
           </div>
+        </div>
+        <div className={styles.mobile_menuContainer}>
+          <div className={styles.mobile_menuBurgerContainer}>
+            <Image
+              src={"/burger.svg"}
+              width={28}
+              height={19}
+              alt="Burger Icon"
+            />
+          </div>
+          <div className={styles.mobile_logoContainer}>
+            <Link href={staticUrl.main} className={styles.headerLogoContainer}>
+              <Image
+                className={styles.headerLogoImage}
+                src={"/mantis.svg"}
+                width={150}
+                height={150}
+                alt="Logo Mantis"
+              />
+            </Link>
+          </div>
+
+          <Link
+            className={styles.header_socialsIconContainer}
+            href={"https://vk.com"}>
+            <Image
+              className={styles.header_socialsIcon}
+              src={"/cart.svg"}
+              width={24}
+              height={24}
+              alt="Cart Icon"
+            />
+          </Link>
         </div>
       </div>
     </header>

@@ -29,3 +29,18 @@
   display: flex;
   justify-content: space-between;
 }
+
+@media screen and (max-width: 1120px) {
+  .footer_content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer_menus {
+    flex-direction: column;
+  }
+
+  .footer_socials {
+    flex-direction: column-reverse;
+  }
+}

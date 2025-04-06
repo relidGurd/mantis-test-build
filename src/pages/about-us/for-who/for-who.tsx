@@ -6,7 +6,11 @@ const AboutForWho = () => {
   return (
     <section>
       <div className="main-container">
-        <Typography variant="h2" outline="semibold" register="32">
+        <Typography
+          className={styles.about_forWhoTitle}
+          variant="h2"
+          outline="semibold"
+          register="32">
           Для кого мы работаем
         </Typography>
         <div className={styles.about_forWhoTextContainer}>

@@ -1,5 +1,9 @@
+.about_forWhoTitle {
+  margin-bottom: 60px !important;
+}
+
 .about_forWhoTextContainer {
-  width: 75%;
+  width: 65%;
 }
 
 .about_forWhoText {
