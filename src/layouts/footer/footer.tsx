@@ -20,17 +20,19 @@ const Footer = () => {
                   alt="footer-logo"
                 />
               </div>
-              <Link href={"tel:+79999999999"}>
-                <Typography variant="span" outline="regular" register="18">
-                  +7 999 999-99-99
-                </Typography>
-              </Link>
+              <div className={styles.footer_links}>
+                <Link href={"tel:+79999999999"}>
+                  <Typography variant="span" outline="regular" register="18">
+                    +7 999 999-99-99
+                  </Typography>
+                </Link>
 
-              <Link href={"mailto:mantis@gmail.com"}>
-                <Typography variant="span" outline="regular" register="18">
-                  mantis@gmail.com
-                </Typography>
-              </Link>
+                <Link href={"mailto:mantis@gmail.com"}>
+                  <Typography variant="span" outline="regular" register="18">
+                    mantis@gmail.com
+                  </Typography>
+                </Link>
+              </div>
             </div>
             <div className={styles.footer_menus}>
               <div className={styles.footer_menuSection}>

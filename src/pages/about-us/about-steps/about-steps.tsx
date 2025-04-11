@@ -8,6 +8,14 @@ const AboutSteps = () => {
   return (
     <section>
       <div className="main-container">
+        <Typography
+          className={styles.about_steps}
+          variant="h2"
+          outline="semibold"
+          register="32"
+        >
+          Наша история
+        </Typography>
         <ul className={styles.about_stepsItemList}>
           <li className={styles.about_stepsItem}>
             <Typography outline="bold" register="48">

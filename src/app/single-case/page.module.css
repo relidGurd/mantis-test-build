@@ -1,0 +1,137 @@
+.singleCase_mainContainer {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+.singleCase_tag {
+  background: var(--purple-gradient);
+  padding: 16px 24px;
+  border-radius: 16px;
+  display: inline-block;
+}
+
+.singleCase_title {
+  margin-bottom: 24px !important;
+}
+
+.singleCase_container {
+  display: grid;
+  grid-template-columns: 0.7fr 1fr;
+  gap: 80px;
+  padding: 60px;
+  background: var(--gray-gradient);
+  border-radius: 40px;
+}
+
+.singleCase_textInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.singleCase_imageList {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.singleCase_imageContainer {
+  width: 569px;
+  overflow: hidden;
+  border-radius: 40px;
+}
+
+.singleCase_image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.singleCase_bgImage {
+  position: absolute;
+  width: 269px;
+  overflow: hidden;
+  border-radius: 24px;
+  bottom: 0;
+  right: 0;
+  z-index: -2;
+  transform: translate(-600px, -10px);
+}
+
+.singleCase_blurContainer {
+  position: absolute;
+  width: 226px;
+  height: 319px;
+  bottom: 0;
+  right: 0;
+  overflow: hidden;
+  border-radius: 24px;
+  z-index: -1;
+  transform: translate(-480px, 30px);
+}
+
+.singleCase_blur {
+  width: 100%;
+  height: 100%;
+  filter: blur(4px);
+  background: rgba(255, 255, 255, 0.1); /* полупрозрачный фон */
+  backdrop-filter: blur(10px); /* размытие заднего фона */
+  -webkit-backdrop-filter: blur(10px); /* поддержка Safari */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+@media screen and (max-width: 1640px) {
+  .singleCase_container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px;
+  }
+
+  .singleCase_imageList {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .singleCase_imageContainer {
+    width: 65%;
+    border-radius: 10px;
+  }
+
+  .singleCase_bgImage {
+    width: 35%;
+    transform: translate(0, -10px);
+    left: 0;
+    border-radius: 10px;
+  }
+
+  .singleCase_blurContainer {
+    width: 20%;
+    right: 55%;
+    height: 80%;
+    transform: translate(0px, 15px);
+    border-radius: 18px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .singleCase_mainContainer {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+/* Мобильные устройства (до 767px) */
+@media (max-width: 767px) {
+  .singleCase_mainContainer {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .singleCase_container {
+    border-radius: 0;
+  }
+}

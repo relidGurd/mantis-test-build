@@ -53,3 +53,7 @@
 .about_stepsItem:last-child .about_stepsBullets::before {
   background-color: transparent;
 }
+
+.about_steps {
+  margin-bottom: 60px !important;
+}

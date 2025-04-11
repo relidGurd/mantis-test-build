@@ -124,6 +124,9 @@ section {
   padding: 80px 0;
 }
 
+.swiper-container {
+  overflow: visible !important;
+}
 /* Планшеты (768px - 1024px) */
 @media (max-width: 1024px) {
   .main-container {

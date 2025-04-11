@@ -8,6 +8,8 @@ import AboutForWho from "./for-who/for-who";
 import { image } from "motion/react-client";
 import AboutSteps from "./about-steps/about-steps";
 import AboutTeam from "./about-team/about-team";
+import AboutReviews from "./about-reviews/about-reviews";
+import RiseUpAnimation from "@/animation/rise-up-animation/rise-up-animation";
 
 const exampleStages = [
   {
@@ -96,7 +98,9 @@ const exampleAdvantages = [
 export default function AboutPage() {
   return (
     <>
-      <AboutUsHero />
+      <RiseUpAnimation>
+        <AboutUsHero />
+      </RiseUpAnimation>
       <AboutStages title="Этапы работ" data={exampleStages} />
       <AboutForWho />
       <AboutStages
@@ -104,8 +108,15 @@ export default function AboutPage() {
         data={exampleAdvantages}
       />
       <AboutSteps />
-      <AboutTeam />
-      <Partners />
+      <RiseUpAnimation>
+        <AboutTeam />
+      </RiseUpAnimation>
+      <RiseUpAnimation>
+        <Partners />
+      </RiseUpAnimation>
+      <RiseUpAnimation>
+        <AboutReviews />
+      </RiseUpAnimation>
     </>
   );
 }

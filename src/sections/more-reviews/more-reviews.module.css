@@ -1,0 +1,83 @@
+.moreReviews_card {
+  display: grid;
+  grid-template-columns: 1fr 0.6fr;
+  gap: 40px;
+}
+
+.moreReviews_reviewCheck {
+  position: relative;
+}
+
+.moreReviews_reviewCard {
+  position: absolute;
+  width: 75%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  border-radius: 40px;
+  z-index: 1;
+  overflow: hidden;
+  background: var(--linear-40);
+}
+
+.firstCard {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  filter: blur(4px);
+  backdrop-filter: blur(20px); /* размытие заднего фона */
+  -webkit-backdrop-filter: blur(10px); /* поддержка Safari */
+}
+
+.card_contetn {
+  position: relative;
+  padding: 40px;
+  z-index: 1;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: 56px;
+}
+
+.example {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.demoImageCnt {
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
+  border-radius: 100%;
+}
+.demoImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.moreReviews_reviewCard:nth-child(2) {
+  right: 100px;
+  z-index: -2;
+}
+.moreReviews_reviewCard:nth-child(3) {
+  right: 50px;
+  z-index: -3;
+}
+.moreReviews_reviewCard:nth-child(4) {
+  right: 0;
+  z-index: -4;
+}
+
+@media screen and (max-width: 1680px) {
+  .moreReviews_card {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 40px;
+  }
+}

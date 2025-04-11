@@ -136,3 +136,25 @@
   font-size: var(--title-big);
   font-weight: var(--font-bold);
 }
+
+@media screen and (max-width: 1020px) {
+  .text-20-bold {
+    font-size: var(--small-txt);
+    font-weight: var(--font-bold);
+  }
+
+  .text-16-regular {
+    font-size: var(--small-txt);
+    font-weight: var(--font-regular);
+  }
+
+  .text-48-bold {
+    font-size: var(--big-txt);
+    font-weight: var(--font-regular);
+  }
+
+  .text-32-bold {
+    font-size: var(--extra-big-txt);
+    font-weight: var(--font-bold);
+  }
+}

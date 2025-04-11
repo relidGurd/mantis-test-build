@@ -3,6 +3,7 @@ import Typography from "@/ui-kit/typography/typography";
 import styles from "./about-stages.module.css";
 import { image } from "motion/react-client";
 import Image from "next/image";
+import RiseUpAnimation from "@/animation/rise-up-animation/rise-up-animation";
 
 interface IAboutStagesData {
   id: number;
@@ -25,36 +26,39 @@ const AboutStages: React.FC<IAboutStages> = ({ title, data }) => {
         </Typography>
         <ul className={styles.stages_list}>
           {data.map((el, index: number) => (
-            <li key={el.id} className={styles.stages_listItem}>
-              {el.image ? (
-                <div className={styles.stages_listItem__imageContainer}>
-                  <Image
-                    className={styles.stages_listItem__image}
-                    src={el.image}
-                    width={54}
-                    height={54}
-                    alt="sateges item"
-                  />
-                </div>
-              ) : (
-                <div className={styles.stages_listItem__number}>
-                  <Typography variant="span" register="48" outline="bold">
-                    {`0${index + 1}`}
-                  </Typography>
-                </div>
-              )}
+            <RiseUpAnimation delay={0.2 * index}>
+              <li key={el.id} className={styles.stages_listItem}>
+                {el.image ? (
+                  <div className={styles.stages_listItem__imageContainer}>
+                    <Image
+                      className={styles.stages_listItem__image}
+                      src={el.image}
+                      width={54}
+                      height={54}
+                      alt="sateges item"
+                    />
+                  </div>
+                ) : (
+                  <div className={styles.stages_listItem__number}>
+                    <Typography variant="span" register="48" outline="bold">
+                      {`0${index + 1}`}
+                    </Typography>
+                  </div>
+                )}
 
-              <div className={styles.stages_listItem__description}>
-                <Typography
-                  outline="bold"
-                  variant="span"
-                  register="20"
-                  className={styles.stages_listItem__title}>
-                  {el.title}
-                </Typography>
-                <Typography>{el.description}</Typography>
-              </div>
-            </li>
+                <div className={styles.stages_listItem__description}>
+                  <Typography
+                    outline="bold"
+                    variant="span"
+                    register="20"
+                    className={styles.stages_listItem__title}
+                  >
+                    {el.title}
+                  </Typography>
+                  <Typography>{el.description}</Typography>
+                </div>
+              </li>
+            </RiseUpAnimation>
           ))}
         </ul>
       </div>

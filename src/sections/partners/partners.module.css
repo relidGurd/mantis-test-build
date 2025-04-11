@@ -1,3 +1,7 @@
+.partners_section {
+  width: 100%;
+  overflow: hidden;
+}
 .partners_card {
   display: flex;
   align-items: center;
