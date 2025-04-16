@@ -19,7 +19,7 @@ const ProductCard: React.FC<IProdctCard> = ({
   price,
 }) => {
   return (
-    <li className={styles.product_card}>
+    <div className={styles.product_card}>
       {tag && (
         <div className={styles.product_tag}>
           <Typography>Веб-разработка</Typography>
@@ -41,14 +41,15 @@ const ProductCard: React.FC<IProdctCard> = ({
           outline="bold"
           register="20"
           variant="p"
-          className={styles.card_info__title}>
+          className={styles.card_info__title}
+        >
           {name}
         </Typography>
         <Typography outline="regular" register="16" variant="p">
           {description.slice(0, 60)}...
         </Typography>
       </div>
-    </li>
+    </div>
   );
 };
 

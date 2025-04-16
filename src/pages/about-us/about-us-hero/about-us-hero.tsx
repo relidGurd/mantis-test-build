@@ -3,6 +3,7 @@
 import Typography from "@/ui-kit/typography/typography";
 import styles from "./about-us-hero.module.css";
 import Image from "next/image";
+import Video from "@/ui-kit/video/video";
 
 const AboutUsHero = () => {
   return (
@@ -11,22 +12,22 @@ const AboutUsHero = () => {
         className={styles.about_heroTitle}
         variant="h1"
         outline="bold"
-        register="40">
+        register="40"
+      >
         О нас
       </Typography>
       <div className={styles.aboutus_hero}>
         <div className={styles.about_block}>
           <div className={styles.about_videoContainer}>
-            <video className={styles.about_video} width="100%" controls>
-              <source src="/video.mp4" type="video/mp4" />
-            </video>
+            <Video url="/video.mp4" />
           </div>
           <div className={styles.about_videoText}>
             <Typography
               className={styles.about_textMargin}
               variant="p"
               register="18"
-              outline="regular">
+              outline="regular"
+            >
               Мы проектируем и развёртываем ИТ-инфраструктуру любой сложности
               и масштаба, в том числе на базе российских продуктов
               виртуализации.
@@ -35,7 +36,8 @@ const AboutUsHero = () => {
               variant="p"
               register="18"
               outline="regular"
-              className={styles.about_textMargin}>
+              className={styles.about_textMargin}
+            >
               В рамках партнёрских отношений мы готовы предложить вам варианты
               серверной виртуализации под ваши задачи, внедрим и развернём
               ИТ-инфраструктуру, а также осуществим миграцию с зарубежных
@@ -54,7 +56,8 @@ const AboutUsHero = () => {
               className={styles.about_textMargin}
               variant="p"
               register="18"
-              outline="regular">
+              outline="regular"
+            >
               Мы проектируем и развёртываем ИТ-инфраструктуру любой сложности
               и масштаба, в том числе на базе российских продуктов
               виртуализации.
@@ -63,7 +66,8 @@ const AboutUsHero = () => {
               className={styles.about_textMargin}
               variant="p"
               register="18"
-              outline="regular">
+              outline="regular"
+            >
               В рамках партнёрских отношений мы готовы предложить вам варианты
               серверной виртуализации под ваши задачи, внедрим и развернём
               ИТ-инфраструктуру, а также осуществим миграцию с зарубежных

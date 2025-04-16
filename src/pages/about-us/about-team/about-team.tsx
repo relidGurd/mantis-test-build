@@ -2,6 +2,7 @@
 import Typography from "@/ui-kit/typography/typography";
 import styles from "./about-team.module.css";
 import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 const AboutTeam = () => {
   return (
@@ -10,8 +11,23 @@ const AboutTeam = () => {
         <Typography variant="h2" register="32" outline="bold">
           Наша команда
         </Typography>
-        <ul className={styles.about_teamList}>
-          <li className={styles.about_teamItem}>
+
+        <Swiper
+          slidesPerView={1.2}
+          wrapperClass={styles.about_teamList}
+          wrapperTag="ul"
+          spaceBetween={16}
+          className="swiper-container"
+          breakpoints={{
+            760: {
+              slidesPerView: 2,
+            },
+            1240: {
+              slidesPerView: 5,
+            },
+          }}
+        >
+          <SwiperSlide tag="li" className={styles.about_teamItem}>
             <div className={styles.about_teamImageContainer}>
               <Image
                 className={styles.about_teamImage}
@@ -32,8 +48,8 @@ const AboutTeam = () => {
               </Typography>
               <Typography>Иван</Typography>
             </div>
-          </li>
-          <li className={styles.about_teamItem}>
+          </SwiperSlide>
+          <SwiperSlide tag="li" className={styles.about_teamItem}>
             <div className={styles.about_teamImageContainer}>
               <Image
                 className={styles.about_teamImage}
@@ -54,8 +70,8 @@ const AboutTeam = () => {
               </Typography>
               <Typography>Иван</Typography>
             </div>
-          </li>
-          <li className={styles.about_teamItem}>
+          </SwiperSlide>
+          <SwiperSlide tag="li" className={styles.about_teamItem}>
             <div className={styles.about_teamImageContainer}>
               <Image
                 className={styles.about_teamImage}
@@ -76,8 +92,8 @@ const AboutTeam = () => {
               </Typography>
               <Typography>Иван</Typography>
             </div>
-          </li>
-          <li className={styles.about_teamItem}>
+          </SwiperSlide>
+          <SwiperSlide tag="li" className={styles.about_teamItem}>
             <div className={styles.about_teamImageContainer}>
               <Image
                 className={styles.about_teamImage}
@@ -98,8 +114,8 @@ const AboutTeam = () => {
               </Typography>
               <Typography>Иван</Typography>
             </div>
-          </li>
-          <li className={styles.about_teamItem}>
+          </SwiperSlide>
+          <SwiperSlide tag="li" className={styles.about_teamItem}>
             <div className={styles.about_teamImageContainer}>
               <Image
                 className={styles.about_teamImage}
@@ -120,8 +136,8 @@ const AboutTeam = () => {
               </Typography>
               <Typography>Иван</Typography>
             </div>
-          </li>
-        </ul>
+          </SwiperSlide>
+        </Swiper>
       </div>
     </section>
   );

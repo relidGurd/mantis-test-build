@@ -2,6 +2,9 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import Typography from "@/ui-kit/typography/typography";
 import MoreReviews from "@/sections/more-reviews/more-reviews";
+import Dynamic from "@/components/dynamic-page/dynamic-page";
+
+const components = [{ elem: "TEST" }, { elem: "TEST2" }, { elem: "TEST" }];
 
 const SingleCase = () => {
   return (
@@ -55,6 +58,7 @@ const SingleCase = () => {
           </ul>
         </div>
       </section>
+      <Dynamic component={components} />
       <MoreReviews />
     </main>
   );

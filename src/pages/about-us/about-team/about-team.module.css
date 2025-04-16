@@ -1,5 +1,6 @@
 .about_teamSection {
   background: var(--linear-40);
+  overflow: hidden;
 }
 
 .about_teamItem {
@@ -9,10 +10,7 @@
 }
 
 .about_teamList {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
   margin-top: 60px;
-  gap: 40px;
 }
 
 .about_teamImageContainer {

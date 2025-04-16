@@ -25,7 +25,7 @@ const Partners = () => {
               },
             }}
             modules={[Autoplay, FreeMode]}
-            slidesPerView={1}
+            slidesPerView={1.2}
             spaceBetween={20}
             wrapperTag="ul"
             className="swiper-container"

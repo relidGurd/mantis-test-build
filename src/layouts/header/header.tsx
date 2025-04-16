@@ -6,7 +6,11 @@ import Typography from "@/ui-kit/typography/typography";
 import Button from "@/ui-kit/button/button";
 import Dropdown from "@/components/dropdown/dropdown";
 import { staticUrl } from "@/utils/static-urls";
+import { useCart } from "@/store/cart";
+import classNames from "classnames";
 const Header = () => {
+  const cartLengrth = useCart((elem: any) => elem.items);
+
   return (
     <header className={styles.main_header}>
       <div className="main-container">
@@ -63,9 +67,15 @@ const Header = () => {
             </nav>
             <div className={styles.header_socialsContainer}>
               <Link
-                className={styles.header_socialsIconContainer}
-                href={"https://vk.com"}
+                className={classNames(
+                  styles.header_socialsIconContainer,
+                  styles.headerCart
+                )}
+                href={"/cart"}
               >
+                <div className={styles.headerCartInfo}>
+                  {cartLengrth.length}
+                </div>
                 <Image
                   className={styles.header_socialsIcon}
                   src={"/cart.svg"}
@@ -134,9 +144,13 @@ const Header = () => {
             </div>
 
             <Link
-              className={styles.header_socialsIconContainer}
-              href={"https://vk.com"}
+              className={classNames(
+                styles.header_socialsIconContainer,
+                styles.headerCart
+              )}
+              href={"/cart"}
             >
+              <div className={styles.headerCartInfo}>{cartLengrth.length}</div>
               <Image
                 className={styles.header_socialsIcon}
                 src={"/cart.svg"}
