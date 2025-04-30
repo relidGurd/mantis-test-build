@@ -28,7 +28,19 @@ const demoList = [
   },
 ];
 
-const Cases = () => {
+const Cases = ({
+  searchParams,
+}: {
+  searchParams: { [key: string]: string | string[] };
+}) => {
+  const params = new URLSearchParams(
+    Object.entries(searchParams).flatMap(([key, value]) =>
+      Array.isArray(value) ? value.map((v) => [key, v]) : [[key, value]]
+    )
+  );
+
+  const queryString = params.toString();
+  console.log(queryString); // ← теперь работает как надо
   return (
     <main>
       <div className="main-container">
@@ -36,7 +48,8 @@ const Cases = () => {
           className={styles.cases_title}
           variant="h1"
           register="40"
-          outline="bold">
+          outline="bold"
+        >
           Кейсы
         </Typography>
         <div></div>
