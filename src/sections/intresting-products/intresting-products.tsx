@@ -67,10 +67,18 @@ const IntrestingProducts: React.FC<any> = ({
         )}
 
         <Swiper
-          slidesPerView={slidesView}
-          className={className}
+          slidesPerView={1.2}
           spaceBetween={20}
+          className={className}
           wrapperTag="ul"
+          breakpoints={{
+            760: {
+              slidesPerView: 3,
+            },
+            1240: {
+              slidesPerView: slidesView,
+            },
+          }}
         >
           {demoList.map((el: any, index: number) => (
             <SwiperSlide key={index} tag="li">
