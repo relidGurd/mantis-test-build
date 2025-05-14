@@ -21,8 +21,8 @@ export default async function ServicePage() {
   });
 
   console.log(qwery);
-  const data = await getService(qwery);
+  // const data = await getService(qwery);
 
-  console.log(data);
+  // console.log(data);
   return <main>Test</main>;
 }

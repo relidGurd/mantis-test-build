@@ -1,5 +1,5 @@
 async function getService(qwery: string) {
-  const url = `http://localhost:1337/api/services/xotrt1hpntpa19shmrldrklk?${qwery}
+  const url = `https://cms.mantis-185.ru/api/services/xotrt1hpntpa19shmrldrklk?${qwery}
 `;
 
   try {

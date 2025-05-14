@@ -3,10 +3,21 @@ import styles from "./page.module.css";
 import Typography from "@/ui-kit/typography/typography";
 import MoreReviews from "@/sections/more-reviews/more-reviews";
 import Dynamic from "@/components/dynamic-page/dynamic-page";
-
+import { getCase } from "@/api/cases/cases-page";
+import qs from "qs";
 const components = [{ elem: "TEST" }, { elem: "TEST2" }, { elem: "TEST" }];
+type Params = Promise<{ slug: string }>;
 
-const SingleCase = () => {
+const SingleCase = async ({ params }: { params: Params }) => {
+  // const data = await getCase();
+  const { slug } = await params;
+
+  const qweryP = qs.stringify({
+    populate: "*",
+  });
+
+  const { data } = await getCase(slug, qweryP);
+
   return (
     <main>
       <section className={styles.singleCase_mainContainer}>
@@ -58,7 +69,7 @@ const SingleCase = () => {
           </ul>
         </div>
       </section>
-      <Dynamic component={components} />
+      <Dynamic component={data.page} />
       <MoreReviews />
     </main>
   );

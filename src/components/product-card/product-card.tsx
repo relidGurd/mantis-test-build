@@ -29,7 +29,7 @@ const ProductCard: React.FC<IProdctCard> = ({
       <div className={styles.product_cardImageContainer}>
         <Image
           className={styles.product_cardImage}
-          src={image}
+          src={`https://cms.mantis-185.ru${image}`}
           alt=""
           width={150}
           height={150}
