@@ -1,3 +1,4 @@
+import { Logo } from "@/icons/icons";
 import styles from "./page.module.css";
 import MainPage from "@/pages/main-page/main-page";
 

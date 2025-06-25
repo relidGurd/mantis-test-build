@@ -34,3 +34,34 @@
   display: block;
   margin-bottom: 16px;
 }
+
+@media screen and (max-width: 1440px) {
+  .stages_list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-top: 60px;
+  }
+}
+
+@media screen and (max-width: 940px) {
+  .stages_list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 25px;
+    margin-top: 60px;
+  }
+
+  .stages_listItem {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    background: var(--gray-gradient);
+    padding: 24px;
+    border-radius: 24px;
+  }
+
+  .stages_listItem__number {
+    padding: 0;
+  }
+}

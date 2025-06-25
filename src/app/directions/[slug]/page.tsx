@@ -5,12 +5,19 @@ import IntrestingProducts from "@/sections/intresting-products/intresting-produc
 import classNames from "classnames";
 import CategoryCard from "@/components/category-card/category-card";
 import AboutReviews from "@/pages/about-us/about-reviews/about-reviews";
-const DirectionElement = () => {
+import { getCategory } from "@/api/directions/directions";
+
+type Params = Promise<{ slug: string }>;
+
+const DirectionElement = async ({ params }: { params: Params }) => {
+  const { slug } = await params;
+  const { data } = await getCategory(slug);
+
   return (
     <main>
       <div className="main-container">
         <Typography register="40" outline="bold">
-          Название направления
+          {data.title}
         </Typography>
       </div>
       <IntrestingProducts className={"swiper-container"} />

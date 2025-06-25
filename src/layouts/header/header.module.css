@@ -1,13 +1,9 @@
 .main_header {
   position: sticky;
   top: 0;
-  background-color: var(--header-bg);
+  backdrop-filter: blur(15px);
   padding: 20px 0;
   z-index: 100;
-}
-
-.test {
-  position: relative;
 }
 
 .menu_container {
@@ -23,7 +19,7 @@
 
 .headerLogoContainer {
   display: block;
-  width: 180px;
+  width: 90px;
   height: auto;
 }
 
@@ -31,6 +27,10 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+
+.header_linkItem {
+  /* position: relative; */
 }
 
 .header_linkItem:not(:last-child) {
@@ -91,6 +91,20 @@
   border-radius: 100%;
   bottom: -8px;
   right: -12px;
+}
+
+.sub_menu_container {
+  width: 1220px;
+  margin: auto;
+}
+
+.subMenu_area {
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--green-gradient);
+  background-color: #1a1a1a;
+  height: 300px;
+  padding: 16px 32px;
+  border-radius: 0 0 40px 40px;
 }
 
 @media screen and (max-width: 1200px) {

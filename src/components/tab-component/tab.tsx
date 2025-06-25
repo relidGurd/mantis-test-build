@@ -59,7 +59,13 @@ const Tab = () => {
         {exampleData.map(
           (el: any, index: number) =>
             activeIndex === index && (
-              <div className={styles.information}>
+              <motion.div
+                className={styles.information}
+                variants={motionTab}
+                initial="init"
+                animate={activeIndex === index ? "visible" : "init"}
+                transition={{ ...motionTab.transition }}
+              >
                 <Typography
                   variant="span"
                   register="48"
@@ -70,16 +76,20 @@ const Tab = () => {
                   99.96%. saw 50% reduction in infra admin effort.
                 </Typography>
                 <Button color="greenButton" label="Узнать больше" />
-              </div>
+              </motion.div>
             )
         )}
       </div>
       <div className={styles.tab_buttonsContainer}>
         {exampleData.map((el: any, index: number) => (
-          <div className={styles.tab_mobileTabs}>
+          <div key={index} className={styles.tab_mobileTabs}>
             <Button
               onClick={() => setActiveIndex(index)}
-              className={styles.activeButton}
+              className={
+                activeIndex === index
+                  ? styles.tabBtbActive
+                  : styles.activeButton
+              }
               color="buttonRound"
               label={el.title}
             />

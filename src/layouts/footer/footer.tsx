@@ -14,7 +14,7 @@ const Footer = () => {
               <div className={styles.footer_logoImageContainer}>
                 <Image
                   className={styles.footer_logoImage}
-                  src={"/black-mantis.svg"}
+                  src={"/logo-icon.svg"}
                   width={220}
                   height={31}
                   alt="footer-logo"

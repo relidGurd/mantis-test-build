@@ -47,6 +47,10 @@
   display: none;
 }
 
+.tabBtbActive {
+  background: var(--green-gradient);
+}
+
 @media screen and (max-width: 1680px) {
   .mobile_tab__informationContainer {
     display: block;
@@ -54,6 +58,11 @@
 
   .activeButton {
     font-size: var(--small-text);
+  }
+
+  .tabBtbActive {
+    background: none;
+    padding: 0;
   }
 }
 

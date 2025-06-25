@@ -14,12 +14,12 @@ const Header = () => {
   return (
     <header className={styles.main_header}>
       <div className="main-container">
-        <div className={styles.test}>
+        <div>
           <div className={styles.menu_container}>
             <Link href={staticUrl.main} className={styles.headerLogoContainer}>
               <Image
                 className={styles.headerLogoImage}
-                src={"/mantis.svg"}
+                src={"/logo-icon.svg"}
                 width={150}
                 height={150}
                 alt="Logo Mantis"
@@ -28,7 +28,7 @@ const Header = () => {
             <nav>
               <ul className={styles.mainLinks}>
                 <li className={styles.header_linkItem}>
-                  <Link href={staticUrl.main}>
+                  <div>
                     <Dropdown
                       button={
                         <Typography variant="span" outline="bold" register="18">
@@ -36,11 +36,14 @@ const Header = () => {
                         </Typography>
                       }
                     >
-                      <ul>
-                        <li>test</li>
-                      </ul>
+                      <div className={styles.sub_menu_container}>
+                        <div style={{ height: "60px" }}></div>
+                        <ul className={styles.subMenu_area}>
+                          <li>test</li>
+                        </ul>
+                      </div>
                     </Dropdown>
-                  </Link>
+                  </div>
                 </li>
                 <li className={styles.header_linkItem}>
                   <Link href={staticUrl.about}>

@@ -50,3 +50,14 @@
   height: 100%;
   object-fit: cover;
 }
+
+@media screen and (max-width: 1440px) {
+  .about_block {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .about_block:nth-child(2) {
+    flex-direction: column-reverse;
+  }
+}

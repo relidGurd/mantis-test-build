@@ -48,7 +48,7 @@ const Dropdown: React.FC<IDropdown> = ({ button, children }) => {
       onMouseLeave={() => setIsVisible(false)}
     >
       <div onClick={() => setIsVisible(!visible)}>{button}</div>
-      {visible && (
+      {true && (
         <motion.div
           variants={motionDropdown}
           initial="hidden"
