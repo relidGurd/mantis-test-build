@@ -190,7 +190,7 @@ const Header = ({ menu_list }: any) => {
               >
                 <Image
                   className={styles.headerLogoImage}
-                  src={"/mantis.svg"}
+                  src={"/logo-icon.svg"}
                   width={150}
                   height={150}
                   alt="Logo Mantis"

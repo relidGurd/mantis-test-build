@@ -34,3 +34,26 @@
   background: var(--gray-gradient);
   border-radius: 40px;
 }
+
+@media screen and (max-width: 680px) {
+  .review_item__mainInfo {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .review_item__imgContainer {
+    width: 80px;
+    height: 80px;
+    margin-right: 20px;
+  }
+  .reviewText {
+    display: -webkit-box;
+    display: box; /* для старых версий Firefox, не обязателен */
+    -webkit-box-orient: vertical;
+    box-orient: vertical; /* для старых версий Firefox, не обязателен */
+    overflow: hidden;
+
+    -webkit-line-clamp: 3; /* для WebKit-браузеров (Chrome, Safari) */
+    line-clamp: 3;
+  }
+}
