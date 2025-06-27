@@ -64,6 +64,10 @@
     background: none;
     padding: 0;
   }
+
+  .mobile_tab_text {
+    margin: 26px 0;
+  }
 }
 
 @media screen and (max-width: 1480px) {
@@ -90,6 +94,7 @@
     background: none !important;
     text-align: left;
     padding: 0 !important;
+    margin-bottom: 20px;
   }
 }
 
