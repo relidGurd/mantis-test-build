@@ -104,6 +104,7 @@ const Tab = () => {
               {activeIndex === index && (
                 <div>
                   <Typography
+                    className={styles.mobile_tab_title}
                     variant="span"
                     register="48"
                     outline="bold"
