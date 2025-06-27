@@ -57,7 +57,7 @@ const SingleCase = async ({ params }: { params: Params }) => {
                 className={styles.singleCase_image}
                 src={
                   data.image[0].url
-                    ? `${process.env.STRAPI_URL}${data.image[0].url}`
+                    ? `http://cms.mantis-185.ru${data.image[0].url}`
                     : "/demo-shoes.png"
                 }
                 alt=""
@@ -73,7 +73,7 @@ const SingleCase = async ({ params }: { params: Params }) => {
                 className={styles.singleCase_image}
                 src={
                   data.image[1].url
-                    ? `${process.env.STRAPI_URL}${data.image[1].url}`
+                    ? `http://cms.mantis-185.ru${data.image[1].url}`
                     : "/demo-shoes.png"
                 }
                 alt=""
