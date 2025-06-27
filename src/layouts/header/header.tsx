@@ -212,17 +212,17 @@ const Header = ({ menu_list }: any) => {
               className={styles.hidden_mobile_menu}
             >
               <li className={styles.item_mobile_link_container}>
-                <Link className={styles.item_link} href={`/directions/about`}>
+                <Link className={styles.item_link} href={`/about`}>
                   О нас
                 </Link>
               </li>
               <li className={styles.item_mobile_link_container}>
-                <Link className={styles.item_link} href={`/directions/cases`}>
+                <Link className={styles.item_link} href={`/cases`}>
                   Кейсы
                 </Link>
               </li>
               <li className={styles.item_mobile_link_container}>
-                <Link className={styles.item_link} href={`/directions/cases`}>
+                <Link className={styles.item_link} href={`/blog`}>
                   Блог
                 </Link>
               </li>
