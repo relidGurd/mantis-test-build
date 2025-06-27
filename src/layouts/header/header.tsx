@@ -212,23 +212,36 @@ const Header = ({ menu_list }: any) => {
               className={styles.hidden_mobile_menu}
             >
               <li className={styles.item_mobile_link_container}>
-                <Link className={styles.item_link} href={`/about`}>
+                <Link
+                  onClick={() => isClickedOnBurger(false)}
+                  className={styles.item_link}
+                  href={`/about`}
+                >
                   О нас
                 </Link>
               </li>
               <li className={styles.item_mobile_link_container}>
-                <Link className={styles.item_link} href={`/cases`}>
+                <Link
+                  onClick={() => isClickedOnBurger(false)}
+                  className={styles.item_link}
+                  href={`/cases`}
+                >
                   Кейсы
                 </Link>
               </li>
               <li className={styles.item_mobile_link_container}>
-                <Link className={styles.item_link} href={`/blog`}>
+                <Link
+                  onClick={() => isClickedOnBurger(false)}
+                  className={styles.item_link}
+                  href={`/blog`}
+                >
                   Блог
                 </Link>
               </li>
               {menu_list.map((el: any) => (
                 <li className={styles.item_mobile_link_container} key={el.id}>
                   <Link
+                    onClick={() => isClickedOnBurger(false)}
                     className={styles.item_link}
                     href={`/directions/${el.title}`}
                   >
