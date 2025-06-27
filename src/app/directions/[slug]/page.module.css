@@ -21,25 +21,25 @@
 @media screen and (max-width: 1290) {
   .direction_categoryList {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr) !important;
     gap: 16px;
   }
 
   .direction_categoryItem {
     width: 100%;
-    grid-column: span 1;
+    grid-column: span 1 !important;
   }
 
   .direction_categoryItem:nth-child(5n + 4),
   .direction_categoryItem:nth-child(5n + 5) {
-    grid-column: span 1;
+    grid-column: span 1 !important;
   }
 }
 
 @media screen and (max-width: 780) {
   .direction_categoryList {
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(1, 1fr) !important;
     gap: 16px;
   }
 }
