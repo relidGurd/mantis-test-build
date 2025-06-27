@@ -148,4 +148,24 @@
     width: 100%;
     justify-content: center;
   }
+
+  .hidden_mobile_menu {
+    position: absolute;
+    min-height: 100vh;
+    background-color: var(--black-90);
+    padding: 16px 24px;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  }
+
+  .item_mobile_link_container {
+    margin-bottom: 32px;
+  }
+
+  .item_link {
+    font-size: 24px;
+    font-weight: bold;
+  }
 }

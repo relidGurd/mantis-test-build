@@ -8,11 +8,30 @@ import Dropdown from "@/components/dropdown/dropdown";
 import { staticUrl } from "@/utils/static-urls";
 import { useCart } from "@/store/cart";
 import classNames from "classnames";
-import { useEffect, useState } from "react";
-import { getCategories } from "@/api/directions/directions";
-
+import { motion } from "motion/react";
+import { useState } from "react";
 const Header = ({ menu_list }: any) => {
   const cartLengrth = useCart((elem: any) => elem.items);
+
+  const [clickOnBurger, isClickedOnBurger] = useState(false);
+
+  const handleClick = () => {
+    isClickedOnBurger(!clickOnBurger);
+    console.log(clickOnBurger);
+  };
+
+  const animatedMenu = {
+    initial: {
+      x: -100,
+      opacity: 0,
+      display: "none",
+    },
+    visible: {
+      x: 0,
+      opacity: 1,
+      display: "block",
+    },
+  };
 
   return (
     <header className={styles.main_header}>
@@ -175,7 +194,10 @@ const Header = ({ menu_list }: any) => {
             </div>
           </div>
           <div className={styles.mobile_menuContainer}>
-            <div className={styles.mobile_menuBurgerContainer}>
+            <div
+              onClick={() => handleClick()}
+              className={styles.mobile_menuBurgerContainer}
+            >
               <Image
                 src={"/burger.svg"}
                 width={28}
@@ -183,6 +205,38 @@ const Header = ({ menu_list }: any) => {
                 alt="Burger Icon"
               />
             </div>
+            <motion.ul
+              variants={animatedMenu}
+              initial={"hidden"}
+              animate={clickOnBurger ? "visible" : "initial"}
+              className={styles.hidden_mobile_menu}
+            >
+              <li className={styles.item_mobile_link_container}>
+                <Link className={styles.item_link} href={`/directions/about`}>
+                  О нас
+                </Link>
+              </li>
+              <li className={styles.item_mobile_link_container}>
+                <Link className={styles.item_link} href={`/directions/cases`}>
+                  Кейсы
+                </Link>
+              </li>
+              <li className={styles.item_mobile_link_container}>
+                <Link className={styles.item_link} href={`/directions/cases`}>
+                  Блог
+                </Link>
+              </li>
+              {menu_list.map((el: any) => (
+                <li className={styles.item_mobile_link_container} key={el.id}>
+                  <Link
+                    className={styles.item_link}
+                    href={`/directions/${el.title}`}
+                  >
+                    {el.title}
+                  </Link>
+                </li>
+              ))}
+            </motion.ul>
             <div className={styles.mobile_logoContainer}>
               <Link
                 href={staticUrl.main}
