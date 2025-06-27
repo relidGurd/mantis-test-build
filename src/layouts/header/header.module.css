@@ -152,7 +152,7 @@
   .hidden_mobile_menu {
     position: absolute;
     min-height: 100vh;
-    background-color: var(--black-90);
+    background-color: var(--theme-bg);
     padding: 16px 24px;
     top: 100%;
     left: 0;
