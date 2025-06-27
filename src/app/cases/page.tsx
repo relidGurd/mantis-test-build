@@ -60,9 +60,9 @@ const Cases = async () => {
               </li>
             ))}
           </ul>
-          <Suspense>
+          {/* <Suspense>
             <Pagination totalPages={meta.pagination.total} />
-          </Suspense>
+          </Suspense> */}
         </section>
       </div>
     </main>
