@@ -14,7 +14,7 @@ const SinglePrdouct = () => {
         <div className={styles.productImageCarouselContainer}>
           <Swiper
             direction={"vertical"}
-            onSwiper={setThumbsSwiper}
+            onSwiper={() => setThumbsSwiper}
             spaceBetween={10}
             slidesPerView={4}
             freeMode={true}

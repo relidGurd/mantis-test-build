@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import styles from "./intresting-products.module.css";
 import ProductCard from "@/components/product-card/product-card";
 import Typography from "@/ui-kit/typography/typography";
+import Link from "next/link";
 
 const demoList = [
   {
@@ -49,8 +50,15 @@ const demoList = [
   },
 ];
 
-const IntrestingProducts: React.FC<any> = ({
-  productList,
+interface IRelatedProductCard {
+  title?: string;
+  product_list: any;
+  slidesView?: number;
+  className?: string;
+}
+
+const IntrestingProducts: React.FC<IRelatedProductCard> = ({
+  product_list,
   slidesView = 4,
   className,
   title,
@@ -80,13 +88,15 @@ const IntrestingProducts: React.FC<any> = ({
             },
           }}
         >
-          {demoList.map((el: any, index: number) => (
-            <SwiperSlide key={index} tag="li">
-              <ProductCard
-                name={el.name}
-                description={el.description}
-                image={el.image}
-              />
+          {product_list.map((el: any, index: number) => (
+            <SwiperSlide key={el.id} tag="li">
+              <Link href={`/product/${el.slug}`}>
+                <ProductCard
+                  name={el.title}
+                  description={el.description}
+                  image={`${el.preview_image.url}`}
+                />
+              </Link>
             </SwiperSlide>
           ))}
         </Swiper>

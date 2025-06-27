@@ -5,6 +5,7 @@ import "@/styles/normalize.css";
 import Footer from "@/layouts/footer/footer";
 import Header from "@/layouts/header/header";
 import "swiper/css";
+import { getCategories } from "@/api/directions/directions";
 
 export const metadata: Metadata = {
   title: "Mantis",
@@ -13,11 +14,13 @@ export const metadata: Metadata = {
 
 const jura = Jura({ subsets: ["cyrillic"], weight: ["700", "400", "600"] });
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const { data } = await getCategories();
+
   return (
     <html lang="ru">
       <body className={jura.className}>

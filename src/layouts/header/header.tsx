@@ -8,6 +8,9 @@ import Dropdown from "@/components/dropdown/dropdown";
 import { staticUrl } from "@/utils/static-urls";
 import { useCart } from "@/store/cart";
 import classNames from "classnames";
+import { useEffect, useState } from "react";
+import { getCategories } from "@/api/directions/directions";
+
 const Header = () => {
   const cartLengrth = useCart((elem: any) => elem.items);
 
@@ -31,7 +34,12 @@ const Header = () => {
                   <div>
                     <Dropdown
                       button={
-                        <Typography variant="span" outline="bold" register="18">
+                        <Typography
+                          className={styles.directionsBtn}
+                          variant="span"
+                          outline="bold"
+                          register="18"
+                        >
                           Направления
                         </Typography>
                       }

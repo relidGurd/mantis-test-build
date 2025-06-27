@@ -5,31 +5,32 @@ import { getCases } from "@/api/cases/cases-page";
 import Link from "next/link";
 import qs from "qs";
 import Pagination from "@/components/pagination/pagination";
-
-const Cases = async ({
-  searchParams,
-}: {
-  searchParams: { [key: string]: string | string[] | undefined };
-}) => {
-  const page = searchParams["page"] ?? "1";
+import { Suspense } from "react";
+// {
+//   searchParams,
+// }: {
+//   searchParams: { [key: string]: string | string[] | undefined };
+// }
+const Cases = async () => {
+  // const param = await searchParams;
+  // const page = (await param["page"]) ?? "1";
 
   const CasesQwery = qs.stringify({
     populate: {
       image: {
         populate: "*",
       },
-      case_tag: {
+      cases_tag: {
         populate: "*",
       },
     },
     pagination: {
-      page: Number(page),
-      pageSize: 1, // например, по 6 карточек
+      // page: Number(page),
+      pageSize: 10, // например, по 6 карточек
     },
   });
   const { data, meta } = await getCases(CasesQwery);
 
-  console.log(data);
   return (
     <main>
       <div className="main-container">
@@ -51,13 +52,15 @@ const Cases = async ({
                     image={el.image[0].formats.small.url}
                     name={el.title}
                     description={el.description}
-                    tag={el.case_tag.title}
+                    tag={el.cases_tag.title}
                   />
                 </Link>
               </li>
             ))}
           </ul>
-          <Pagination totalPages={meta.pagination.total} />
+          <Suspense>
+            <Pagination totalPages={meta.pagination.total} />
+          </Suspense>
         </section>
       </div>
     </main>

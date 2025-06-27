@@ -60,6 +60,7 @@ const Tab = () => {
           (el: any, index: number) =>
             activeIndex === index && (
               <motion.div
+                key={index}
                 className={styles.information}
                 variants={motionTab}
                 initial="init"

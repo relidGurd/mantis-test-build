@@ -37,7 +37,7 @@ const demoList = [
 const Equipment = () => {
   return (
     <main>
-      <div style={{ textAlign: "center" }}>
+      <div style={{ textAlign: "center", marginTop: "60px" }}>
         <Typography variant="h1" outline="bold" register="48">
           Оборудовние
         </Typography>

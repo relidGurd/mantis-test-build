@@ -21,14 +21,14 @@ const CategoryCard: React.FC<ICategory> = ({ title, description, icon }) => {
 
         <div>
           <Typography register="20" outline="bold">
-            Услуга
+            {title}
           </Typography>
           <Typography
             className={styles.categoryCard_description}
             register="16"
             outline="regular"
           >
-            Процессы, обеспечиваем безопасность и упрощаем управление
+            {description}
           </Typography>
         </div>
       </div>

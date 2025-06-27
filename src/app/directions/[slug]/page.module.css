@@ -4,6 +4,10 @@
   gap: 16px;
 }
 
+.category_page_title {
+  margin-top: 40px;
+}
+
 .direction_categoryItem {
   width: 100%;
   grid-column: span 2;

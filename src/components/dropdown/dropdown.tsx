@@ -14,8 +14,10 @@ const Dropdown: React.FC<IDropdown> = ({ button, children }) => {
   const motionDropdown = {
     hidden: {
       opacity: 0,
+      display: "none",
     },
     visible: {
+      display: "block",
       opacity: 1,
       transition: {
         ease: "easeInOut",
@@ -47,7 +49,7 @@ const Dropdown: React.FC<IDropdown> = ({ button, children }) => {
       className={styles.dropdownContainer}
       onMouseLeave={() => setIsVisible(false)}
     >
-      <div onClick={() => setIsVisible(!visible)}>{button}</div>
+      <div onMouseEnter={() => setIsVisible(!visible)}>{button}</div>
       {true && (
         <motion.div
           variants={motionDropdown}

@@ -6,11 +6,11 @@ const CartPage = () => {
   return (
     <main>
       <Cart />
-      <IntrestingProducts
+      {/* <IntrestingProducts
         title={"Вас может заинтересовать"}
         slidesView={4}
         className={"swiper-container"}
-      />
+      /> */}
     </main>
   );
 };

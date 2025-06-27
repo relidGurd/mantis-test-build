@@ -1,5 +1,5 @@
 async function getCategories(qwery?: string) {
-  const url = `https://cms.mantis-185.ru/api/categries?${qwery}`;
+  const url = `https://cms.mantis-185.ru/api/categories?${qwery}`;
 
   try {
     const response = await fetch(url);
@@ -19,7 +19,7 @@ async function getCategories(qwery?: string) {
 async function getCategory(slug: string, qwery?: string) {
   const url = `https://cms.mantis-185.ru/api/category/${slug}?${qwery}
   `;
-
+  console.log(qwery);
   try {
     const response = await fetch(url);
 

@@ -13,7 +13,15 @@ const SingleCase = async ({ params }: { params: Params }) => {
   const { slug } = await params;
 
   const qweryP = qs.stringify({
-    populate: "*",
+    populate: {
+      image: true,
+      page: {
+        populate: "*",
+      },
+      cases_tag: {
+        populate: "*",
+      },
+    },
   });
 
   const { data } = await getCase(slug, qweryP);
@@ -25,7 +33,7 @@ const SingleCase = async ({ params }: { params: Params }) => {
           <div className={styles.singleCase_textInfo}>
             <div>
               <div className={styles.singleCase_tag}>
-                <Typography variant="span">Web-разработка</Typography>
+                <Typography variant="span">{data.cases_tag.title}</Typography>
               </div>
             </div>
 
@@ -36,11 +44,10 @@ const SingleCase = async ({ params }: { params: Params }) => {
                 register="40"
                 variant="h1"
               >
-                Интернет-магазин для бренда Barker
+                {data.title}
               </Typography>
               <Typography outline="regular" register="18">
-                Мы всегда рады ответить на ваши вопросы и помочь вам с выбором
-                подходящих услуг. Мы гарантируем оперативный ответ!
+                {data.description}
               </Typography>
             </div>
           </div>
@@ -48,7 +55,11 @@ const SingleCase = async ({ params }: { params: Params }) => {
             <li className={styles.singleCase_imageContainer}>
               <Image
                 className={styles.singleCase_image}
-                src={"/demo-shoes.png"}
+                src={
+                  data.image[0].url
+                    ? `${process.env.STRAPI_URL}${data.image[0].url}`
+                    : "/demo-shoes.png"
+                }
                 alt=""
                 width={800}
                 height={800}
@@ -60,7 +71,11 @@ const SingleCase = async ({ params }: { params: Params }) => {
             <li className={styles.singleCase_bgImage}>
               <Image
                 className={styles.singleCase_image}
-                src={"/demo-shoes2.png"}
+                src={
+                  data.image[1].url
+                    ? `${process.env.STRAPI_URL}${data.image[1].url}`
+                    : "/demo-shoes.png"
+                }
                 alt=""
                 width={800}
                 height={800}

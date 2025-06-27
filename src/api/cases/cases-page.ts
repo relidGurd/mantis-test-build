@@ -17,6 +17,7 @@ async function getCases(qwery?: string) {
 }
 
 async function getCase(slug: string, qwery?: string) {
+  console.log(slug, qwery);
   const url = `https://cms.mantis-185.ru/api/cases/${slug}?${qwery}
 `;
 

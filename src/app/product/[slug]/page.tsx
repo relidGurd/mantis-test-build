@@ -6,7 +6,7 @@ const ProductPage = () => {
   return (
     <main>
       <SinglePrdouct />
-      <IntrestingProducts title={"Вас может заинтересовать"} />;
+      {/* <IntrestingProducts title={"Вас может заинтересовать"} /> */}
     </main>
   );
 };

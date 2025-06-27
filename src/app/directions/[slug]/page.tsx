@@ -6,38 +6,57 @@ import classNames from "classnames";
 import CategoryCard from "@/components/category-card/category-card";
 import AboutReviews from "@/pages/about-us/about-reviews/about-reviews";
 import { getCategory } from "@/api/directions/directions";
+import qs from "qs";
+import Link from "next/link";
 
 type Params = Promise<{ slug: string }>;
 
 const DirectionElement = async ({ params }: { params: Params }) => {
   const { slug } = await params;
-  const { data } = await getCategory(slug);
+
+  const qweryP = qs.stringify({
+    populate: {
+      subcategories: {
+        populate: "*",
+      },
+      related_products: {
+        populate: {
+          preview_image: true,
+        },
+      },
+    },
+  });
+
+  const { data } = await getCategory(slug, qweryP);
 
   return (
     <main>
       <div className="main-container">
-        <Typography register="40" outline="bold">
+        <Typography
+          className={styles.category_page_title}
+          register="40"
+          outline="bold"
+        >
           {data.title}
         </Typography>
       </div>
-      <IntrestingProducts className={"swiper-container"} />
+      <IntrestingProducts
+        product_list={data.related_products}
+        className={"swiper-container"}
+      />
       <section className={classNames("main-container")}>
         <ul className={classNames(styles.direction_categoryList)}>
-          <li className={styles.direction_categoryItem}>
-            <CategoryCard title="Test" description="te" icon="dfsfsdfdsf" />
-          </li>
-          <li className={styles.direction_categoryItem}>
-            <CategoryCard title="Test" description="te" icon="dfsfsdfdsf" />
-          </li>
-          <li className={styles.direction_categoryItem}>
-            <CategoryCard title="Test" description="te" icon="dfsfsdfdsf" />
-          </li>
-          <li className={styles.direction_categoryItem}>
-            <CategoryCard title="Test" description="te" icon="dfsfsdfdsf" />
-          </li>
-          <li className={styles.direction_categoryItem}>
-            <CategoryCard title="Test" description="te" icon="dfsfsdfdsf" />
-          </li>
+          {data.subcategories.map((el: any) => (
+            <li key={el.id} className={styles.direction_categoryItem}>
+              <Link href={`/store/${el.slug}`}>
+                <CategoryCard
+                  title={el.title}
+                  description={el.description}
+                  icon="dfsfsdfdsf"
+                />
+              </Link>
+            </li>
+          ))}
         </ul>
       </section>
 

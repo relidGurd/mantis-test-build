@@ -1,7 +1,8 @@
 "use client";
 import { useRouter, useSearchParams } from "next/navigation";
-
+import { Suspense } from "react";
 import Button from "@/ui-kit/button/button";
+import { useState } from "react";
 
 const Pagination = ({ totalPages }: any) => {
   const searchParams = useSearchParams();
@@ -10,32 +11,21 @@ const Pagination = ({ totalPages }: any) => {
 
   console.log(page);
   return (
-    <>
-      {page < totalPages ? (
-        <div>
-          <Button
-            onClick={() => {
-              router.push(`/cases?page=${Number(page) + 1}`);
-            }}
-            label="Назад"
-          />
+    <div>
+      <Button
+        onClick={() => {
+          router.push(`/cases?page=${Number(page) - 1}`);
+        }}
+        label="Назад"
+      />
 
-          <Button
-            onClick={() => {
-              router.push(`/cases?page=${Number(page) + 1}`);
-            }}
-            label="Вперед"
-          />
-        </div>
-      ) : (
-        <Button
-          onClick={() => {
-            router.push(`/cases?page=${Number(page) - 1}`);
-          }}
-          label="Назад"
-        />
-      )}
-    </>
+      <Button
+        onClick={() => {
+          router.push(`/cases?page=${Number(page) + 1}`);
+        }}
+        label="Вперед"
+      />
+    </div>
   );
 };
 
