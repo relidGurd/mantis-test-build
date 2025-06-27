@@ -38,6 +38,7 @@
 @media screen and (max-width: 680px) {
   .review_item__mainInfo {
     flex-direction: column;
+    align-items: start;
   }
 
   .review_item__imgContainer {
