@@ -94,7 +94,7 @@
 }
 
 .sub_menu_container {
-  width: 1220px;
+  width: 1320px;
   margin: auto;
 }
 
@@ -102,9 +102,34 @@
   backdrop-filter: blur(10px);
   border: 1px solid var(--green-gradient);
   background-color: #1a1a1a;
-  height: 300px;
   padding: 16px 32px;
   border-radius: 0 0 40px 40px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  width: auto;
+}
+
+.menuTitle {
+  margin-bottom: 36px;
+}
+
+.link_group:not(:last-child) {
+  margin-bottom: 36px;
+
+  display: block;
+}
+
+.link_group_item_imgContainer {
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+}
+
+.link_group_item {
+  display: flex;
+  gap: 15px;
+  align-items: center;
 }
 
 @media screen and (max-width: 1200px) {

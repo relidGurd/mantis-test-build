@@ -6,11 +6,13 @@ import Link from "next/link";
 import qs from "qs";
 import Pagination from "@/components/pagination/pagination";
 import { Suspense } from "react";
+
 // {
 //   searchParams,
 // }: {
 //   searchParams: { [key: string]: string | string[] | undefined };
 // }
+
 const Cases = async () => {
   // const param = await searchParams;
   // const page = (await param["page"]) ?? "1";

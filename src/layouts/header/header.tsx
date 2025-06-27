@@ -11,7 +11,7 @@ import classNames from "classnames";
 import { useEffect, useState } from "react";
 import { getCategories } from "@/api/directions/directions";
 
-const Header = () => {
+const Header = ({ menu_list }: any) => {
   const cartLengrth = useCart((elem: any) => elem.items);
 
   return (
@@ -45,9 +45,53 @@ const Header = () => {
                       }
                     >
                       <div className={styles.sub_menu_container}>
-                        <div style={{ height: "60px" }}></div>
+                        <div style={{ height: "45px" }}></div>
                         <ul className={styles.subMenu_area}>
-                          <li>test</li>
+                          {menu_list.map((el: any) => (
+                            <li key={el.id}>
+                              <Typography
+                                className={styles.menuTitle}
+                                outline="semibold"
+                                register="18"
+                              >
+                                {el.title}
+                              </Typography>
+                              <div>
+                                {el.list.map((el: any) => (
+                                  <Link
+                                    key={el.id}
+                                    className={styles.link_group}
+                                    href={el.link}
+                                  >
+                                    <div className={styles.link_group_item}>
+                                      <div
+                                        className={
+                                          styles.link_group_item_imgContainer
+                                        }
+                                      >
+                                        <Image
+                                          className={styles.link_group_item_img}
+                                          src={"/test-icon.svg"}
+                                          width={24}
+                                          height={24}
+                                          alt=""
+                                        />
+                                      </div>
+                                      <div>
+                                        <Typography
+                                          register="14"
+                                          outline="bold"
+                                        >
+                                          {el.title}
+                                        </Typography>
+                                        <div>{el.description}</div>
+                                      </div>
+                                    </div>
+                                  </Link>
+                                ))}
+                              </div>
+                            </li>
+                          ))}
                         </ul>
                       </div>
                     </Dropdown>
