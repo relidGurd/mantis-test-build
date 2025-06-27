@@ -9,3 +9,9 @@
 .about_forWhoText {
   margin-bottom: 30px;
 }
+
+@media screen and (max-width: 750px) {
+  .about_forWhoTextContainer {
+    width: auto;
+  }
+}

@@ -96,9 +96,8 @@ export default function AboutPage() {
 
   return (
     <>
-      <RiseUpAnimation>
-        <AboutUsHero />
-      </RiseUpAnimation>
+      <AboutUsHero />
+
       <AboutStages title="Этапы работ" data={exampleStages} />
       <AboutForWho />
       <AboutStages
