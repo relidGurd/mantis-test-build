@@ -57,7 +57,7 @@ const SingleCase = async ({ params }: { params: Params }) => {
                 className={styles.singleCase_image}
                 src={
                   data.image[0].url
-                    ? `http://cms.mantis-185.ru${data.image[0].url}`
+                    ? `https://cms.mantis-185.ru${data.image[0].url}`
                     : "/demo-shoes.png"
                 }
                 alt=""
