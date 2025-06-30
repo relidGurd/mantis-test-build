@@ -10,17 +10,21 @@ import { useState } from "react";
 import type { Swiper as SwiperType } from "swiper";
 import Image from "next/image";
 import { Product } from "@/types/product-types";
+import { useCart } from "@/store/cart";
 
 const SinglePrdouct: React.FC<Product> = ({
+  id,
   title,
   description,
   availability,
   price,
   gallery,
+  preview_image,
 }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
 
   const [tabInfo, setTabInfo] = useState(true);
+  const { addItem } = useCart((elem: any) => elem);
 
   return (
     <div className="main-container">
@@ -91,8 +95,14 @@ const SinglePrdouct: React.FC<Product> = ({
             {price} р
           </Typography>
           <div className={styles.productButtonsContainer}>
-            <Button label="Добавить в корзину" color="greenButton" />
-            <Button label="Добавить в корзину" color="blackButton" />
+            <Button
+              onClick={() =>
+                addItem({ id, image: preview_image, title, price, quantity: 1 })
+              }
+              label="Добавить в корзину"
+              color="greenButton"
+            />
+            <Button label="Купить в 1 клик" color="blackButton" />
           </div>
 
           <div>

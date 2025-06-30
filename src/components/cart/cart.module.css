@@ -12,6 +12,7 @@
 .cartContainer {
   display: grid;
   grid-template-columns: 1fr 0.4fr;
+  grid-template-rows: auto;
   gap: 40px;
 }
 
@@ -70,4 +71,78 @@
   grid-template-columns: auto auto auto;
   gap: 40px;
   align-items: center;
+}
+
+.mobileRemove {
+  display: none;
+}
+
+.cartInfo_titlesContainer {
+  margin: 30px 0 20px 0;
+}
+
+.cartInfo_titles {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cartInfo_titles:nth-child(1) {
+  margin-bottom: 10px;
+}
+
+.salePrice {
+  font-size: 18px;
+  font-weight: regular;
+}
+
+.totalPrice {
+  font-size: 24px;
+  font-weight: semibold;
+}
+
+.saleBtn {
+  width: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+  .cartContainer {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 1056px) {
+  .cartProductItem {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+  .cart_mainInfo {
+    width: 100%;
+  }
+
+  .cart_mainInfo {
+    grid-template-columns: auto 1fr auto;
+    gap: 16px;
+  }
+
+  .cart_imageContainer {
+    width: 60px;
+  }
+
+  .additionalInfo {
+    width: 100%;
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .mobileRemove {
+    display: block;
+  }
+
+  .desktopRemove {
+    display: none;
+  }
 }

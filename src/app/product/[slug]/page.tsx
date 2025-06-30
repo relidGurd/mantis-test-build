@@ -22,6 +22,8 @@ const ProductPage = async ({
         availability={data.availability}
         price={data.price}
         gallery={data.gallery}
+        id={data.id}
+        preview_image={data.preview_image.url}
       />
       {/* <IntrestingProducts title={"Вас может заинтересовать"} /> */}
     </main>
