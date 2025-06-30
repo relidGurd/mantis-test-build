@@ -30,6 +30,7 @@ const Video = ({ url }: any) => {
         className={styles.videoContainerItem}
         width="100%"
         controls={false}
+        poster="/demo.png"
       >
         <source src={url} type="video/mp4" />
       </video>
