@@ -51,6 +51,10 @@
   margin-bottom: 25px;
 }
 
+.btn_active {
+  border: 1px solid rgba(36, 210, 57, 1);
+}
+
 /* .specifications_row {
   border-bottom: 1px solid var(--white-4);
 } */

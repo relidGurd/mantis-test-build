@@ -11,6 +11,7 @@ import type { Swiper as SwiperType } from "swiper";
 import Image from "next/image";
 import { Product } from "@/types/product-types";
 import { useCart } from "@/store/cart";
+import classNames from "classnames";
 
 const SinglePrdouct: React.FC<Product> = ({
   id,
@@ -111,6 +112,7 @@ const SinglePrdouct: React.FC<Product> = ({
               <li>
                 <Button
                   onClick={() => setTabInfo(true)}
+                  className={classNames(tabInfo === true && styles.btn_active)}
                   label="Описнание"
                   color="blackButton"
                 />
@@ -118,6 +120,7 @@ const SinglePrdouct: React.FC<Product> = ({
               <li>
                 <Button
                   onClick={() => setTabInfo(false)}
+                  className={classNames(tabInfo === false && styles.btn_active)}
                   label="Характеристики"
                   color="blackButton"
                 />
