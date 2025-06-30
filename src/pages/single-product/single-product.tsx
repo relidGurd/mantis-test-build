@@ -12,13 +12,13 @@ import type { Swiper as SwiperType } from "swiper";
 import Image from "next/image";
 
 //test
-const SinglePrdouct: React.FC<Product> = ({
+export default function SinglePrdouct({
   title,
   description,
   availability,
   price,
   gallery,
-}) => {
+}: Product) {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
 
   return (
@@ -115,6 +115,4 @@ const SinglePrdouct: React.FC<Product> = ({
       </div>
     </div>
   );
-};
-
-export default SinglePrdouct;
+}
