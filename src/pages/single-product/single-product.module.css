@@ -50,7 +50,7 @@
     display: flex;
     flex-direction: column;
     gap: 15px;
-    margin-top: 30px;
+    margin-top: 40px;
   }
   .productImageCarouselContainer {
     width: 100%;
@@ -58,7 +58,7 @@
     grid-template-columns: auto;
     grid-template-rows: 1fr auto;
     gap: 24px;
-    height: 600px;
+    height: auto;
   }
 
   .productImageCarouselContainer div:nth-child(1) {
