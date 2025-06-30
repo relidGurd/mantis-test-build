@@ -132,6 +132,10 @@
   align-items: center;
 }
 
+.active_menu {
+  color: rgba(36, 210, 57, 1);
+}
+
 @media screen and (max-width: 1200px) {
   .menu_container {
     display: none;

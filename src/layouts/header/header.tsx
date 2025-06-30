@@ -9,16 +9,20 @@ import { staticUrl } from "@/utils/static-urls";
 import { useCart } from "@/store/cart";
 import classNames from "classnames";
 import { motion } from "motion/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
+
 const Header = ({ menu_list }: any) => {
   const cartLengrth = useCart((elem: any) => elem.items);
-
   const [clickOnBurger, isClickedOnBurger] = useState(false);
+  const router = usePathname();
 
   const handleClick = () => {
     isClickedOnBurger(!clickOnBurger);
-    console.log(clickOnBurger);
   };
+
+  console.log(router === "/about");
+  console.log(router);
 
   const animatedMenu = {
     initial: {
@@ -118,21 +122,45 @@ const Header = ({ menu_list }: any) => {
                 </li>
                 <li className={styles.header_linkItem}>
                   <Link href={staticUrl.about}>
-                    <Typography variant="span" outline="bold" register="18">
+                    <Typography
+                      className={classNames(
+                        styles.item_link,
+                        router === staticUrl.about && styles.active_menu
+                      )}
+                      variant="span"
+                      outline="bold"
+                      register="18"
+                    >
                       О нас
                     </Typography>
                   </Link>
                 </li>
                 <li className={styles.header_linkItem}>
                   <Link href={staticUrl.cases}>
-                    <Typography variant="span" outline="bold" register="18">
+                    <Typography
+                      className={classNames(
+                        styles.item_link,
+                        router === staticUrl.cases && styles.active_menu
+                      )}
+                      variant="span"
+                      outline="bold"
+                      register="18"
+                    >
                       Кейсы
                     </Typography>
                   </Link>
                 </li>
                 <li className={styles.header_linkItem}>
                   <Link href={"/"}>
-                    <Typography variant="span" outline="bold" register="18">
+                    <Typography
+                      className={classNames(
+                        styles.item_link,
+                        router === staticUrl.blog && styles.active_menu
+                      )}
+                      variant="span"
+                      outline="bold"
+                      register="18"
+                    >
                       Блог
                     </Typography>
                   </Link>
@@ -213,8 +241,14 @@ const Header = ({ menu_list }: any) => {
             >
               <li className={styles.item_mobile_link_container}>
                 <Link
+                  style={
+                    router === "/about" ? { color: "rgba(36, 210, 57, 1)" } : {}
+                  }
                   onClick={() => isClickedOnBurger(false)}
-                  className={styles.item_link}
+                  className={classNames(
+                    styles.item_link,
+                    router === "/about" && styles.active_menu
+                  )}
                   href={`/about`}
                 >
                   О нас
@@ -223,7 +257,10 @@ const Header = ({ menu_list }: any) => {
               <li className={styles.item_mobile_link_container}>
                 <Link
                   onClick={() => isClickedOnBurger(false)}
-                  className={styles.item_link}
+                  className={classNames(
+                    styles.item_link,
+                    router === "/cases" && styles.active_menu
+                  )}
                   href={`/cases`}
                 >
                   Кейсы
@@ -232,7 +269,10 @@ const Header = ({ menu_list }: any) => {
               <li className={styles.item_mobile_link_container}>
                 <Link
                   onClick={() => isClickedOnBurger(false)}
-                  className={styles.item_link}
+                  className={classNames(
+                    styles.item_link,
+                    router === "/blog" && styles.active_menu
+                  )}
                   href={`/blog`}
                 >
                   Блог
