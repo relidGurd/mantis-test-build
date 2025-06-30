@@ -130,16 +130,20 @@ const SinglePrdouct: React.FC<Product> = ({
               <div className={styles.specifications_container}>
                 <table className={styles.specifications_table}>
                   <tbody>
-                    {specifications?.map((el: any) => (
-                      <tr key={el.id}>
-                        <td className={styles.specifications_cell}>
-                          {el.title}
-                        </td>
-                        <td className={styles.specifications_cell}>
-                          {el.property}
-                        </td>
-                      </tr>
-                    ))}
+                    {specifications ? (
+                      specifications?.map((el: any) => (
+                        <tr key={el.id}>
+                          <td className={styles.specifications_cell}>
+                            {el.title}
+                          </td>
+                          <td className={styles.specifications_cell}>
+                            {el.property}
+                          </td>
+                        </tr>
+                      ))
+                    ) : (
+                      <div>Характеристики не указаны</div>
+                    )}
                   </tbody>
                 </table>
               </div>
