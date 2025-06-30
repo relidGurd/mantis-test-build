@@ -11,6 +11,7 @@ import { data } from "motion/react-client";
 import type { Swiper as SwiperType } from "swiper";
 import Image from "next/image";
 
+//test
 const SinglePrdouct: React.FC<Product> = ({
   title,
   description,
