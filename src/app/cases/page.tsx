@@ -51,7 +51,7 @@ const Cases = async () => {
               <li key={el.id}>
                 <Link href={`/single-case/${el.slug}`}>
                   <ProductCard
-                    image={el.image[0].formats.small.url}
+                    image={el.image[0].url}
                     name={el.title}
                     description={el.description}
                     tag={el.cases_tag.title}
