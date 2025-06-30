@@ -6,19 +6,18 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import styles from "./single-product.module.css";
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 import { useState } from "react";
-import { Product } from "./product-types";
-import { data } from "motion/react-client";
+
 import type { Swiper as SwiperType } from "swiper";
 import Image from "next/image";
+import { Product } from "@/types/product-types";
 
-//test
-export default function SinglePrdouct({
+const SinglePrdouct: React.FC<Product> = ({
   title,
   description,
   availability,
   price,
   gallery,
-}: Product) {
+}) => {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
 
   return (
@@ -115,4 +114,6 @@ export default function SinglePrdouct({
       </div>
     </div>
   );
-}
+};
+
+export default SinglePrdouct;
