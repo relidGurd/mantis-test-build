@@ -80,4 +80,11 @@
     margin-bottom: 20px;
     margin-right: 0px;
   }
+
+  .tab_btn_list {
+    display: flex;
+    gap: 10px;
+    overflow-y: auto;
+    margin-bottom: 25px;
+  }
 }

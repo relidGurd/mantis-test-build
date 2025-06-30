@@ -20,6 +20,8 @@ const SinglePrdouct: React.FC<Product> = ({
 }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
 
+  const [tabInfo, setTabInfo] = useState(true);
+
   return (
     <div className="main-container">
       <div className={styles.prdouct_grid}>
@@ -92,23 +94,30 @@ const SinglePrdouct: React.FC<Product> = ({
             <Button label="Добавить в корзину" color="greenButton" />
             <Button label="Добавить в корзину" color="blackButton" />
           </div>
+
           <div>
-            <Swiper slidesPerView={6} wrapperTag="ul">
-              <SwiperSlide tag="li">
-                <div>Описание</div>
-              </SwiperSlide>
-              <SwiperSlide tag="li">
-                <div>Характеристики</div>
-              </SwiperSlide>
-            </Swiper>
-            <Typography>
-              ASUS TUF Gaming Z590 — это надёжная и мощная материнская плата
-              для сборки игрового ПК или рабочей станции. Благодаря прочной
-              конструкции, поддержке новейших технологий и расширенным
-              возможностям охлаждения, она обеспечит стабильную работу
-              даже в самых требовательных сценариях. Отличный выбор для геймеров
-              и энтузиастов!
-            </Typography>
+            <ul className={styles.tab_btn_list}>
+              <li>
+                <Button
+                  onClick={() => setTabInfo(true)}
+                  label="Описнание"
+                  color="blackButton"
+                />
+              </li>
+              <li>
+                <Button
+                  onClick={() => setTabInfo(false)}
+                  label="Характеристики"
+                  color="blackButton"
+                />
+              </li>
+            </ul>
+
+            {tabInfo ? (
+              <Typography>{description}</Typography>
+            ) : (
+              <div>Характеристики</div>
+            )}
           </div>
         </div>
       </div>
