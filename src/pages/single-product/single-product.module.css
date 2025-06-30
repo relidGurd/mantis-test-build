@@ -36,3 +36,48 @@
 .product_price {
   margin-bottom: 24px;
 }
+
+.productButtonsContainer {
+  display: flex;
+  margin-bottom: 20px;
+}
+.productButtonsContainer button:nth-child(1) {
+  margin-right: 20px;
+}
+
+@media screen and (max-width: 1200px) {
+  .prdouct_grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 30px;
+  }
+  .productImageCarouselContainer {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 1fr auto;
+    gap: 24px;
+    height: 600px;
+  }
+
+  .productImageCarouselContainer div:nth-child(1) {
+    grid-row: 2;
+  }
+  .productImageCarouselContainer div:nth-child(2) {
+    grid-row: 1;
+  }
+
+  .inSales {
+    margin-bottom: 25px;
+  }
+
+  .productButtonsContainer {
+    display: flex;
+    flex-direction: column;
+  }
+  .productButtonsContainer button:nth-child(1) {
+    margin-bottom: 20px;
+    margin-right: 0px;
+  }
+}

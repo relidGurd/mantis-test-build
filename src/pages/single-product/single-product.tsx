@@ -6,46 +6,53 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import styles from "./single-product.module.css";
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 import { useState } from "react";
-const SinglePrdouct = () => {
-  const [thumbsSwiper, setThumbsSwiper] = useState(null);
+import { Product } from "./product-types";
+import { data } from "motion/react-client";
+import type { Swiper as SwiperType } from "swiper";
+import Image from "next/image";
+
+const SinglePrdouct: React.FC<Product> = ({
+  title,
+  description,
+  availability,
+  price,
+  gallery,
+}) => {
+  const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
+
   return (
     <div className="main-container">
       <div className={styles.prdouct_grid}>
         <div className={styles.productImageCarouselContainer}>
           <Swiper
-            direction={"vertical"}
-            onSwiper={() => setThumbsSwiper}
+            breakpoints={{
+              "1200": {
+                direction: "vertical",
+                spaceBetween: 10,
+                slidesPerView: 4,
+              },
+            }}
+            direction={"horizontal"}
+            onSwiper={setThumbsSwiper}
             spaceBetween={10}
             slidesPerView={4}
             freeMode={true}
             watchSlidesProgress={true}
             modules={[FreeMode, Navigation, Thumbs]}
             className={styles.thumbsGrid}
+            autoHeight={true}
           >
-            <SwiperSlide>
-              <img
-                className={styles.slideImage}
-                src="https://swiperjs.com/demos/images/nature-1.jpg"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                className={styles.slideImage}
-                src="https://swiperjs.com/demos/images/nature-2.jpg"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                className={styles.slideImage}
-                src="https://swiperjs.com/demos/images/nature-3.jpg"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                className={styles.slideImage}
-                src="https://swiperjs.com/demos/images/nature-4.jpg"
-              />
-            </SwiperSlide>
+            {gallery?.map((el) => (
+              <SwiperSlide>
+                <Image
+                  width={1200}
+                  height={1200}
+                  alt=""
+                  className={styles.slideImage}
+                  src={`https://cms.mantis-185.ru${el.url}`}
+                />
+              </SwiperSlide>
+            ))}
           </Swiper>
           <Swiper
             spaceBetween={10}
@@ -54,47 +61,34 @@ const SinglePrdouct = () => {
             modules={[FreeMode, Navigation, Thumbs]}
             className={styles.previewGrid}
           >
-            <SwiperSlide>
-              <img
-                className={styles.slideImage}
-                src="https://swiperjs.com/demos/images/nature-1.jpg"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                className={styles.slideImage}
-                src="https://swiperjs.com/demos/images/nature-2.jpg"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                className={styles.slideImage}
-                src="https://swiperjs.com/demos/images/nature-3.jpg"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                className={styles.slideImage}
-                src="https://swiperjs.com/demos/images/nature-4.jpg"
-              />
-            </SwiperSlide>
+            {gallery?.map((el) => (
+              <SwiperSlide>
+                <Image
+                  width={1200}
+                  height={1200}
+                  alt=""
+                  className={styles.slideImage}
+                  src={`https://cms.mantis-185.ru${el.url}`}
+                />
+              </SwiperSlide>
+            ))}
           </Swiper>
         </div>
         <div>
           <Typography variant="h1" register="40">
-            Материнская плата ASUS TUF Gaming Z590
+            {title}
           </Typography>
           <Typography className={styles.inSales} variant="span">
-            В наличии
+            {availability ? "В наличии" : "Нет в наличии"}
           </Typography>
           <Typography
             className={styles.product_price}
             register="32"
             outline="bold"
           >
-            15 900 р
+            {price} р
           </Typography>
-          <div>
+          <div className={styles.productButtonsContainer}>
             <Button label="Добавить в корзину" color="greenButton" />
             <Button label="Добавить в корзину" color="blackButton" />
           </div>

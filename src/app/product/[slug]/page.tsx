@@ -1,11 +1,28 @@
 import IntrestingProducts from "@/sections/intresting-products/intresting-products";
 import styles from "./page.module.css";
 import SinglePrdouct from "@/pages/single-product/single-product";
+import { getProduct } from "@/api/products/products";
+import qs from "qs";
+const ProductPage = async ({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) => {
+  const CasesQwery = qs.stringify({
+    populate: "*",
+  });
+  const { data } = await getProduct((await params).slug, CasesQwery);
 
-const ProductPage = () => {
+  console.log(data);
   return (
     <main>
-      <SinglePrdouct />
+      <SinglePrdouct
+        title={data.title}
+        description={data.description}
+        availability={data.availability}
+        price={data.price}
+        gallery={data.gallery}
+      />
       {/* <IntrestingProducts title={"Вас может заинтересовать"} /> */}
     </main>
   );

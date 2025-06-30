@@ -3,6 +3,7 @@
   font-size: var(--medium-txt);
   border-radius: 16px;
   transition: 0.3s ease;
+  border: 1px solid inherit;
 }
 
 .blackButton {
@@ -19,14 +20,19 @@
   padding: 16px;
 }
 
+.greenButton:hover {
+  background-color: transparent;
+  color: white;
+}
+
 .buttonRound {
   background: var(--gray-gradient);
   font-size: var(--extra-big-txt);
   border-radius: 40px;
   padding: 24px 0;
+  border: 1px solid transparent;
 }
 
 .basic:hover {
-  background-color: transparent;
-  border: 1px solid rgba(36, 210, 57, 1);
+  border: 1px solid rgba(36, 210, 57, 1) !important;
 }
