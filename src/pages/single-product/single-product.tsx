@@ -20,6 +20,7 @@ const SinglePrdouct: React.FC<Product> = ({
   price,
   gallery,
   preview_image,
+  specifications,
 }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
 
@@ -126,7 +127,22 @@ const SinglePrdouct: React.FC<Product> = ({
             {tabInfo ? (
               <Typography>{description}</Typography>
             ) : (
-              <div>Характеристики</div>
+              <div className={styles.specifications_container}>
+                <table className={styles.specifications_table}>
+                  <tbody>
+                    {specifications?.map((el: any) => (
+                      <tr key={el.id}>
+                        <td className={styles.specifications_cell}>
+                          {el.title}
+                        </td>
+                        <td className={styles.specifications_cell}>
+                          {el.property}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             )}
           </div>
         </div>

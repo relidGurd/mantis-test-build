@@ -9,11 +9,20 @@ const ProductPage = async ({
   params: Promise<{ slug: string }>;
 }) => {
   const CasesQwery = qs.stringify({
-    populate: "*",
+    populate: {
+      gallery: {
+        populate: "*",
+      },
+      preview_image: {
+        populate: "*",
+      },
+      specifications: {
+        populate: "*",
+      },
+    },
   });
   const { data } = await getProduct((await params).slug, CasesQwery);
 
-  console.log(data);
   return (
     <main>
       <SinglePrdouct
@@ -24,6 +33,7 @@ const ProductPage = async ({
         gallery={data.gallery}
         id={data.id}
         preview_image={data.preview_image.url}
+        specifications={data.specifications.tab}
       />
       {/* <IntrestingProducts title={"Вас может заинтересовать"} /> */}
     </main>

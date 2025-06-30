@@ -51,6 +51,24 @@
   margin-bottom: 25px;
 }
 
+/* .specifications_row {
+  border-bottom: 1px solid var(--white-4);
+} */
+
+.specifications_cell {
+  padding: 12px 24px;
+  border-bottom: 1px solid var(--white-4);
+}
+
+.specifications_cell:nth-child(1) {
+  width: auto;
+}
+.specifications_table {
+  width: 100%;
+  background-color: var(--white-6);
+  border-radius: 24px;
+}
+
 @media screen and (max-width: 1200px) {
   .prdouct_grid {
     display: flex;
