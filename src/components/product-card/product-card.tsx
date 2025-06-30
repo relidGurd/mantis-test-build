@@ -31,8 +31,8 @@ const ProductCard: React.FC<IProdctCard> = ({
           className={styles.product_cardImage}
           src={`https://cms.mantis-185.ru${image}`}
           alt=""
-          width={150}
-          height={150}
+          width={800}
+          height={800}
         />
       </div>
       <div className={styles.card_info}>
