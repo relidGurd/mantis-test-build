@@ -131,7 +131,7 @@ const SinglePrdouct: React.FC<Product> = ({
                 <table className={styles.specifications_table}>
                   <tbody>
                     {specifications ? (
-                      specifications?.map((el: any) => (
+                      specifications.tab?.map((el: any) => (
                         <tr key={el.id}>
                           <td className={styles.specifications_cell}>
                             {el.title}
@@ -142,7 +142,11 @@ const SinglePrdouct: React.FC<Product> = ({
                         </tr>
                       ))
                     ) : (
-                      <div>Характеристики не указаны</div>
+                      <tr>
+                        <td className={styles.specifications_cell}>
+                          Характеристики не указаны
+                        </td>
+                      </tr>
                     )}
                   </tbody>
                 </table>

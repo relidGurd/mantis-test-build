@@ -51,7 +51,7 @@ export type Product = {
   updatedAt?: string;
   publishedAt?: string;
   preview_image?: Image;
-  specifications?: any[];
+  specifications?: any;
   gallery?: Image[];
 };
 

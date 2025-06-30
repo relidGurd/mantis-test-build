@@ -33,7 +33,7 @@ const ProductPage = async ({
         gallery={data.gallery}
         id={data.id}
         preview_image={data.preview_image.url}
-        specifications={data.specifications.tab}
+        specifications={data.specifications}
       />
       {/* <IntrestingProducts title={"Вас может заинтересовать"} /> */}
     </main>
