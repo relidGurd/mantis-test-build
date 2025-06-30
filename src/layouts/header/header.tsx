@@ -72,13 +72,16 @@ const Header = ({ menu_list }: any) => {
                         <ul className={styles.subMenu_area}>
                           {menu_list.map((el: any) => (
                             <li key={el.id}>
-                              <Typography
-                                className={styles.menuTitle}
-                                outline="semibold"
-                                register="18"
-                              >
-                                {el.title}
-                              </Typography>
+                              <Link href={`/directions${el.link}`}>
+                                <Typography
+                                  className={styles.menuTitle}
+                                  outline="semibold"
+                                  register="18"
+                                >
+                                  {el.title}
+                                </Typography>
+                              </Link>
+
                               <div>
                                 {el.list.map((el: any) => (
                                   <Link
@@ -283,7 +286,7 @@ const Header = ({ menu_list }: any) => {
                   <Link
                     onClick={() => isClickedOnBurger(false)}
                     className={styles.item_link}
-                    href={`/directions/${el.title}`}
+                    href={`/directions${el.link}`}
                   >
                     {el.title}
                   </Link>
