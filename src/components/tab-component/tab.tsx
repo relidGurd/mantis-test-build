@@ -6,6 +6,7 @@ import Button from "@/ui-kit/button/button";
 import { useState } from "react";
 import Typography from "@/ui-kit/typography/typography";
 import { motion } from "motion/react";
+import classNames from "classnames";
 const exampleData = [
   {
     id: 1,
@@ -86,11 +87,12 @@ const Tab = () => {
           <div key={index} className={styles.tab_mobileTabs}>
             <Button
               onClick={() => setActiveIndex(index)}
-              className={
+              className={classNames(
                 activeIndex === index
                   ? styles.tabBtbActive
-                  : styles.activeButton
-              }
+                  : styles.activeButton,
+                styles.mobNoHover
+              )}
               color="buttonRound"
               label={el.title}
             />

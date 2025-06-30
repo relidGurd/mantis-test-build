@@ -75,6 +75,10 @@
 }
 
 @media screen and (max-width: 1480px) {
+  .mobNoHover:hover {
+    border: 1px solid transparent !important;
+  }
+
   .tab_informationContainer {
     display: none;
   }
