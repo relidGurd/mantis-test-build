@@ -7,11 +7,11 @@ import qs from "qs";
 import Pagination from "@/components/pagination/pagination";
 import { Suspense } from "react";
 
-const Cases = async ({
-  searchParams,
-}: {
+interface CasesPageProps {
   searchParams: { [key: string]: string | string[] | undefined };
-}) => {
+}
+
+const Cases = async ({ searchParams }: CasesPageProps) => {
   const page = searchParams["page"] ?? "1";
 
   const CasesQwery = qs.stringify({
