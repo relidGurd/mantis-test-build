@@ -5,17 +5,15 @@ import { getCases } from "@/api/cases/cases-page";
 import Link from "next/link";
 import qs from "qs";
 import Pagination from "@/components/pagination/pagination";
-import { Suspense } from "react";
+import { JSX, Suspense } from "react";
 
-// {
-//   searchParams,
-// }: {
-//   searchParams: { [key: string]: string | string[] | undefined };
-// }
-
-const Cases = async () => {
-  // const param = await searchParams;
-  // const page = (await param["page"]) ?? "1";
+const Cases = async ({
+  searchParams,
+}: {
+  searchParams: { [key: string]: string | string[] | undefined };
+}): Promise<JSX.Element> => {
+  const param = await searchParams;
+  const page = (await param["page"]) ?? "1";
 
   const CasesQwery = qs.stringify({
     populate: {
@@ -27,7 +25,7 @@ const Cases = async () => {
       },
     },
     pagination: {
-      // page: Number(page),
+      page: Number(page),
       pageSize: 10, // например, по 6 карточек
     },
   });
@@ -40,8 +38,7 @@ const Cases = async () => {
           className={styles.cases_title}
           variant="h1"
           register="40"
-          outline="bold"
-        >
+          outline="bold">
           Кейсы
         </Typography>
         <div></div>
@@ -60,9 +57,9 @@ const Cases = async () => {
               </li>
             ))}
           </ul>
-          {/* <Suspense>
+          <Suspense>
             <Pagination totalPages={meta.pagination.total} />
-          </Suspense> */}
+          </Suspense>
         </section>
       </div>
     </main>
