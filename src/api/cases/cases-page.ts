@@ -2,7 +2,7 @@ async function getCases(qwery?: string) {
   const url = `https://cms.mantis-185.ru/api/cases?${qwery}`;
 
   try {
-    const response = await fetch(url);
+    const response = await fetch(url, { next: { revalidate: false } });
 
     if (!response.ok) {
       throw new Error(`Ошибка HTTP: ${response.status} ${response.statusText}`);
