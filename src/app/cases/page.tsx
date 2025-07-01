@@ -12,8 +12,7 @@ const Cases = async ({
 }: {
   searchParams: { [key: string]: string | string[] | undefined };
 }) => {
-  const param = await searchParams;
-  const page = (await param["page"]) ?? "1";
+  const page = searchParams["page"] ?? "1";
 
   const CasesQwery = qs.stringify({
     populate: {
