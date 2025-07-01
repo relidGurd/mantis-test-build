@@ -5,13 +5,13 @@ import { getCases } from "@/api/cases/cases-page";
 import Link from "next/link";
 import qs from "qs";
 import Pagination from "@/components/pagination/pagination";
-import { JSX, Suspense } from "react";
+import { Suspense } from "react";
 
 const Cases = async ({
   searchParams,
 }: {
   searchParams: { [key: string]: string | string[] | undefined };
-}): Promise<JSX.Element> => {
+}) => {
   const param = await searchParams;
   const page = (await param["page"]) ?? "1";
 
