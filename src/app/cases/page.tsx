@@ -7,12 +7,14 @@ import qs from "qs";
 import Pagination from "@/components/pagination/pagination";
 import { Suspense } from "react";
 
-interface CasesPageProps {
-  searchParams: { [key: string]: string | string[] | undefined };
-}
-
-const Cases = async ({ searchParams }: CasesPageProps) => {
-  const page = searchParams["page"] ?? "1";
+const Cases = async (props: {
+  searchParams?: Promise<{
+    query?: string;
+    page?: string;
+  }>;
+}) => {
+  const searchParams = await props.searchParams;
+  const page = Number(searchParams?.page) || 1;
 
   const CasesQwery = qs.stringify({
     populate: {
@@ -24,7 +26,7 @@ const Cases = async ({ searchParams }: CasesPageProps) => {
       },
     },
     pagination: {
-      page: Number(page),
+      page: page,
       pageSize: 10, // например, по 6 карточек
     },
   });
