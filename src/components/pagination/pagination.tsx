@@ -1,18 +1,36 @@
 "use client";
 import { useRouter, useSearchParams } from "next/navigation";
-import { Suspense } from "react";
 import Button from "@/ui-kit/button/button";
-import { useState } from "react";
-
+import styles from "./pagination.module.css";
 const Pagination = ({ totalPages }: any) => {
   const searchParams = useSearchParams();
   const router = useRouter();
   const page = searchParams?.get("page") ?? "1";
 
-  console.log(page);
+  console.log(totalPages);
+
+  if (totalPages === 1) {
+    return <></>;
+  }
+
+  if (Number(page) === 1) {
+    return (
+      <div className={styles.pagination_container}>
+        <Button
+          className={styles.pagination_btn}
+          onClick={() => {
+            router.push(`/cases?page=${Number(page) + 1}`);
+          }}
+          label="Далее"
+        />
+      </div>
+    );
+  }
+
   return (
-    <div>
+    <div className={styles.pagination_container}>
       <Button
+        className={styles.pagination_btn}
         onClick={() => {
           router.push(`/cases?page=${Number(page) - 1}`);
         }}
@@ -20,10 +38,11 @@ const Pagination = ({ totalPages }: any) => {
       />
 
       <Button
+        className={styles.pagination_btn}
         onClick={() => {
           router.push(`/cases?page=${Number(page) + 1}`);
         }}
-        label="Вперед"
+        label="Далее"
       />
     </div>
   );
