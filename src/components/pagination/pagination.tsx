@@ -2,12 +2,10 @@
 import { useRouter, useSearchParams } from "next/navigation";
 import Button from "@/ui-kit/button/button";
 import styles from "./pagination.module.css";
-const Pagination = ({ totalPages }: any) => {
+const Pagination = ({ totalPages, variant }: any) => {
   const searchParams = useSearchParams();
   const router = useRouter();
   const page = searchParams?.get("page") ?? "1";
-
-  console.log(totalPages);
 
   if (totalPages === 1) {
     return <></>;
@@ -19,7 +17,7 @@ const Pagination = ({ totalPages }: any) => {
         <Button
           className={styles.pagination_btn}
           onClick={() => {
-            router.push(`/cases?page=${Number(page) + 1}`);
+            router.push(`/${variant}?page=${Number(page) + 1}`);
           }}
           label="Далее"
         />
@@ -32,7 +30,7 @@ const Pagination = ({ totalPages }: any) => {
       <Button
         className={styles.pagination_btn}
         onClick={() => {
-          router.push(`/cases?page=${Number(page) - 1}`);
+          router.push(`/${variant}?page=${Number(page) - 1}`);
         }}
         label="Назад"
       />
@@ -40,7 +38,7 @@ const Pagination = ({ totalPages }: any) => {
       <Button
         className={styles.pagination_btn}
         onClick={() => {
-          router.push(`/cases?page=${Number(page) + 1}`);
+          router.push(`/${variant}?page=${Number(page) + 1}`);
         }}
         label="Далее"
       />

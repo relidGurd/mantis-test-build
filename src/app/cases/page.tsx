@@ -32,8 +32,6 @@ const Cases = async (props: {
   });
   const { data, meta } = await getCases(CasesQwery);
 
-  console.log(meta);
-
   return (
     <main>
       <div className="main-container">
@@ -41,7 +39,8 @@ const Cases = async (props: {
           className={styles.cases_title}
           variant="h1"
           register="40"
-          outline="bold">
+          outline="bold"
+        >
           Кейсы
         </Typography>
         <div></div>
@@ -61,7 +60,10 @@ const Cases = async (props: {
             ))}
           </ul>
           <Suspense>
-            <Pagination totalPages={meta.pagination.pageCount} />
+            <Pagination
+              variant={"cases"}
+              totalPages={meta.pagination.pageCount}
+            />
           </Suspense>
         </section>
       </div>

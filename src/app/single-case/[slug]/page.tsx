@@ -5,7 +5,6 @@ import MoreReviews from "@/sections/more-reviews/more-reviews";
 import Dynamic from "@/components/dynamic-page/dynamic-page";
 import { getCase } from "@/api/cases/cases-page";
 import qs from "qs";
-const components = [{ elem: "TEST" }, { elem: "TEST2" }, { elem: "TEST" }];
 type Params = Promise<{ slug: string }>;
 
 const SingleCase = async ({ params }: { params: Params }) => {

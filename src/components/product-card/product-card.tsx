@@ -36,7 +36,16 @@ const ProductCard: React.FC<IProdctCard> = ({
         />
       </div>
       <div className={styles.card_info}>
-        {price && <div>{price} ₽</div>}
+        {price && (
+          <Typography
+            variant="span"
+            outline="bold"
+            register="20"
+            className={styles.product_card_price}
+          >
+            {price} ₽
+          </Typography>
+        )}
         <Typography
           outline="bold"
           register="20"

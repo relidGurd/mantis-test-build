@@ -33,6 +33,11 @@
   border-radius: 8px;
 }
 
+.product_card_price {
+  margin: 10px 0;
+  display: block;
+}
+
 @media screen and (max-width: 870px) {
   .product_cardImageContainer {
     height: 220px;

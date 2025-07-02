@@ -12,10 +12,11 @@ export default function RootLayout({
 }>) {
   return (
     <main>
-      <div style={{ display: "grid", gridTemplateColumns: "0.4fr 1fr" }}>
-        <div>SideBar</div>
-
-        <div> {children}</div>
+      <div className={"main-container"}>
+        <div style={{ display: "grid", gridTemplateColumns: "0.2fr 1fr" }}>
+          <div>FIlters</div>
+          <div>{children}</div>
+        </div>
       </div>
     </main>
   );
