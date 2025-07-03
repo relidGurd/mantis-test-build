@@ -6,7 +6,7 @@ import { Formik, Form, Field } from "formik";
 import { useRouter, useSearchParams, usePathname } from "next/navigation";
 
 const FIlters: React.FC<any> = ({ filter_list }) => {
-  const searchParams = useSearchParams();
+  const searchParams: any = useSearchParams();
   const pathname = usePathname();
   const { replace } = useRouter();
 
