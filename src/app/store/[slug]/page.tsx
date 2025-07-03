@@ -1,9 +1,12 @@
-import { getSubProducts } from "@/api/subcategory/subcategory";
+import { getSubCategory, getSubProducts } from "@/api/subcategory/subcategory";
 import ProductCard from "@/components/product-card/product-card";
 import qs from "qs";
 import styles from "./sub.module.css";
 import Pagination from "@/components/pagination/pagination";
-import { equal } from "assert";
+import Link from "next/link";
+import Typography from "@/ui-kit/typography/typography";
+import FIlters from "@/sections/filters/filters-block";
+import { title } from "process";
 
 type Params = Promise<{ slug: string; page?: string }>;
 type SearchParams = Promise<{ query?: string; page?: string }>;
@@ -23,6 +26,17 @@ const Computers = async ({
       preview_image: {
         populate: "*",
       },
+      subcategory: true,
+      specifications: {
+        populate: "*",
+      },
+    },
+    filters: {
+      subcategory: {
+        slug: {
+          $eq: (await params).slug,
+        },
+      },
     },
     pagination: {
       page: page,
@@ -30,27 +44,44 @@ const Computers = async ({
     },
   });
 
+  const qweryC = qs.stringify({
+    populate: "*",
+  });
+
   const { data, meta } = await getSubProducts(qweryP);
+  const { data: category } = await getSubCategory((await params).slug, qweryC);
 
   return (
-    <div>
-      <h1>{data.title}</h1>
-
-      <div className={styles.product_grid}>
-        {data.map((el: any) => (
-          <ProductCard
-            key={el.id}
-            price={el.price}
-            name={el.title}
-            description={el.description}
-            image={el.preview_image.url}
+    <div className={"main-container"}>
+      <Typography
+        className={styles.subcategory_page_title}
+        variant="h1"
+        register="40"
+        outline="bold"
+      >
+        {category.title}
+      </Typography>
+      <div className={styles.subcategory_page_grid}>
+        <FIlters filter_list={category.filters} />
+        <div>
+          <div className={styles.product_grid}>
+            {data.map((el: any) => (
+              <Link key={el.id} href={`/product/${el.slug}`}>
+                <ProductCard
+                  price={el.price}
+                  name={el.title}
+                  description={el.description}
+                  image={el.preview_image.url}
+                />
+              </Link>
+            ))}
+          </div>
+          <Pagination
+            variant={`store/${(await params).slug}`}
+            totalPages={meta.pagination.pageCount}
           />
-        ))}
+        </div>
       </div>
-      <Pagination
-        variant={`store/${(await params).slug}`}
-        totalPages={meta.pagination.pageCount}
-      />
     </div>
   );
 };

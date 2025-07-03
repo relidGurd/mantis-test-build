@@ -1,0 +1,9 @@
+.filters_container {
+  background: var(--gray-gradient);
+  border-radius: 24px;
+  padding: 24px;
+}
+
+.filters_btn {
+  width: 100%;
+}
