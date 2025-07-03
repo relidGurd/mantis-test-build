@@ -6,9 +6,8 @@ import Pagination from "@/components/pagination/pagination";
 import Link from "next/link";
 import Typography from "@/ui-kit/typography/typography";
 import FIlters from "@/sections/filters/filters-block";
-import { title } from "process";
 
-type Params = Promise<{ slug: string; page?: string }>;
+type Params = Promise<{ slug: string }>;
 type SearchParams = Promise<{ query?: string; page?: string }>;
 
 const Computers = async ({
@@ -20,6 +19,33 @@ const Computers = async ({
 }) => {
   const resolvedSearchParams = searchParams ? await searchParams : {};
   const page = Number(resolvedSearchParams.page) || 1;
+  const query = resolvedSearchParams?.query || "";
+
+  const filters: any = {
+    subcategory: {
+      slug: {
+        $eq: (await params).slug,
+      },
+    },
+  };
+
+  if (query) {
+    try {
+      const fixed = JSON.parse(query.replace(/'/g, '"')); // строка → массив
+
+      if (Array.isArray(fixed) && fixed.length > 0) {
+        filters.specifications = {
+          tab: {
+            property: {
+              $in: fixed,
+            },
+          },
+        };
+      }
+    } catch (err) {
+      console.error("Ошибка парсинга фильтра:", err);
+    }
+  }
 
   const qweryP = qs.stringify({
     populate: {
@@ -31,16 +57,10 @@ const Computers = async ({
         populate: "*",
       },
     },
-    filters: {
-      subcategory: {
-        slug: {
-          $eq: (await params).slug,
-        },
-      },
-    },
+    filters,
     pagination: {
       page: page,
-      pageSize: 10, // например, по 6 карточек
+      pageSize: 1,
     },
   });
 

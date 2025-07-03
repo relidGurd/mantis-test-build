@@ -1,24 +1,58 @@
 "use client";
 import Button from "@/ui-kit/button/button";
 import styles from "./filters.module.css";
+import { useState } from "react";
+import { Formik, Form, Field } from "formik";
+import { useRouter, useSearchParams, usePathname } from "next/navigation";
+
 const FIlters: React.FC<any> = ({ filter_list }) => {
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
+  const { replace } = useRouter();
+
+  function handleSearch(term: string) {
+    //@ts-ignore
+    console.log(term);
+    const params = new URLSearchParams(searchParams);
+    if (term) {
+      params.set("query", term);
+    } else {
+      params.delete("query");
+    }
+    replace(`${pathname}?${params.toString()}`);
+  }
   return (
     <div className={styles.filters_container}>
-      {filter_list.map((el: any) => (
-        <div key={el.id}>
-          {el.title}
-          <div>
-            {el.list.map((item: any, index: number) => (
-              <div key={el.index}>{item}</div>
+      <Formik
+        initialValues={{ selected: [] }}
+        onSubmit={(values) => handleSearch(JSON.stringify(values.selected))}
+      >
+        {() => (
+          <Form>
+            {filter_list.map((el: any) => (
+              <div key={el.id}>
+                <strong>{el.title}</strong>
+                <div>
+                  {el.list.map((item: any, index: number) => (
+                    <label key={index}>
+                      <Field type="checkbox" name="selected" value={item} />
+                      {item}
+                      <br />
+                    </label>
+                  ))}
+                </div>
+              </div>
             ))}
-          </div>
-        </div>
-      ))}
-      <Button
-        className={styles.filters_btn}
-        color="greenButton"
-        label="Применить"
-      />
+
+            <Button
+              type="submit"
+              className={styles.filters_btn}
+              color="greenButton"
+              label="Применить"
+            />
+          </Form>
+        )}
+      </Formik>
     </div>
   );
 };

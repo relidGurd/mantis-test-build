@@ -2,6 +2,7 @@
 import { useRouter, useSearchParams } from "next/navigation";
 import Button from "@/ui-kit/button/button";
 import styles from "./pagination.module.css";
+
 const Pagination = ({ totalPages, variant }: any) => {
   const searchParams = useSearchParams();
   const router = useRouter();

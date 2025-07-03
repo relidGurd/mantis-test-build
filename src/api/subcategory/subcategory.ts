@@ -1,7 +1,6 @@
 async function getSubProducts(qwery?: string) {
   const url = `https://cms.mantis-185.ru/api/products?${qwery}`;
 
-  console.log(qwery);
   try {
     const response = await fetch(url);
 
