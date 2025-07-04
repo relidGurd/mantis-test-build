@@ -5,6 +5,7 @@ import MoreReviews from "@/sections/more-reviews/more-reviews";
 import Dynamic from "@/components/dynamic-page/dynamic-page";
 import { getCase } from "@/api/cases/cases-page";
 import qs from "qs";
+import Breadcrumbs from "@/components/breadcrumbs/breadcrumbs";
 type Params = Promise<{ slug: string }>;
 
 const SingleCase = async ({ params }: { params: Params }) => {
@@ -25,8 +26,24 @@ const SingleCase = async ({ params }: { params: Params }) => {
 
   const { data } = await getCase(slug, qweryP);
 
+  const breadcrumbsCase = [
+    {
+      title: "Главная",
+      url: "/",
+    },
+    {
+      title: "Кейсы",
+      url: "/cases",
+    },
+    {
+      title: data.title,
+      url: "#",
+    },
+  ];
+
   return (
     <div>
+      <Breadcrumbs list={breadcrumbsCase} />
       <section className={styles.singleCase_mainContainer}>
         <div className={styles.singleCase_container}>
           <div className={styles.singleCase_textInfo}>
@@ -41,8 +58,7 @@ const SingleCase = async ({ params }: { params: Params }) => {
                 className={styles.singleCase_title}
                 outline="bold"
                 register="40"
-                variant="h1"
-              >
+                variant="h1">
                 {data.title}
               </Typography>
               <Typography outline="regular" register="18">
