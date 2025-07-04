@@ -1,7 +1,7 @@
 import IntrestingProducts from "@/sections/intresting-products/intresting-products";
 import styles from "./page.module.css";
 import SinglePrdouct from "@/pages/single-product/single-product";
-import { getProduct } from "@/api/products/products";
+import { getProduct, getRelatedProducts } from "@/api/products/products";
 import qs from "qs";
 import type { Metadata, ResolvingMetadata } from "next";
 
@@ -53,7 +53,18 @@ const ProductPage = async ({
       },
     },
   });
+
+  const relatedQwery = qs.stringify({
+    populate: {
+      products: {
+        populate: {
+          preview_image: true,
+        },
+      },
+    },
+  });
   const { data } = await getProduct((await params).slug, CasesQwery);
+  const { data: relatedProducts } = await getRelatedProducts(relatedQwery);
 
   return (
     <div>
@@ -67,7 +78,10 @@ const ProductPage = async ({
         preview_image={data.preview_image.url}
         specifications={data.specifications}
       />
-      {/* <IntrestingProducts title={"Вас может заинтересовать"} /> */}
+      <IntrestingProducts
+        product_list={relatedProducts.products}
+        title={"Вас может заинтересовать"}
+      />
     </div>
   );
 };
