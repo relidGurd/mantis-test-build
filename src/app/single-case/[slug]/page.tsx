@@ -43,7 +43,7 @@ const SingleCase = async ({ params }: { params: Params }) => {
 
   return (
     <div>
-      <Breadcrumbs list={breadcrumbsCase} />
+      <Breadcrumbs className="main-container" list={breadcrumbsCase} />
       <section className={styles.singleCase_mainContainer}>
         <div className={styles.singleCase_container}>
           <div className={styles.singleCase_textInfo}>

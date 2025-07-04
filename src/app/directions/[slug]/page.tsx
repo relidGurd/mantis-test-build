@@ -35,8 +35,7 @@ const DirectionElement = async ({ params }: { params: Params }) => {
         <Typography
           className={styles.category_page_title}
           register="40"
-          outline="bold"
-        >
+          outline="bold">
           {data.title}
         </Typography>
       </div>

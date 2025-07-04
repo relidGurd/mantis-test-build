@@ -4,6 +4,7 @@ import SinglePrdouct from "@/pages/single-product/single-product";
 import { getProduct, getRelatedProducts } from "@/api/products/products";
 import qs from "qs";
 import type { Metadata, ResolvingMetadata } from "next";
+import Breadcrumbs from "@/components/breadcrumbs/breadcrumbs";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -66,8 +67,24 @@ const ProductPage = async ({
   const { data } = await getProduct((await params).slug, CasesQwery);
   const { data: relatedProducts } = await getRelatedProducts(relatedQwery);
 
+  const breadcrumbsProduct = [
+    {
+      title: "Главная",
+      url: "/",
+    },
+    {
+      title: "Кейсы",
+      url: "/cases",
+    },
+    {
+      title: data.title,
+      url: "#",
+    },
+  ];
+
   return (
     <div>
+      <Breadcrumbs className="main-container" list={breadcrumbsProduct} />
       <SinglePrdouct
         title={data.title}
         description={data.description}
