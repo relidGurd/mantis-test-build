@@ -18,6 +18,10 @@
   grid-column: span 3;
 }
 
+.direction_categoryList_title {
+  margin-bottom: 40px;
+}
+
 @media screen and (max-width: 1290px) {
   .direction_categoryList {
     display: grid;

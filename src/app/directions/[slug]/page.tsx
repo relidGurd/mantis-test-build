@@ -45,7 +45,11 @@ const DirectionElement = async ({ params }: { params: Params }) => {
         className={"swiper-container"}
       />
       <section className={classNames("main-container")}>
-        <Typography variant="h2" register="32" outline="bold">
+        <Typography
+          className={styles.direction_categoryList_title}
+          variant="h2"
+          register="32"
+          outline="bold">
           Наше предложение
         </Typography>
         <ul className={classNames(styles.direction_categoryList)}>
