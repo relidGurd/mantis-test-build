@@ -30,7 +30,7 @@ const DirectionElement = async ({ params }: { params: Params }) => {
   const { data } = await getCategory(slug, qweryP);
 
   return (
-    <main>
+    <div>
       <div className="main-container">
         <Typography
           className={styles.category_page_title}
@@ -63,7 +63,7 @@ const DirectionElement = async ({ params }: { params: Params }) => {
       <MainForm />
 
       <AboutReviews />
-    </main>
+    </div>
   );
 };
 

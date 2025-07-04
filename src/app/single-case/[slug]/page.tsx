@@ -26,7 +26,7 @@ const SingleCase = async ({ params }: { params: Params }) => {
   const { data } = await getCase(slug, qweryP);
 
   return (
-    <main>
+    <div>
       <section className={styles.singleCase_mainContainer}>
         <div className={styles.singleCase_container}>
           <div className={styles.singleCase_textInfo}>
@@ -85,7 +85,7 @@ const SingleCase = async ({ params }: { params: Params }) => {
       </section>
       <Dynamic component={data.page} />
       <MoreReviews />
-    </main>
+    </div>
   );
 };
 

@@ -36,7 +36,7 @@ const demoList = [
 
 const Equipment = () => {
   return (
-    <main>
+    <div>
       <div style={{ textAlign: "center", marginTop: "60px" }}>
         <Typography variant="h1" outline="bold" register="48">
           Оборудовние
@@ -131,7 +131,7 @@ const Equipment = () => {
         </div>
       </section>
       <MainForm />
-    </main>
+    </div>
   );
 };
 

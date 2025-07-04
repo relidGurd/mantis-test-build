@@ -4,14 +4,14 @@ import IntrestingProducts from "@/sections/intresting-products/intresting-produc
 
 const CartPage = () => {
   return (
-    <main>
+    <div>
       <Cart />
       {/* <IntrestingProducts
         title={"Вас может заинтересовать"}
         slidesView={4}
         className={"swiper-container"}
       /> */}
-    </main>
+    </div>
   );
 };
 

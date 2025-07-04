@@ -33,41 +33,39 @@ const Cases = async (props: {
   const { data, meta } = await getCases(CasesQwery);
 
   return (
-    <main>
-      <div className="main-container">
-        <Typography
-          className={styles.cases_title}
-          variant="h1"
-          register="40"
-          outline="bold"
-        >
-          Кейсы
-        </Typography>
-        <div></div>
-        <section>
-          <ul className={styles.cases_list}>
-            {data.map((el: any) => (
-              <li key={el.id}>
-                <Link href={`/single-case/${el.slug}`}>
-                  <ProductCard
-                    image={el.image[0].url}
-                    name={el.title}
-                    description={el.description}
-                    tag={el.cases_tag.title}
-                  />
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <Suspense>
-            <Pagination
-              variant={"cases"}
-              totalPages={meta.pagination.pageCount}
-            />
-          </Suspense>
-        </section>
-      </div>
-    </main>
+    <div className="main-container">
+      <Typography
+        className={styles.cases_title}
+        variant="h1"
+        register="40"
+        outline="bold"
+      >
+        Кейсы
+      </Typography>
+      <div></div>
+      <section>
+        <ul className={styles.cases_list}>
+          {data.map((el: any) => (
+            <li key={el.id}>
+              <Link href={`/single-case/${el.slug}`}>
+                <ProductCard
+                  image={el.image[0].url}
+                  name={el.title}
+                  description={el.description}
+                  tag={el.cases_tag.title}
+                />
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <Suspense>
+          <Pagination
+            variant={"cases"}
+            totalPages={meta.pagination.pageCount}
+          />
+        </Suspense>
+      </section>
+    </div>
   );
 };
 

@@ -56,7 +56,7 @@ const ProductPage = async ({
   const { data } = await getProduct((await params).slug, CasesQwery);
 
   return (
-    <main>
+    <div>
       <SinglePrdouct
         title={data.title}
         description={data.description}
@@ -68,7 +68,7 @@ const ProductPage = async ({
         specifications={data.specifications}
       />
       {/* <IntrestingProducts title={"Вас может заинтересовать"} /> */}
-    </main>
+    </div>
   );
 };
 
