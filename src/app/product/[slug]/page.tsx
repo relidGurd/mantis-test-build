@@ -23,14 +23,14 @@ export async function generateMetadata(
       },
     },
   });
-  // fetch post information
+
   const { data } = await getProduct(slug, CasesQwery);
 
   return {
     title: data.title,
     description: data.description,
     openGraph: {
-      images: [`https://cms.mantis.ru${data.preview_image.url}`],
+      images: [`https://cms.mantis-185.ru${data.preview_image.url}`],
     },
   };
 }
