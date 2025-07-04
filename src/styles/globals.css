@@ -52,6 +52,7 @@
 
   /*gradients*/
 
+  --main-green: rgba(36, 210, 57, 1);
   --green-gradient: linear-gradient(
     90deg,
     rgba(140, 189, 131, 1) 0%,

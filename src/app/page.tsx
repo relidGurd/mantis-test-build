@@ -19,7 +19,7 @@ export const metadata: Metadata = {
         url: "https://mantis-test-build.vercel.app/open-g.jpg", // абсолютный URL
         width: 1200,
         height: 630,
-        alt: "Изображение компании",
+        alt: "Mantis - Купить 1С в Мелитополе",
       },
     ],
   },

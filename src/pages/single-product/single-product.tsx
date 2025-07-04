@@ -51,7 +51,7 @@ const SinglePrdouct: React.FC<Product> = ({
             autoHeight={true}
           >
             {gallery?.map((el) => (
-              <SwiperSlide>
+              <SwiperSlide className={styles.slide_gallery_image_container}>
                 <Image
                   width={1200}
                   height={1200}
@@ -67,7 +67,10 @@ const SinglePrdouct: React.FC<Product> = ({
             navigation={true}
             thumbs={{ swiper: thumbsSwiper }}
             modules={[FreeMode, Navigation, Thumbs]}
-            className={styles.previewGrid}
+            className={classNames(
+              styles.slide_main_image_container,
+              styles.previewGrid
+            )}
           >
             {gallery?.map((el) => (
               <SwiperSlide>
@@ -86,15 +89,26 @@ const SinglePrdouct: React.FC<Product> = ({
           <Typography variant="h1" register="40">
             {title}
           </Typography>
-          <Typography className={styles.inSales} variant="span">
-            {availability ? "В наличии" : "Нет в наличии"}
-          </Typography>
+          <div className={styles.in_sales_container}>
+            <span
+              className={classNames(
+                styles.in_sales_circle,
+                availability
+                  ? styles.in_sales_circle_green
+                  : styles.in_sales_circle_red
+              )}
+            ></span>
+            <Typography variant="span">
+              {availability ? "В наличии" : "Нет в наличии"}
+            </Typography>
+          </div>
+
           <Typography
             className={styles.product_price}
             register="32"
             outline="bold"
           >
-            {price} р
+            {price} ₽
           </Typography>
           <div className={styles.productButtonsContainer}>
             <Button
