@@ -5,51 +5,6 @@ import ProductCard from "@/components/product-card/product-card";
 import Typography from "@/ui-kit/typography/typography";
 import Link from "next/link";
 
-const demoList = [
-  {
-    id: 1,
-    name: "Test",
-    description:
-      "Автоматизируем процессы, обеспечиваем безопасность и упрощаем управление. Автоматизируем процессы, обеспечиваем",
-    image: "/demo-prod.png",
-  },
-  {
-    id: 2,
-    name: "Test",
-    description:
-      "Автоматизируем процессы, обеспечиваем безопасность и упрощаем управление. Автоматизируем процессы, обеспечиваем",
-    image: "/demo-prod.png",
-  },
-  {
-    id: 3,
-    name: "Test",
-    description:
-      "Автоматизируем процессы, обеспечиваем безопасность и упрощаем управление. Автоматизируем процессы, обеспечиваем",
-    image: "/demo-prod.png",
-  },
-  {
-    id: 4,
-    name: "Test",
-    description:
-      "Автоматизируем процессы, обеспечиваем безопасность и упрощаем управление. Автоматизируем процессы, обеспечиваем",
-    image: "/demo-prod.png",
-  },
-  {
-    id: 5,
-    name: "Test",
-    description:
-      "Автоматизируем процессы, обеспечиваем безопасность и упрощаем управление. Автоматизируем процессы, обеспечиваем",
-    image: "/demo-prod.png",
-  },
-  {
-    id: 6,
-    name: "Test",
-    description:
-      "Автоматизируем процессы, обеспечиваем безопасность и упрощаем управление. Автоматизируем процессы, обеспечиваем",
-    image: "/demo-prod.png",
-  },
-];
-
 interface IRelatedProductCard {
   title?: string;
   product_list: any;
@@ -88,10 +43,14 @@ const IntrestingProducts: React.FC<IRelatedProductCard> = ({
             },
           }}
         >
-          {product_list.map((el: any, index: number) => (
-            <SwiperSlide key={el.id} tag="li">
-              <Link href={`/product/${el.slug}`}>
+          {product_list.map((el: any) => (
+            <SwiperSlide className={styles.swiper_slide} key={el.id} tag="li">
+              <Link
+                className={styles.swiper_slide_link}
+                href={`/product/${el.slug}`}
+              >
                 <ProductCard
+                  className={styles.swiper_slide_card}
                   name={el.title}
                   description={el.description}
                   image={`${el.preview_image.url}`}

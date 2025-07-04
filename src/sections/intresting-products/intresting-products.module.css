@@ -1,0 +1,12 @@
+.swiper_slide {
+  height: auto !important;
+}
+
+.swiper_slide_link {
+  display: block;
+  height: 100%;
+}
+
+.swiper_slide_card {
+  height: 100%;
+}

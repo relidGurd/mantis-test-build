@@ -2,6 +2,7 @@
 import Typography from "@/ui-kit/typography/typography";
 import styles from "./product-card.module.css";
 import Image from "next/image";
+import classNames from "classnames";
 
 interface IProdctCard {
   name: string;
@@ -9,6 +10,7 @@ interface IProdctCard {
   tag?: string;
   image: string;
   price?: number;
+  className?: string;
 }
 
 const ProductCard: React.FC<IProdctCard> = ({
@@ -17,9 +19,10 @@ const ProductCard: React.FC<IProdctCard> = ({
   tag,
   image,
   price,
+  className,
 }) => {
   return (
-    <div className={styles.product_card}>
+    <div className={classNames(styles.product_card, className)}>
       {tag && (
         <div className={styles.product_tag}>
           <Typography>Веб-разработка</Typography>
