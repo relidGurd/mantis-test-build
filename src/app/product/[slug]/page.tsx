@@ -80,6 +80,7 @@ const ProductPage = async ({
       />
       <IntrestingProducts
         product_list={relatedProducts.products}
+        className={"swiper-container"}
         title={"Вас может заинтересовать"}
       />
     </div>
