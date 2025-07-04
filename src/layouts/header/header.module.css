@@ -159,6 +159,7 @@
     position: fixed;
     /* background-color: rgba(36, 210, 57, 0.3); */
     backdrop-filter: blur(15px);
+    height: 100%;
     padding: 16px 24px;
     top: 95px;
     left: 0;
