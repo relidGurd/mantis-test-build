@@ -18,8 +18,12 @@ const Computers = async ({
   searchParams?: SearchParams;
 }) => {
   const resolvedSearchParams = searchParams ? await searchParams : {};
-  const page = Number(resolvedSearchParams.page) || 1;
+  // const page = Number(resolvedSearchParams.page) || 1;
+
   const query = resolvedSearchParams?.query || "";
+
+  const page =
+    query && query.length > 0 ? 1 : Number(resolvedSearchParams.page) || 1;
 
   const filters: any = {
     subcategory: {

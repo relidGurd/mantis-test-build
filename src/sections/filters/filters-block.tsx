@@ -11,8 +11,6 @@ const FIlters: React.FC<any> = ({ filter_list }) => {
   const { replace } = useRouter();
 
   function handleSearch(term: string) {
-    //@ts-ignore
-    console.log(term);
     const params = new URLSearchParams(searchParams);
     if (term) {
       params.set("query", term);
@@ -29,6 +27,16 @@ const FIlters: React.FC<any> = ({ filter_list }) => {
       >
         {() => (
           <Form>
+            <div>
+              <strong>Стоимость</strong>
+              <div>
+                <label>
+                  <Field type="range" min={0} max={10} />
+
+                  <br />
+                </label>
+              </div>
+            </div>
             {filter_list.map((el: any) => (
               <div key={el.id}>
                 <strong>{el.title}</strong>
