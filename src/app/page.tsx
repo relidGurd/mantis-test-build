@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     url: "https://mantis-test-build.vercel.app",
     images: [
       {
-        url: "https://mantis-test-build.vercel.app/cover.jpg", // абсолютный URL
+        url: "https://mantis-test-build.vercel.app/open-g.jpg", // абсолютный URL
         width: 1200,
         height: 630,
         alt: "Изображение компании",
