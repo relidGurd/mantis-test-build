@@ -13,8 +13,15 @@ export const metadata: Metadata = {
       "Mantis - Купить 1С в Мелитополе, Бердянске, ДНР, ЛНР, и Крыму! Заказать на сайте.",
     description:
       "У нас можно купить 1С под ключ в Запорожской области, Херсонской области и Крыму.",
-    url: "https://mantis-test-build.vercel.app/Cover.jpg",
-    images: ["/Cover.jpg"],
+    url: "https://mantis-test-build.vercel.app",
+    images: [
+      {
+        url: "https://mantis-test-build.vercel.app/Cover.jpg", // абсолютный URL
+        width: 1200,
+        height: 630,
+        alt: "Изображение компании",
+      },
+    ],
   },
 };
 
