@@ -40,10 +40,14 @@ const DirectionElement = async ({ params }: { params: Params }) => {
         </Typography>
       </div>
       <IntrestingProducts
+        title="Популярные товары"
         product_list={data.related_products}
         className={"swiper-container"}
       />
       <section className={classNames("main-container")}>
+        <Typography variant="h2" register="32" outline="bold">
+          Наше предложение
+        </Typography>
         <ul className={classNames(styles.direction_categoryList)}>
           {data.subcategories.map((el: any) => (
             <li key={el.id} className={styles.direction_categoryItem}>
