@@ -86,9 +86,12 @@
   border-bottom: 1px solid var(--white-4);
 } */
 
+.specifications_table tr:not(:last-child) td {
+  border-bottom: 1px solid var(--white-4);
+}
+
 .specifications_cell {
   padding: 12px 24px;
-  border-bottom: 1px solid var(--white-4);
 }
 
 .specifications_cell:nth-child(1) {

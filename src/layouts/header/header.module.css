@@ -1,6 +1,8 @@
 .main_header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   backdrop-filter: blur(15px);
   padding: 15px 0;
   z-index: 100;
@@ -154,14 +156,15 @@
   }
 
   .hidden_mobile_menu {
-    position: absolute;
-    min-height: 100vh;
-    background-color: var(--theme-bg);
+    position: fixed;
+    /* background-color: rgba(36, 210, 57, 0.3); */
+    backdrop-filter: blur(15px);
     padding: 16px 24px;
-    top: 100%;
+    top: 95px;
     left: 0;
     right: 0;
-    z-index: 1000;
+    bottom: 0;
+    z-index: 99;
   }
 
   .item_mobile_link_container {

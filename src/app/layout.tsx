@@ -33,7 +33,7 @@ export default async function RootLayout({
     <html lang="ru">
       <body className={jura.className}>
         <Header menu_list={data.MenuBLocks} />
-        {children}
+        <main>{children}</main>
         <Footer />
       </body>
     </html>
