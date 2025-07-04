@@ -9,7 +9,12 @@ export const metadata: Metadata = {
   description:
     "У нас можно купить 1С под ключ в Запорожской области, Херсонской области и Крыму.",
   openGraph: {
-    images: "/Cover.jpg",
+    title:
+      "Mantis - Купить 1С в Мелитополе, Бердянске, ДНР, ЛНР, и Крыму! Заказать на сайте.",
+    description:
+      "У нас можно купить 1С под ключ в Запорожской области, Херсонской области и Крыму.",
+    url: "https://mantis-test-build.vercel.app/Cover.jpg",
+    images: ["/Cover.jpg"],
   },
 };
 
