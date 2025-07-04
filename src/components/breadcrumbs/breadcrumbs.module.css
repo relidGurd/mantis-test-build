@@ -1,0 +1,23 @@
+.for_breadcrumbs {
+  padding-bottom: 0;
+}
+.breadcrumbs_main_container {
+  display: flex;
+  gap: 8px;
+}
+.breadcrumbs_item_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.breadcrumbs_item_container:not(:last-child) .breadcrumbs_item_title {
+  color: var(--black-60);
+}
+.breadcrumbs_arrow {
+  display: none;
+}
+.breadcrumbs_item_container:not(:last-child) .breadcrumbs_arrow {
+  display: block;
+}

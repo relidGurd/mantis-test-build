@@ -6,6 +6,8 @@ import Link from "next/link";
 import qs from "qs";
 import Pagination from "@/components/pagination/pagination";
 import { Suspense } from "react";
+import Breadcrumbs from "@/components/breadcrumbs/breadcrumbs";
+import routes from "@/utils/breadcrumbs-massive";
 
 const Cases = async (props: {
   searchParams?: Promise<{
@@ -34,6 +36,7 @@ const Cases = async (props: {
 
   return (
     <div className="main-container">
+      <Breadcrumbs list={routes.casesList} />
       <Typography
         className={styles.cases_title}
         variant="h1"

@@ -89,4 +89,22 @@ const Logo = () => {
   );
 };
 
-export { Logo };
+const BreadcrumbsArrow = ({ className }: { className: string }) => {
+  return (
+    <svg
+      className={className}
+      width="7"
+      height="9"
+      viewBox="0 0 7 9"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M6.72 4.89142L0 8.89142V7.32342L4.672 4.49142L0 1.61142V0.107422L6.72 4.15542V4.89142Z"
+        fill="#9FA1AA"
+      />
+    </svg>
+  );
+};
+
+export { Logo, BreadcrumbsArrow };
