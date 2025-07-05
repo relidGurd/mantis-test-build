@@ -31,9 +31,6 @@ const Header = ({ menu_list }: any) => {
     isClickedOnBurger(!clickOnBurger);
   };
 
-  console.log(router === "/about");
-  console.log(router);
-
   const animatedMenu = {
     initial: {
       x: -100,
@@ -55,8 +52,7 @@ const Header = ({ menu_list }: any) => {
             <div className={styles.menu_container}>
               <Link
                 href={staticUrl.main}
-                className={styles.headerLogoContainer}
-              >
+                className={styles.headerLogoContainer}>
                 <Image
                   className={styles.headerLogoImage}
                   src={"/logo-icon.svg"}
@@ -75,12 +71,10 @@ const Header = ({ menu_list }: any) => {
                             className={styles.directionsBtn}
                             variant="span"
                             outline="bold"
-                            register="18"
-                          >
+                            register="18">
                             Направления
                           </Typography>
-                        }
-                      >
+                        }>
                         <div className={styles.sub_menu_container}>
                           <div style={{ height: "45px" }}></div>
                           <ul className={styles.subMenu_area}>
@@ -90,8 +84,7 @@ const Header = ({ menu_list }: any) => {
                                   <Typography
                                     className={styles.menuTitle}
                                     outline="semibold"
-                                    register="18"
-                                  >
+                                    register="18">
                                     {el.title}
                                   </Typography>
                                 </Link>
@@ -101,14 +94,12 @@ const Header = ({ menu_list }: any) => {
                                     <Link
                                       key={el.id}
                                       className={styles.link_group}
-                                      href={el.link}
-                                    >
+                                      href={el.link}>
                                       <div className={styles.link_group_item}>
                                         <div
                                           className={
                                             styles.link_group_item_imgContainer
-                                          }
-                                        >
+                                          }>
                                           <Image
                                             className={
                                               styles.link_group_item_img
@@ -122,8 +113,7 @@ const Header = ({ menu_list }: any) => {
                                         <div>
                                           <Typography
                                             register="14"
-                                            outline="bold"
-                                          >
+                                            outline="bold">
                                             {el.title}
                                           </Typography>
                                           <div>{el.description}</div>
@@ -148,8 +138,7 @@ const Header = ({ menu_list }: any) => {
                         )}
                         variant="span"
                         outline="bold"
-                        register="18"
-                      >
+                        register="18">
                         О нас
                       </Typography>
                     </Link>
@@ -163,8 +152,7 @@ const Header = ({ menu_list }: any) => {
                         )}
                         variant="span"
                         outline="bold"
-                        register="18"
-                      >
+                        register="18">
                         Кейсы
                       </Typography>
                     </Link>
@@ -178,8 +166,7 @@ const Header = ({ menu_list }: any) => {
                         )}
                         variant="span"
                         outline="bold"
-                        register="18"
-                      >
+                        register="18">
                         Блог
                       </Typography>
                     </Link>
@@ -192,8 +179,7 @@ const Header = ({ menu_list }: any) => {
                     styles.header_socialsIconContainer,
                     styles.headerCart
                   )}
-                  href={"/cart"}
-                >
+                  href={"/cart"}>
                   <div className={styles.headerCartInfo}>
                     {cartLengrth.length}
                   </div>
@@ -208,8 +194,7 @@ const Header = ({ menu_list }: any) => {
                 <div className={styles.header_socials}>
                   <Link
                     className={styles.header_socialsIconContainer}
-                    href={"https://vk.com"}
-                  >
+                    href={"https://vk.com"}>
                     <Image
                       className={styles.header_socialsIcon}
                       src={"/vk.svg"}
@@ -220,8 +205,7 @@ const Header = ({ menu_list }: any) => {
                   </Link>
                   <Link
                     className={styles.header_socialsIconContainer}
-                    href={"https://vk.com"}
-                  >
+                    href={"https://vk.com"}>
                     <Image
                       className={styles.header_socialsIcon}
                       src={"/tg.svg"}
@@ -243,8 +227,7 @@ const Header = ({ menu_list }: any) => {
             <div className={styles.mobile_menuContainer}>
               <div
                 onClick={() => handleClick()}
-                className={styles.mobile_menuBurgerContainer}
-              >
+                className={styles.mobile_menuBurgerContainer}>
                 <Image
                   src={"/burger.svg"}
                   width={28}
@@ -256,8 +239,7 @@ const Header = ({ menu_list }: any) => {
               <div className={styles.mobile_logoContainer}>
                 <Link
                   href={staticUrl.main}
-                  className={styles.headerLogoContainer}
-                >
+                  className={styles.headerLogoContainer}>
                   <Image
                     className={styles.headerLogoImage}
                     src={"/logo-icon.svg"}
@@ -273,8 +255,7 @@ const Header = ({ menu_list }: any) => {
                   styles.header_socialsIconContainer,
                   styles.headerCart
                 )}
-                href={"/cart"}
-              >
+                href={"/cart"}>
                 <div className={styles.headerCartInfo}>
                   {cartLengrth.length}
                 </div>
@@ -295,8 +276,7 @@ const Header = ({ menu_list }: any) => {
         variants={animatedMenu}
         initial={"hidden"}
         animate={clickOnBurger ? "visible" : "initial"}
-        className={styles.hidden_mobile_menu}
-      >
+        className={styles.hidden_mobile_menu}>
         <li className={styles.item_mobile_link_container}>
           <Link
             style={router === "/about" ? { color: "rgba(36, 210, 57, 1)" } : {}}
@@ -305,8 +285,7 @@ const Header = ({ menu_list }: any) => {
               styles.item_link,
               router === "/about" && styles.active_menu
             )}
-            href={`/about`}
-          >
+            href={`/about`}>
             О нас
           </Link>
         </li>
@@ -317,8 +296,7 @@ const Header = ({ menu_list }: any) => {
               styles.item_link,
               router === "/cases" && styles.active_menu
             )}
-            href={`/cases`}
-          >
+            href={`/cases`}>
             Кейсы
           </Link>
         </li>
@@ -329,8 +307,7 @@ const Header = ({ menu_list }: any) => {
               styles.item_link,
               router === "/blog" && styles.active_menu
             )}
-            href={`/blog`}
-          >
+            href={`/blog`}>
             Блог
           </Link>
         </li>
@@ -339,8 +316,7 @@ const Header = ({ menu_list }: any) => {
             <Link
               onClick={() => isClickedOnBurger(false)}
               className={styles.item_link}
-              href={`/directions${el.link}`}
-            >
+              href={`/directions${el.link}`}>
               {el.title}
             </Link>
           </li>

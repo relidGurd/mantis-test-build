@@ -8,8 +8,36 @@ import AboutReviews from "@/pages/about-us/about-reviews/about-reviews";
 import { getCategory } from "@/api/directions/directions";
 import qs from "qs";
 import Link from "next/link";
+import type { Metadata, ResolvingMetadata } from "next";
 
 type Params = Promise<{ slug: string }>;
+
+export async function generateMetadata(
+  { params }: { params: Params },
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const slug = (await params).slug;
+
+  const { data } = await getCategory(slug);
+
+  return {
+    title: data.title,
+    description: data.description,
+    openGraph: {
+      title: data.title,
+      description: data.description,
+      url: "https://mantis-test-build.vercel.app",
+      images: [
+        {
+          url: "https://mantis-test-build.vercel.app/open-g.jpg", // абсолютный URL
+          width: 1200,
+          height: 630,
+          alt: data.title,
+        },
+      ],
+    },
+  };
+}
 
 const DirectionElement = async ({ params }: { params: Params }) => {
   const { slug } = await params;

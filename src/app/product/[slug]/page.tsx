@@ -5,7 +5,6 @@ import { getProduct, getRelatedProducts } from "@/api/products/products";
 import qs from "qs";
 import type { Metadata, ResolvingMetadata } from "next";
 import Breadcrumbs from "@/components/breadcrumbs/breadcrumbs";
-import { title } from "process";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -70,8 +69,6 @@ const ProductPage = async ({
   });
   const { data } = await getProduct((await params).slug, CasesQwery);
   const { data: relatedProducts } = await getRelatedProducts(relatedQwery);
-
-  console.log(data);
 
   const breadcrumbsProduct = [
     {

@@ -29,7 +29,7 @@ const Cases = async (props: {
     },
     pagination: {
       page: page,
-      pageSize: 10, // например, по 6 карточек
+      pageSize: 10,
     },
   });
   const { data, meta } = await getCases(CasesQwery);
@@ -41,11 +41,9 @@ const Cases = async (props: {
         className={styles.cases_title}
         variant="h1"
         register="40"
-        outline="bold"
-      >
+        outline="bold">
         Кейсы
       </Typography>
-      <div></div>
       <section>
         <ul className={styles.cases_list}>
           {data.map((el: any) => (

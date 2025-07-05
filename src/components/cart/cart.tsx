@@ -22,8 +22,7 @@ const Cart = () => {
           register="40"
           outline="bold"
           className={styles.cartTitle}
-          variant="h1"
-        >
+          variant="h1">
           Корзина
         </Typography>
         <Typography>Корзина пуста</Typography>
@@ -37,8 +36,7 @@ const Cart = () => {
         register="40"
         outline="bold"
         className={styles.cartTitle}
-        variant="h1"
-      >
+        variant="h1">
         Корзина
       </Typography>
       <div className={styles.cartContainer}>
@@ -48,21 +46,30 @@ const Cart = () => {
               <li key={el.id} className={styles.cartProductItem}>
                 <div className={styles.cart_mainInfo}>
                   <div className={styles.cart_imageContainer}>
-                    <Image
-                      className={styles.cartItem_imageContainer}
-                      src={`https://cms.mantis-185.ru${el.image}`}
-                      width={140}
-                      height={140}
-                      alt=""
-                    />
+                    {el.image ? (
+                      <Image
+                        className={styles.cartItem_imageContainer}
+                        src={`https://cms.mantis-185.ru${el.image}`}
+                        width={140}
+                        height={140}
+                        alt=""
+                      />
+                    ) : (
+                      <Image
+                        className={styles.cartItem_imageContainer}
+                        src={`/demo.png`}
+                        width={140}
+                        height={140}
+                        alt=""
+                      />
+                    )}
                   </div>
                   <Typography register="18" outline="semibold">
                     {el.title}
                   </Typography>
                   <div
                     className={styles.mobileRemove}
-                    onClick={() => removeItem(el.id)}
-                  >
+                    onClick={() => removeItem(el.id)}>
                     <Image
                       src={"/remove-icon.svg"}
                       width={18}
@@ -95,8 +102,7 @@ const Cart = () => {
                   </div>
                   <div
                     className={styles.desktopRemove}
-                    onClick={() => removeItem(el.id)}
-                  >
+                    onClick={() => removeItem(el.id)}>
                     <Image
                       src={"/remove-icon.svg"}
                       width={24}

@@ -1,6 +1,6 @@
 async function getSiteMenu(qwery: string) {
   const url = `https://cms.mantis-185.ru/api/site-menu?${qwery}`;
-  console.log(qwery);
+
   try {
     const response = await fetch(url);
 
