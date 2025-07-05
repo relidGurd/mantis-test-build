@@ -31,6 +31,17 @@ const cartList = [
   },
 ];
 
-const routes = { breadList, casesList, cartList };
+const blogList = [
+  {
+    title: "Главная",
+    url: "/",
+  },
+  {
+    title: "Блог",
+    url: "#",
+  },
+];
+
+const routes = { breadList, casesList, cartList, blogList };
 
 export default routes;

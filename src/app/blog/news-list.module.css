@@ -1,0 +1,10 @@
+.news_list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+@media screen and (max-width: 768px) {
+  .news_list {
+    gap: 24px;
+  }
+}

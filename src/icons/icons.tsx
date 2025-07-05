@@ -5,8 +5,7 @@ const Logo = () => {
       height="2434"
       viewBox="0 0 2698 2434"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <path
         d="M1868.5 1333L1885 1090L1360.5 1457.5L1350 1509L1868.5 1333Z"
         fill="#29812A"
@@ -68,8 +67,7 @@ const Logo = () => {
           y1="1691.21"
           x2="207.01"
           y2="2236.96"
-          gradientUnits="userSpaceOnUse"
-        >
+          gradientUnits="userSpaceOnUse">
           <stop stop-color="#21591C" />
           <stop offset="1" stop-color="#122C0F" />
         </linearGradient>
@@ -79,8 +77,7 @@ const Logo = () => {
           y1="1231.5"
           x2="2695"
           y2="2063"
-          gradientUnits="userSpaceOnUse"
-        >
+          gradientUnits="userSpaceOnUse">
           <stop stop-color="#21591C" />
           <stop offset="1" stop-color="#122C0F" />
         </linearGradient>
@@ -89,7 +86,7 @@ const Logo = () => {
   );
 };
 
-const BreadcrumbsArrow = ({ className }: { className: string }) => {
+const BreadcrumbsArrow = ({ className }: { className?: string }) => {
   return (
     <svg
       className={className}
@@ -97,8 +94,7 @@ const BreadcrumbsArrow = ({ className }: { className: string }) => {
       height="9"
       viewBox="0 0 7 9"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <path
         d="M6.72 4.89142L0 8.89142V7.32342L4.672 4.49142L0 1.61142V0.107422L6.72 4.15542V4.89142Z"
         fill="#9FA1AA"
@@ -107,4 +103,31 @@ const BreadcrumbsArrow = ({ className }: { className: string }) => {
   );
 };
 
-export { Logo, BreadcrumbsArrow };
+const EyeIcon = ({ className }: { className?: string }) => {
+  return (
+    <svg
+      className={className}
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M0.75 9C0.75 9 3.75 3 9 3C14.25 3 17.25 9 17.25 9C17.25 9 14.25 15 9 15C3.75 15 0.75 9 0.75 9Z"
+        stroke="#8F8F8F"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M9 11.25C10.2426 11.25 11.25 10.2426 11.25 9C11.25 7.75736 10.2426 6.75 9 6.75C7.75736 6.75 6.75 7.75736 6.75 9C6.75 10.2426 7.75736 11.25 9 11.25Z"
+        stroke="#8F8F8F"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
+
+export { Logo, BreadcrumbsArrow, EyeIcon };

@@ -158,7 +158,7 @@ const Header = ({ menu_list }: any) => {
                     </Link>
                   </li>
                   <li className={styles.header_linkItem}>
-                    <Link href={"/"}>
+                    <Link href={"/blog"}>
                       <Typography
                         className={classNames(
                           styles.item_link,
