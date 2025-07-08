@@ -5,7 +5,7 @@ import styles from "./cart.module.css";
 import { useCart } from "@/store/cart";
 import Image from "next/image";
 import Button from "@/ui-kit/button/button";
-
+import Link from "next/link";
 const Cart = () => {
   const {
     removeItem,
@@ -22,7 +22,8 @@ const Cart = () => {
           register="40"
           outline="bold"
           className={styles.cartTitle}
-          variant="h1">
+          variant="h1"
+        >
           Корзина
         </Typography>
         <Typography>Корзина пуста</Typography>
@@ -36,7 +37,8 @@ const Cart = () => {
         register="40"
         outline="bold"
         className={styles.cartTitle}
-        variant="h1">
+        variant="h1"
+      >
         Корзина
       </Typography>
       <div className={styles.cartContainer}>
@@ -69,7 +71,8 @@ const Cart = () => {
                   </Typography>
                   <div
                     className={styles.mobileRemove}
-                    onClick={() => removeItem(el.id)}>
+                    onClick={() => removeItem(el.id)}
+                  >
                     <Image
                       src={"/remove-icon.svg"}
                       width={18}
@@ -102,7 +105,8 @@ const Cart = () => {
                   </div>
                   <div
                     className={styles.desktopRemove}
-                    onClick={() => removeItem(el.id)}>
+                    onClick={() => removeItem(el.id)}
+                  >
                     <Image
                       src={"/remove-icon.svg"}
                       width={24}
@@ -136,11 +140,13 @@ const Cart = () => {
               </div>
             </div>
 
-            <Button
-              className={styles.saleBtn}
-              color="greenButton"
-              label="Оформить заказ"
-            />
+            <Link href={"/order"}>
+              <Button
+                className={styles.saleBtn}
+                color="greenButton"
+                label="Оформить заказ"
+              />
+            </Link>
           </div>
         </div>
       </div>

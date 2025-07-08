@@ -6,14 +6,20 @@ import classNames from "classnames";
 
 interface IReviewItem {
   size: "small" | "big";
+  className?: string;
 }
 
-const ReviewItem: React.FC<any> = ({ size }) => {
+const ReviewItem: React.FC<IReviewItem> = ({ size, className }) => {
   const reviewItem = styles[`size-${size}`];
 
   return (
     <div
-      className={classNames(reviewItem, styles.basic_reviewItem, classNames)}
+      className={classNames(
+        reviewItem,
+        styles.basic_reviewItem,
+        className,
+        classNames
+      )}
     >
       <div className={styles.review_item__mainInfo}>
         <div className={styles.review_item__imgContainer}>

@@ -9,18 +9,12 @@ const MoreReviews = () => {
   return (
     <section className="main-container">
       <div className={styles.moreReviews_card}>
-        <ReviewItem size="big" />
+        <ReviewItem className={styles.review_card} size="big" />
         <div className={styles.moreReviews_reviewCheck}>
           <div className={styles.moreReviews_reviewCard}>
             <div className={styles.firstCard}></div>
             <div className={styles.card_contetn}>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "space-between",
-                }}
-              >
+              <div>
                 <Typography outline="semibold" register="32">
                   Ещё больше отзывов о нашей компании
                 </Typography>
