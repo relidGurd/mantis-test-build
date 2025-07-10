@@ -1,4 +1,3 @@
-"use client";
 import classNames from "classnames";
 import styles from "./delivery.module.css";
 import Typography from "@/ui-kit/typography/typography";
