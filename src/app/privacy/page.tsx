@@ -24,9 +24,6 @@ const Privacy = () => {
       <div className={styles.privacy_container}>
         <div className={styles.privacy_list}>
           <div>
-            <Typography variant="h3" outline="bold" register="32">
-              1. Условия доставки
-            </Typography>
             <Typography className={styles.privacy_info} variant="p">
               Термины и определения 1.1. Администрация сайта (далее –
               Администрация) – уполномоченные на управления сайтом работники,
