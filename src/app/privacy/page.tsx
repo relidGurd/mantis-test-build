@@ -1,6 +1,6 @@
 "use client";
 import classNames from "classnames";
-import styles from "./delivery.module.css";
+import styles from "./privacy.module.css";
 import Typography from "@/ui-kit/typography/typography";
 
 const Delivery = () => {
@@ -14,13 +14,13 @@ const Delivery = () => {
       >
         Доставка
       </Typography>
-      <div className={styles.delivery_container}>
-        <div className={styles.delivery_list}>
+      <div className={styles.privacy_container}>
+        <div className={styles.privacy_list}>
           <div>
             <Typography variant="h3" outline="bold" register="32">
               1. Условия доставки
             </Typography>
-            <Typography className={styles.deliver_info} variant="p">
+            <Typography className={styles.privacy_info} variant="p">
               Мы — IT-компания, специализирующаяся на комплексных решениях
               для бизнеса и госсектора. Партнёры ведущих разработчиков
               программного обеспечения и производителей оборудования. Наша
