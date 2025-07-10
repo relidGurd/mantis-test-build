@@ -1,9 +1,16 @@
-"use client";
 import classNames from "classnames";
 import styles from "./privacy.module.css";
 import Typography from "@/ui-kit/typography/typography";
 
-const Delivery = () => {
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Mantis | Условия доставки",
+  description:
+    "У нас можно купить 1С под ключ в Запорожской области, Херсонской области и Крыму.",
+};
+
+const Privacy = () => {
   return (
     <div className={classNames("main-container")}>
       <Typography
@@ -69,4 +76,4 @@ const Delivery = () => {
   );
 };
 
-export default Delivery;
+export default Privacy;
