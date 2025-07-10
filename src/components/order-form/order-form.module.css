@@ -58,3 +58,9 @@
   grid-template-columns: 1fr auto auto;
   gap: 36px;
 }
+
+@media screen and (max-width: 1570px) {
+  .form_container {
+    gap: 24px;
+  }
+}
