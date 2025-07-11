@@ -7,6 +7,9 @@ import Link from "next/link";
 import qs from "qs";
 import styles from "./news-list.module.css";
 import type { Metadata } from "next";
+import Tags from "@/components/tags/tags";
+import { buildBlogQuery } from "./helpers";
+import classNames from "classnames";
 
 export const metadata: Metadata = {
   title: `Мантис | Блог | Все необходимое для Вашего бизнеса!`,
@@ -28,35 +31,51 @@ export const metadata: Metadata = {
   },
 };
 
+async function resolveSearchParams(
+  searchParamsPromise?: Promise<{ query?: string; page?: string }>
+) {
+  const resolved = searchParamsPromise ? await searchParamsPromise : {};
+  const query = resolved.query || "";
+  const page = query.length > 0 ? 1 : Number(resolved.page) || 1;
+
+  return { query, page };
+}
+
 export default async function Page(props: {
   searchParams?: Promise<{
     query?: string;
     page?: string;
   }>;
 }) {
-  const searchParams = await props.searchParams;
-  const page = Number(searchParams?.page) || 1;
-
-  const blogQuery = qs.stringify({
-    populate: {
-      image: true,
-    },
-    pagination: {
-      page: page,
-      pageSize: 10,
-    },
-  });
+  const { query, page } = await resolveSearchParams(props.searchParams);
+  const blogQuery = buildBlogQuery(query, page);
 
   const { data, meta } = await getBlog(blogQuery);
 
+  const tagsBlog = [
+    {
+      title: "Автоматизация",
+    },
+    {
+      title: "Облачные решения",
+    },
+    {
+      title: "IT-инфраструктура",
+    },
+  ];
   return (
     <>
       <Breadcrumbs className="main-container-blog" list={routes.blogList} />
+      <section
+        className={classNames("main-container-blog", styles.tagsContainer)}
+      >
+        <Tags tags={tagsBlog} />
+      </section>
       <section className="main-container-blog">
         <ul className={styles.news_list}>
           {data.map((el: any) => (
             <li key={el.id} className={styles.list_item}>
-              <Link href={`/single-news/${el.slug}`}>
+              <Link href={`/blog-page/${el.slug}`}>
                 <NewsCard
                   title={el.title}
                   description={el.desription}

@@ -1,0 +1,19 @@
+.tags_container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.tag_button {
+  width: 100%;
+  background: var(--gray-gradient);
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid transparent;
+  transition: 0.3s ease;
+}
+
+.tag_button_active {
+  background: var(--green-gradient);
+  color: black;
+}

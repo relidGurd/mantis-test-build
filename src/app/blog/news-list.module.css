@@ -3,6 +3,11 @@
   flex-direction: column;
   gap: 40px;
 }
+
+.tagsContainer {
+  padding-top: 40px;
+  padding-bottom: 0px;
+}
 @media screen and (max-width: 768px) {
   .news_list {
     gap: 24px;
