@@ -1,10 +1,11 @@
-.tags_container {
+/* .tags_container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
-}
+} */
 
 .tag_button {
+  display: block;
   width: 100%;
   background: var(--gray-gradient);
   padding: 16px;

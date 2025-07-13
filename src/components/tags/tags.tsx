@@ -1,5 +1,4 @@
 "use client";
-import Button from "@/ui-kit/button/button";
 import styles from "./tags.module.css";
 import {
   useRouter,
@@ -38,7 +37,7 @@ const Tags: React.FC<ITags> = ({ tags }) => {
 
   return (
     <Swiper
-      slidesPerView={2.2}
+      slidesPerView={1.2}
       spaceBetween={20}
       className="swiper-container"
       wrapperTag="ul"
