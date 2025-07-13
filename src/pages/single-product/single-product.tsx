@@ -48,8 +48,7 @@ const SinglePrdouct: React.FC<Product> = ({
             watchSlidesProgress={true}
             modules={[FreeMode, Navigation, Thumbs]}
             className={styles.thumbsGrid}
-            autoHeight={true}
-          >
+            autoHeight={true}>
             {gallery?.map((el) => (
               <SwiperSlide className={styles.slide_gallery_image_container}>
                 <Image
@@ -70,8 +69,7 @@ const SinglePrdouct: React.FC<Product> = ({
             className={classNames(
               styles.slide_main_image_container,
               styles.previewGrid
-            )}
-          >
+            )}>
             {gallery?.map((el) => (
               <SwiperSlide>
                 <Image
@@ -96,8 +94,7 @@ const SinglePrdouct: React.FC<Product> = ({
                 availability
                   ? styles.in_sales_circle_green
                   : styles.in_sales_circle_red
-              )}
-            ></span>
+              )}></span>
             <Typography variant="span">
               {availability ? "В наличии" : "Нет в наличии"}
             </Typography>
@@ -106,20 +103,27 @@ const SinglePrdouct: React.FC<Product> = ({
           <Typography
             className={styles.product_price}
             register="32"
-            outline="bold"
-          >
+            outline="bold">
             {price} ₽
           </Typography>
-          <div className={styles.productButtonsContainer}>
-            <Button
-              onClick={() =>
-                addItem({ id, image: preview_image, title, price, quantity: 1 })
-              }
-              label="Добавить в корзину"
-              color="greenButton"
-            />
-            <Button label="Купить в 1 клик" color="blackButton" />
-          </div>
+          {availability && (
+            <div className={styles.productButtonsContainer}>
+              <Button
+                onClick={() =>
+                  addItem({
+                    id,
+                    image: preview_image,
+                    title,
+                    price,
+                    quantity: 1,
+                  })
+                }
+                label="Добавить в корзину"
+                color="greenButton"
+              />
+              <Button label="Купить в 1 клик" color="blackButton" />
+            </div>
+          )}
 
           <div>
             <ul className={styles.tab_btn_list}>

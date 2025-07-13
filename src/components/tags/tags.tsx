@@ -8,6 +8,7 @@ import {
   redirect,
 } from "next/navigation";
 import classNames from "classnames";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 interface ITagItem {
   title: string;
@@ -36,33 +37,70 @@ const Tags: React.FC<ITags> = ({ tags }) => {
   }
 
   return (
-    <ul className={styles.tags_container}>
-      <li>
+    <Swiper
+      slidesPerView={2.2}
+      spaceBetween={20}
+      className="swiper-container"
+      wrapperTag="ul"
+      breakpoints={{
+        760: {
+          slidesPerView: 3,
+        },
+        1240: {
+          slidesPerView: 4,
+        },
+      }}>
+      <SwiperSlide className={styles.swiper_slide} tag="li">
         <button
           className={classNames(
             styles.tag_button,
             currentQuery === null ? styles.tag_button_active : ""
           )}
-          onClick={() => handleSearch("")}
-        >
+          onClick={() => handleSearch("")}>
           Все
         </button>
-      </li>
-      {tags.map((el: ITagItem, index: number) => (
-        <li key={index}>
+      </SwiperSlide>
+      {tags.map((el: any) => (
+        <SwiperSlide className={styles.swiper_slide} key={el.id} tag="li">
           <button
             className={classNames(
               styles.tag_button,
               currentQuery === el.title ? styles.tag_button_active : ""
             )}
-            onClick={() => handleSearch(el.title)}
-          >
+            onClick={() => handleSearch(el.title)}>
             {el.title}
           </button>
-        </li>
+        </SwiperSlide>
       ))}
-    </ul>
+    </Swiper>
   );
 };
 
 export default Tags;
+
+{
+  /* <ul className={styles.tags_container}>
+        <li>
+          <button
+            className={classNames(
+              styles.tag_button,
+              currentQuery === null ? styles.tag_button_active : ""
+            )}
+            onClick={() => handleSearch("")}>
+            Все
+          </button>
+        </li>
+        {tags.map((el: ITagItem, index: number) => (
+          <li key={index}>
+            <button
+              className={classNames(
+                styles.tag_button,
+                currentQuery === el.title ? styles.tag_button_active : ""
+              )}
+              onClick={() => handleSearch(el.title)}>
+              {el.title}
+            </button>
+          </li>
+        ))}
+      </ul> */
+}
