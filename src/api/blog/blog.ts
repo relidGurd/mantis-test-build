@@ -1,3 +1,5 @@
+import { notFound } from "next/navigation";
+
 async function getBlog(qwery?: string) {
   const url = `https://cms.mantis-185.ru/api/blogs?${qwery}`;
 

@@ -19,10 +19,15 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  width: 70%;
 }
 
 .test {
   border: 1px solid red;
+}
+
+.checkbox_err {
+  color: red;
 }
 
 .order_details_list {

@@ -17,6 +17,51 @@ const OrderForm: React.FC<any> = () => {
     redirect("/cart");
   }
 
+  const el = items.map((el: any) => el.title).join(",");
+  console.log(el);
+
+  const handleForm = async (values: any) => {
+    const contactRes = await fetch(
+      "https://b24-molb85.bitrix24.ru/rest/51/7t54z9wmumsg7ruh/crm.contact.add.json",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          fields: {
+            NAME: values.name,
+            PHONE: {
+              VALUE: values.phoneNumber,
+              VALUE_TYPE: "MOBILE",
+            },
+          },
+        }),
+      }
+    );
+
+    const { result } = await contactRes.json();
+
+    await fetch(
+      "https://b24-molb85.bitrix24.ru/rest/51/8ais025eq7jrgmq3/crm.deal.add.json",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          fields: {
+            TITLE: `${values.name} - ${values.phoneNumber}`,
+            COMMENTS: items
+              .map((el: any) => `Товар: ${el.title} Количество: ${el.quantity}`)
+              .join("\n"),
+            CONTACT_ID: result,
+          },
+        }),
+      }
+    );
+  };
+
   return (
     <div>
       <Typography variant="h3" outline="bold" register="24">
@@ -25,7 +70,7 @@ const OrderForm: React.FC<any> = () => {
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
-        onSubmit={() => console.log("send")}
+        onSubmit={(values) => handleForm(values)}
       >
         {({ errors, touched, setFieldValue }) => (
           <Form className={styles.form_container}>
@@ -81,6 +126,10 @@ const OrderForm: React.FC<any> = () => {
                 />
               </div>
               <div>
+                {touched.comment && errors.comment ? (
+                  <div>Необходимо ваше согласие</div>
+                ) : null}
+
                 <Field
                   type="checkbox"
                   name="privacyPolicy"
