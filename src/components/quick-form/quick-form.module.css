@@ -25,6 +25,7 @@
   flex-direction: column;
   gap: 10px;
   width: auto;
+  margin: 0 40px;
 }
 
 .test {

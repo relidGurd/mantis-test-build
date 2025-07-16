@@ -24,7 +24,7 @@ const Hero = () => {
           </Typography>
         </div>
         <div className={styles.hero_buttonsContainer}>
-          <Link href={"/about"}>
+          <Link className={styles.buttonsContainer_link} href={"/about"}>
             <Button label="Подробнее" />
           </Link>
           <Popup

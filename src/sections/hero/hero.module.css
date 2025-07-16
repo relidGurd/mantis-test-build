@@ -59,6 +59,10 @@
   color: var(--gray-100);
 }
 
+.buttonsContainer_link {
+  display: block;
+}
+
 @media screen and (max-width: 1440px) {
   .gradientTitle {
     font-size: 80px;
