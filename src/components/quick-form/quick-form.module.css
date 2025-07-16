@@ -9,18 +9,22 @@
   color: white;
 }
 
+.form_title {
+  display: block;
+  margin-bottom: 40px;
+}
+
 .form_container {
-  display: grid;
-  grid-template-columns: 1fr 0.4fr;
-  grid-template-rows: 1fr;
-  gap: 80px;
+  padding: 40px;
+  background: var(--theme-bg);
+  border-radius: 24px;
 }
 
 .inputs_container {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  width: 70%;
+  width: auto;
 }
 
 .test {
@@ -29,34 +33,6 @@
 
 .checkbox_err {
   color: red;
-}
-
-.order_details_list {
-  margin: 30px 0px 36px 0px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.order_details {
-  padding: 24px;
-  border-radius: 24px;
-  background-color: var(--white-6);
-}
-
-.order_details_title_container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.order_details_title {
-  display: block;
-}
-
-.order_details_change {
-  display: block;
-  color: var(--main-green);
 }
 
 .order_item {

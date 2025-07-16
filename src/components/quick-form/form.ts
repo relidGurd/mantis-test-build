@@ -49,8 +49,6 @@ const checkContactExists = async (phone: string) => {
 
 const handleForm = async (
   values: any,
-  productList: any,
-  totalPrice: number,
   resetForm: () => void,
   setFormMessage: (msg: string) => void,
   setIsError: (isError: boolean) => void,
@@ -96,16 +94,10 @@ const handleForm = async (
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           fields: {
-            TITLE: `${values.name} - ${values.phoneNumber}`,
-            COMMENTS: productList
-              .map(
-                (el: any) =>
-                  `Товар: ${el.title} Количество: ${el.quantity} Цена: ${el.price}`
-              )
-              .join("\n"),
+            TITLE: `${values.name} - ${values.phoneNumber} - (Форма "Связаться")`,
+            COMMENTS: values.comment,
             CONTACT_ID: finalContactId,
             STAGE_ID: "NEW",
-            OPPORTUNITY: totalPrice,
           },
         }),
       }

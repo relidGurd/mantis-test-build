@@ -34,6 +34,8 @@
 .cart_imageContainer {
   width: 120px;
   height: auto;
+  overflow: hidden;
+  border-radius: 16px;
 }
 
 .cartItem_imageContainer {

@@ -1,17 +1,16 @@
 "use client";
 
 import { Formik, Form, Field } from "formik";
-import styles from "./order-form.module.css";
+import styles from "./quick-form.module.css";
 import { handleForm, initialValues, validationSchema } from "./form";
 import Button from "@/ui-kit/button/button";
 import { IMaskInput } from "react-imask";
 import classNames from "classnames";
 import Typography from "@/ui-kit/typography/typography";
-import Link from "next/link";
 import { useCart } from "@/store/cart";
 import { redirect } from "next/navigation";
 import { useState } from "react";
-const OrderForm: React.FC<any> = () => {
+const QuickForm: React.FC<any> = () => {
   const { items, getTotalPrice } = useCart((elem: any) => elem);
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -23,8 +22,13 @@ const OrderForm: React.FC<any> = () => {
   }
 
   return (
-    <div>
-      <Typography variant="h3" outline="bold" register="24">
+    <div className={styles.form_container}>
+      <Typography
+        className={styles.form_title}
+        variant="h3"
+        outline="bold"
+        register="24"
+      >
         Заполните данные
       </Typography>
       <Formik
@@ -33,8 +37,6 @@ const OrderForm: React.FC<any> = () => {
         onSubmit={(values, actions) =>
           handleForm(
             values,
-            items,
-            getTotalPrice(),
             actions.resetForm,
             setFormMessage,
             setIsError,
@@ -43,7 +45,7 @@ const OrderForm: React.FC<any> = () => {
         }
       >
         {({ errors, touched, setFieldValue }) => (
-          <Form className={styles.form_container}>
+          <Form>
             <div className={styles.inputs_container}>
               <div>
                 <Field
@@ -110,76 +112,14 @@ const OrderForm: React.FC<any> = () => {
                   конфиденциальности
                 </label>
               </div>
-            </div>
-            <div>
-              <div className={styles.order_details}>
-                <div className={styles.order_details_title_container}>
-                  <Typography
-                    className={styles.order_details_title}
-                    variant="span"
-                    outline="bold"
-                    register="24"
-                  >
-                    Ваш заказ
-                  </Typography>
-                  <Link className={styles.order_details_change} href={"/cart"}>
-                    Изменить
-                  </Link>
-                </div>
-                <ul className={styles.order_details_list}>
-                  {items.map((el: any, index: number) => (
-                    <li key={index} className={styles.order_item}>
-                      <Typography
-                        variant="span"
-                        outline="regular"
-                        register="18"
-                      >
-                        {el.title}
-                      </Typography>
-                      <Typography
-                        variant="span"
-                        outline="regular"
-                        register="18"
-                      >
-                        {el.quantity} шт.
-                      </Typography>
-                      <Typography
-                        variant="span"
-                        outline="regular"
-                        register="18"
-                      >
-                        {el.price * el.quantity} ₽
-                      </Typography>
-                    </li>
-                  ))}
-                </ul>
-                <div className={styles.order_details_title_container}>
-                  <Typography
-                    className={styles.order_details_title}
-                    variant="span"
-                    outline="bold"
-                    register="24"
-                  >
-                    Итого
-                  </Typography>
-                  <Typography
-                    className={styles.order_details_title}
-                    variant="span"
-                    outline="bold"
-                    register="24"
-                  >
-                    {getTotalPrice()}
-                  </Typography>
-                </div>
-                <Button
-                  type="submit"
-                  label={isSubmitting ? "Отправка..." : "Отправить"}
-                  color="greenButton"
-                  className={classNames(
-                    isSubmitting ? styles.submittingButton : ""
-                  )}
-                />
-              </div>
+              <Button
+                type="submit"
+                label={isSubmitting ? "Отправка..." : "Отправить"}
+                color="greenButton"
+                className={classNames(
+                  isSubmitting ? styles.submittingButton : ""
+                )}
+              />
             </div>
           </Form>
         )}
@@ -188,4 +128,4 @@ const OrderForm: React.FC<any> = () => {
   );
 };
 
-export default OrderForm;
+export default QuickForm;
