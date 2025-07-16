@@ -2,6 +2,9 @@
 import Button from "@/ui-kit/button/button";
 import styles from "./hero.module.css";
 import Typography from "@/ui-kit/typography/typography";
+import Link from "next/link";
+import Popup from "@/components/popup/popup";
+import QuickForm from "@/components/quick-form/quick-form";
 
 const Hero = () => {
   return (
@@ -21,8 +24,14 @@ const Hero = () => {
           </Typography>
         </div>
         <div className={styles.hero_buttonsContainer}>
-          <Button label="Подробнее" />
-          <Button label="Оставить заявку" color="greenButton" />
+          <Link href={"/about"}>
+            <Button label="Подробнее" />
+          </Link>
+          <Popup
+            button={<Button label="Оставить заявку" color="greenButton" />}
+          >
+            <QuickForm />
+          </Popup>
         </div>
         <ul className={styles.hero_advContainer}>
           <li className={styles.hero_advItem}>
