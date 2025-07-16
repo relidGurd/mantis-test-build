@@ -24,8 +24,13 @@ const OrderForm: React.FC<any> = () => {
 
   return (
     <div>
-      <Typography variant="h3" outline="bold" register="24">
-        Заполните данные
+      <Typography
+        className={styles.order_form_title}
+        variant="h3"
+        outline="bold"
+        register="24"
+      >
+        Проверьте и заполните данные
       </Typography>
       <Formik
         initialValues={initialValues}
@@ -176,7 +181,8 @@ const OrderForm: React.FC<any> = () => {
                   label={isSubmitting ? "Отправка..." : "Отправить"}
                   color="greenButton"
                   className={classNames(
-                    isSubmitting ? styles.submittingButton : ""
+                    isSubmitting ? styles.submittingButton : "",
+                    styles.order_btn
                   )}
                 />
               </div>

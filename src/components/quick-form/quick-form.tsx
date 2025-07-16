@@ -11,7 +11,7 @@ import { useCart } from "@/store/cart";
 import { redirect } from "next/navigation";
 import { useState } from "react";
 const QuickForm: React.FC<any> = () => {
-  const { items, getTotalPrice } = useCart((elem: any) => elem);
+  const { items } = useCart((elem: any) => elem);
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formMessage, setFormMessage] = useState<string | null>(null);
