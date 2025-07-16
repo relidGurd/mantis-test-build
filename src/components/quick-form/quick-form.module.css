@@ -18,6 +18,7 @@
   padding: 40px;
   background: var(--theme-bg);
   border-radius: 24px;
+  margin: 0 20px;
 }
 
 .inputs_container {
@@ -25,7 +26,6 @@
   flex-direction: column;
   gap: 10px;
   width: auto;
-  margin: 0 40px;
 }
 
 .test {
@@ -50,5 +50,6 @@
 @media screen and (max-width: 1570px) {
   .form_container {
     gap: 24px;
+    padding: 20px;
   }
 }
