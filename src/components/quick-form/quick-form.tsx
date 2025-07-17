@@ -29,7 +29,8 @@ const QuickForm: React.FC<any> = () => {
         outline="bold"
         register="24"
       >
-        Заполните данные
+        Заполните <br className={styles.next} />
+        данные
       </Typography>
       <Formik
         initialValues={initialValues}

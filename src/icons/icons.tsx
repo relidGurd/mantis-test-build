@@ -5,7 +5,8 @@ const Logo = () => {
       height="2434"
       viewBox="0 0 2698 2434"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg">
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path
         d="M1868.5 1333L1885 1090L1360.5 1457.5L1350 1509L1868.5 1333Z"
         fill="#29812A"
@@ -67,7 +68,8 @@ const Logo = () => {
           y1="1691.21"
           x2="207.01"
           y2="2236.96"
-          gradientUnits="userSpaceOnUse">
+          gradientUnits="userSpaceOnUse"
+        >
           <stop stop-color="#21591C" />
           <stop offset="1" stop-color="#122C0F" />
         </linearGradient>
@@ -77,7 +79,8 @@ const Logo = () => {
           y1="1231.5"
           x2="2695"
           y2="2063"
-          gradientUnits="userSpaceOnUse">
+          gradientUnits="userSpaceOnUse"
+        >
           <stop stop-color="#21591C" />
           <stop offset="1" stop-color="#122C0F" />
         </linearGradient>
@@ -94,7 +97,8 @@ const BreadcrumbsArrow = ({ className }: { className?: string }) => {
       height="9"
       viewBox="0 0 7 9"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg">
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path
         d="M6.72 4.89142L0 8.89142V7.32342L4.672 4.49142L0 1.61142V0.107422L6.72 4.15542V4.89142Z"
         fill="#9FA1AA"
@@ -111,7 +115,8 @@ const EyeIcon = ({ className }: { className?: string }) => {
       height="18"
       viewBox="0 0 18 18"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg">
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path
         d="M0.75 9C0.75 9 3.75 3 9 3C14.25 3 17.25 9 17.25 9C17.25 9 14.25 15 9 15C3.75 15 0.75 9 0.75 9Z"
         stroke="#8F8F8F"
@@ -130,4 +135,32 @@ const EyeIcon = ({ className }: { className?: string }) => {
   );
 };
 
-export { Logo, BreadcrumbsArrow, EyeIcon };
+const CloseIcon = ({
+  className,
+  width,
+  height,
+}: {
+  className?: string;
+  width: number;
+  height: number;
+}) => {
+  return (
+    <svg
+      width={`${width}`}
+      height={`${height}`}
+      viewBox="0 0 26 26"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M2.33325 2.33398L23.6666 23.6673M23.6666 2.33398L2.33325 23.6673"
+        stroke="#878B90"
+        strokeOpacity="0.9"
+        strokeWidth="3"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+};
+
+export { Logo, BreadcrumbsArrow, EyeIcon, CloseIcon };

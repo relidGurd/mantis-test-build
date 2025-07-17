@@ -46,10 +46,23 @@
   background: gray;
   color: white;
 }
+.next {
+  display: none;
+}
 
 @media screen and (max-width: 1570px) {
   .form_container {
     gap: 24px;
     padding: 20px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .form_title {
+    display: block;
+    margin-bottom: 40px;
+  }
+  .next {
+    display: block;
   }
 }

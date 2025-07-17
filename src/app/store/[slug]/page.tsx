@@ -64,7 +64,7 @@ const Computers = async ({
     filters,
     pagination: {
       page: page,
-      pageSize: 1,
+      pageSize: 10,
     },
   });
 

@@ -3,6 +3,7 @@
   background: var(--gray-gradient);
   border-radius: 24px;
   overflow: hidden;
+  height: 100%;
 }
 
 .product_cardImageContainer {
