@@ -31,6 +31,7 @@ export async function generateMetadata(
   });
 
   const { data } = await getBlogPage(slug, blogPageQwery);
+  const { data: product } = await getBlogPage(slug, blogPageQwery);
 
   return {
     title: data.title,

@@ -17,7 +17,6 @@ interface IAboutStages {
 }
 
 const AboutStages: React.FC<IAboutStages> = ({ title, data }) => {
-  console.log(data);
   return (
     <section>
       <div className="main-container">
