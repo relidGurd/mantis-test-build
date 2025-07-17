@@ -9,10 +9,15 @@
   overflow: hidden;
 }
 
+.blog_page__title {
+  margin: 0px 0px 40px 0px;
+}
+
 .blog_page__information_container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 24px;
 }
 
 .blog_page__blog_details {
@@ -72,4 +77,21 @@
 
 .blog_body strong {
   font-weight: bold;
+}
+
+.blog_body__container {
+  padding-top: 0;
+}
+
+@media screen and (max-width: 1300px) {
+  .blog_page__bunner {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .blog_container {
+    display: flex;
+    flex-direction: column;
+  }
 }

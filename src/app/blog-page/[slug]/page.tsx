@@ -123,7 +123,7 @@ const BlogPage = async ({ params }: { params: Params }) => {
           </div>
         </div>
       </section>
-      <section>
+      <section className={styles.blog_body__container}>
         <div className={styles.blog_container}>
           <div className={styles.blog_body}>
             <ReactMarkdown
