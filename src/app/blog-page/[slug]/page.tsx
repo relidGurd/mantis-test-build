@@ -115,7 +115,7 @@ const BlogPage = async ({ params }: { params: Params }) => {
           <div className={styles.blog_page__bannerImageContainer}>
             <Image
               className={styles.blog_page__bannerImage}
-              src={"/demo.png"}
+              src={`https://cms.mantis-185.ru${data.image.url}`}
               width={800}
               height={900}
               alt=""

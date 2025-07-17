@@ -11,9 +11,16 @@ interface INewsCard {
   description: string;
   img: string;
   date: string;
+  tag: string;
 }
 
-const NewsCard: React.FC<INewsCard> = ({ title, description, img, date }) => {
+const NewsCard: React.FC<INewsCard> = ({
+  title,
+  description,
+  img,
+  date,
+  tag,
+}) => {
   return (
     <div className={classNames(styles.news_card_container)}>
       <div className={styles.news_card_info_container}>
@@ -25,7 +32,8 @@ const NewsCard: React.FC<INewsCard> = ({ title, description, img, date }) => {
             className={styles.news_card_desription}
             variant="p"
             outline="regular"
-            register="16">
+            register="16"
+          >
             {description}
           </Typography>
           <div className={styles.news_card_more}>
@@ -37,7 +45,7 @@ const NewsCard: React.FC<INewsCard> = ({ title, description, img, date }) => {
           </div>
         </div>
         <div>
-          <span className={styles.news_card_tag}>Тэг</span>
+          <span className={styles.news_card_tag}>{tag}</span>
         </div>
       </div>
       <div className={styles.news_card_img_container}>

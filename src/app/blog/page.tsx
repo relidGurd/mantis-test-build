@@ -78,6 +78,7 @@ export default async function Page(props: {
             <li key={el.id} className={styles.list_item}>
               <Link href={`/blog-page/${el.slug}`}>
                 <NewsCard
+                  tag={el.tag}
                   title={el.title}
                   description={el.seo_description[0].children[0].text}
                   date={el.date}
