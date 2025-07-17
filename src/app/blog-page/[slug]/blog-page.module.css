@@ -95,3 +95,13 @@
     flex-direction: column;
   }
 }
+
+@media screen and (max-width: 760px) {
+  .blog_page__bunner {
+    padding: 16px 24px;
+  }
+
+  .bannerImageContainer {
+    border-radius: 24px;
+  }
+}
