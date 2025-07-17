@@ -142,11 +142,10 @@ const AboutSteps = () => {
         </ul>
 
         {exampleData.map((el: any, index: number) => (
-          <div className={styles.tab_container}>
+          <div key={index} className={styles.tab_container}>
             <button
               className={styles.tab_btn}
               onClick={() => setActiveTab(el.id)}
-              key={index}
             >
               <span>{el.year}</span>
 
