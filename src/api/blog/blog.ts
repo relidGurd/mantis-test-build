@@ -4,7 +4,7 @@ async function getBlog(qwery?: string) {
   const url = `https://cms.mantis-185.ru/api/blogs?${qwery}`;
 
   try {
-    const response = await fetch(url, { next: { revalidate: false } });
+    const response = await fetch(url, { cache: "no-store" });
 
     if (!response.ok) {
       throw new Error(`Ошибка HTTP: ${response.status} ${response.statusText}`);
@@ -22,7 +22,7 @@ async function getBlogPage(slug: string, qwery?: string) {
   const url = `https://cms.mantis-185.ru/api/blogs/${slug}?${qwery}`;
 
   try {
-    const response = await fetch(url, { next: { revalidate: false } });
+    const response = await fetch(url, { cache: "no-store" });
 
     if (!response.ok) {
       throw new Error(`Ошибка HTTP: ${response.status} ${response.statusText}`);

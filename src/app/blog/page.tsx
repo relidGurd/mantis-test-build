@@ -63,6 +63,7 @@ export default async function Page(props: {
       title: "IT-инфраструктура",
     },
   ];
+
   return (
     <>
       <Breadcrumbs className="main-container-blog" list={routes.blogList} />
@@ -78,7 +79,7 @@ export default async function Page(props: {
               <Link href={`/blog-page/${el.slug}`}>
                 <NewsCard
                   title={el.title}
-                  description={el.desription}
+                  description={el.seo_description[0].children[0].text}
                   date={el.date}
                   img={el.image.url}
                 />
