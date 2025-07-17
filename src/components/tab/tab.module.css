@@ -1,0 +1,35 @@
+.tab_container {
+  background: var(--gray-gradient);
+  margin-bottom: 16px;
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.tab_text {
+  margin-top: 8px;
+}
+
+.tab_btn {
+  width: 100%;
+  text-align: left;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tab_arrow {
+  display: flex;
+  align-items: center;
+  transition: 0.3s ease;
+}
+
+.tab_arrow_active {
+  transform: rotate(180deg);
+  transition: 0.3s ease;
+}
+
+.tab_title {
+  font-size: 16px;
+  font-weight: 600;
+}

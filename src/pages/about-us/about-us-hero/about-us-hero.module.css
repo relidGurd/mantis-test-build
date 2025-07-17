@@ -53,12 +53,22 @@
 }
 
 @media screen and (max-width: 1440px) {
+  .aboutus_hero {
+    gap: 24px;
+  }
+
   .about_block {
     display: flex;
     flex-direction: column;
+    gap: 24px;
   }
 
   .about_block:nth-child(2) {
     flex-direction: column-reverse;
+  }
+
+  .aboutus_heroImageContainer,
+  .about_videoContainer {
+    border-radius: 16px;
   }
 }

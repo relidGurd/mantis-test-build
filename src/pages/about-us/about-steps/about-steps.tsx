@@ -3,49 +3,29 @@
 import Typography from "@/ui-kit/typography/typography";
 import styles from "./about-steps.module.css";
 import Image from "next/image";
-import { useState } from "react";
-import { motion } from "motion/react";
-import { Arrow } from "@/icons/icons";
-import classNames from "classnames";
+import Tab from "@/components/tab/tab";
 const exampleData = [
   {
     id: 1,
-    year: "2024",
-    information:
+    title: "2024",
+    description:
       "Наш магазин начал свой путь как инициатива по организации новогодних ярмарок, постепенно превратившись в постоянное пространство для местных брендов в Ташкенте. Открытый в декабре прошлого года, магазин собрал под одной крышей 56 брендов одежды, аксессуаров, украшений и товаров для дома, предлагая участникам выгодные условия аренды и поддержку в продвижении.",
   },
   {
     id: 2,
-    year: "2022",
-    information:
+    title: "2022",
+    description:
       "Наш магазин начал свой путь как инициатива по организации новогодних ярмарок, постепенно превратившись в постоянное пространство для местных брендов в Ташкенте. Открытый в декабре прошлого года, магазин собрал под одной крышей 56 брендов одежды, аксессуаров, украшений и товаров для дома, предлагая участникам выгодные условия аренды и поддержку в продвижении.",
   },
   {
     id: 3,
-    year: "2021",
-    information:
+    title: "2021",
+    description:
       "Наш магазин начал свой путь как инициатива по организации новогодних ярмарок, постепенно превратившись в постоянное пространство для местных брендов в Ташкенте. Открытый в декабре прошлого года, магазин собрал под одной крышей 56 брендов одежды, аксессуаров, украшений и товаров для дома, предлагая участникам выгодные условия аренды и поддержку в продвижении.",
   },
 ];
 
 const AboutSteps = () => {
-  const [activeTab, setActiveTab] = useState(1);
-
-  const motionTab = {
-    init: {
-      opacity: 0,
-      y: -10,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.2,
-        delay: 0.15,
-        ease: [0.25, 0.1, 0.25, 1],
-      },
-    },
-  };
   return (
     <section>
       <div className="main-container">
@@ -140,36 +120,9 @@ const AboutSteps = () => {
             </div>
           </li>
         </ul>
-
-        {exampleData.map((el: any, index: number) => (
-          <div key={index} className={styles.tab_container}>
-            <button
-              className={styles.tab_btn}
-              onClick={() => setActiveTab(el.id)}
-            >
-              <span>{el.year}</span>
-
-              <span
-                className={classNames(
-                  styles.tab_arrow,
-                  activeTab === el.id ? styles.tab_arrow_active : ""
-                )}
-              >
-                <Arrow />
-              </span>
-            </button>
-            {activeTab === el.id && (
-              <motion.div
-                variants={motionTab}
-                initial="init"
-                animate={activeTab === el.id ? "visible" : "init"}
-                className={styles.tab_text}
-              >
-                {el.information}
-              </motion.div>
-            )}
-          </div>
-        ))}
+        <div className={styles.mobile_tab}>
+          <Tab data={exampleData} />
+        </div>
       </div>
     </section>
   );
