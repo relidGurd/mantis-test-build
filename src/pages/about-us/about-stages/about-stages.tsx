@@ -26,7 +26,7 @@ const AboutStages: React.FC<IAboutStages> = ({ title, data }) => {
         <ul className={styles.stages_list}>
           {Array.isArray(data) && data.length > 0 ? (
             data.map((el, index: number) => (
-              <RiseUpAnimation key={el.id} delay={0.2 * index}>
+              <RiseUpAnimation key={el.id} delay={0.2 + index / 10}>
                 <li className={styles.stages_listItem}>
                   {el.image ? (
                     <div className={styles.stages_listItem__imageContainer}>
