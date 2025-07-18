@@ -65,7 +65,8 @@ const DirectionElement = async ({ params }: { params: Params }) => {
         <Typography
           className={styles.category_page_title}
           register="40"
-          outline="bold">
+          outline="bold"
+        >
           {data.title}
         </Typography>
       </div>
@@ -79,7 +80,8 @@ const DirectionElement = async ({ params }: { params: Params }) => {
           className={styles.direction_categoryList_title}
           variant="h2"
           register="32"
-          outline="bold">
+          outline="semibold"
+        >
           Наше предложение
         </Typography>
         <ul className={classNames(styles.direction_categoryList)}>
