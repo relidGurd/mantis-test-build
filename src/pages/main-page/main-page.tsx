@@ -2,6 +2,7 @@
 
 import RiseUpAnimation from "@/animation/rise-up-animation/rise-up-animation";
 import MainForm from "@/components/main-form/main-form";
+import { PreloaderGear } from "@/icons/icons";
 import AboutUs from "@/sections/about-us/about-us";
 import Hero from "@/sections/hero/hero";
 import Partners from "@/sections/partners/partners";

@@ -5,8 +5,7 @@ const Logo = () => {
       height="2434"
       viewBox="0 0 2698 2434"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <path
         d="M1868.5 1333L1885 1090L1360.5 1457.5L1350 1509L1868.5 1333Z"
         fill="#29812A"
@@ -68,8 +67,7 @@ const Logo = () => {
           y1="1691.21"
           x2="207.01"
           y2="2236.96"
-          gradientUnits="userSpaceOnUse"
-        >
+          gradientUnits="userSpaceOnUse">
           <stop stop-color="#21591C" />
           <stop offset="1" stop-color="#122C0F" />
         </linearGradient>
@@ -79,8 +77,7 @@ const Logo = () => {
           y1="1231.5"
           x2="2695"
           y2="2063"
-          gradientUnits="userSpaceOnUse"
-        >
+          gradientUnits="userSpaceOnUse">
           <stop stop-color="#21591C" />
           <stop offset="1" stop-color="#122C0F" />
         </linearGradient>
@@ -97,8 +94,7 @@ const BreadcrumbsArrow = ({ className }: { className?: string }) => {
       height="9"
       viewBox="0 0 7 9"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <path
         d="M6.72 4.89142L0 8.89142V7.32342L4.672 4.49142L0 1.61142V0.107422L6.72 4.15542V4.89142Z"
         fill="#9FA1AA"
@@ -115,8 +111,7 @@ const EyeIcon = ({ className }: { className?: string }) => {
       height="18"
       viewBox="0 0 18 18"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <path
         d="M0.75 9C0.75 9 3.75 3 9 3C14.25 3 17.25 9 17.25 9C17.25 9 14.25 15 9 15C3.75 15 0.75 9 0.75 9Z"
         stroke="#8F8F8F"
@@ -150,8 +145,7 @@ const CloseIcon = ({
       height={`${height}`}
       viewBox="0 0 26 26"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <path
         d="M2.33325 2.33398L23.6666 23.6673M23.6666 2.33398L2.33325 23.6673"
         stroke="#878B90"
@@ -171,8 +165,7 @@ const Arrow = ({ className }: { className?: string }) => {
       height="24"
       viewBox="0 0 24 24"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <path
         d="M5 9L12 14.9998L19 9"
         stroke="#595959"
@@ -186,26 +179,19 @@ const Arrow = ({ className }: { className?: string }) => {
 const PreloaderGear = ({ className }: { className?: string }) => {
   return (
     <svg
-      className={className}
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 50 50"
-    >
-      <path
-        fill="#24D239"
-        stroke="#24D239"
-        strokeWidth="15"
-        d="m148 84.7 13.8-8-10-17.3-13.8 8a50 50 0 0 0-27.4-15.9v-16h-20v16A50 50 0 0 0 63 67.4l-13.8-8-10 17.3 13.8 8a50 50 0 0 0 0 31.7l-13.8 8 10 17.3 13.8-8a50 50 0 0 0 27.5 15.9v16h20v-16a50 50 0 0 0 27.4-15.9l13.8 8 10-17.3-13.8-8a50 50 0 0 0 0-31.7Zm-47.5 50.8a35 35 0 1 1 0-70 35 35 0 0 1 0 70Z"
-      >
+      width="50"
+      height="50"
+      fill="rgba(36, 210, 57, 1)"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg">
+      <path d="M10.72,19.9a8,8,0,0,1-6.5-9.79A7.77,7.77,0,0,1,10.4,4.16a8,8,0,0,1,9.49,6.52A1.54,1.54,0,0,0,21.38,12h.13a1.37,1.37,0,0,0,1.38-1.54,11,11,0,1,0-12.7,12.39A1.54,1.54,0,0,0,12,21.34h0A1.47,1.47,0,0,0,10.72,19.9Z">
         <animateTransform
-          type="rotate"
           attributeName="transform"
-          calcMode="spline"
-          dur="2"
-          values="0;120"
-          keyTimes="0;1"
-          keySplines="0 0 1 1"
+          type="rotate"
+          dur="0.75s"
+          values="0 12 12;360 12 12"
           repeatCount="indefinite"
-        ></animateTransform>
+        />
       </path>
     </svg>
   );

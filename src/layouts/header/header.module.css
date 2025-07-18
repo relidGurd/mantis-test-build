@@ -139,6 +139,9 @@
 }
 
 @media screen and (max-width: 1200px) {
+  .hidden_mobile_menu {
+    display: none;
+  }
   .menu_container {
     display: none;
   }
