@@ -4,6 +4,9 @@ import styles from "./tab.module.css";
 import classNames from "classnames";
 import { Arrow } from "@/icons/icons";
 import { motion } from "motion/react";
+import ReactMarkdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
+import remarkGfm from "remark-gfm";
 
 const Tab: React.FC<any> = ({ data }) => {
   const [activeTab, setActiveTab] = useState(1);
@@ -49,7 +52,13 @@ const Tab: React.FC<any> = ({ data }) => {
               animate={activeTab === el.id ? "visible" : "init"}
               className={styles.tab_text}
             >
-              {el.description}
+              <div className={styles.tab_info__container}>
+                <ReactMarkdown
+                  children={el.description}
+                  remarkPlugins={[remarkGfm]}
+                  rehypePlugins={[rehypeRaw]} // позволяет обрабатывать HTML внутри Markdown
+                />
+              </div>
             </motion.div>
           )}
         </div>

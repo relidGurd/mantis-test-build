@@ -33,3 +33,21 @@
   font-size: 16px;
   font-weight: 600;
 }
+
+.tab_info__container a {
+  background: var(--green-gradient);
+  color: black;
+  padding: 16px;
+  font-size: 19px;
+  font-weight: 700;
+  border-radius: 16px;
+  display: block;
+  text-align: center;
+  border: 1px solid transparent;
+  transition: 0.3s ease;
+  margin-top: 8px;
+}
+
+.tab_info__container a:hover {
+  color: white;
+}

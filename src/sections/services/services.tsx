@@ -2,7 +2,7 @@
 
 import Typography from "@/ui-kit/typography/typography";
 import styles from "./services.module.css";
-import Tab from "@/components/tab-component/tab";
+import TabComponent from "@/components/tab-component/main-tab";
 
 const Services = () => {
   return (
@@ -11,7 +11,7 @@ const Services = () => {
         <Typography variant="h2" register="32" outline="bold">
           Наши услуги
         </Typography>
-        <Tab />
+        <TabComponent />
       </div>
     </section>
   );
