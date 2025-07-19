@@ -17,19 +17,17 @@ const Hero = () => {
           <Typography
             className={styles.hero_text}
             register="18"
-            outline="regular"
-          >
+            outline="regular">
             Автоматизируем процессы, обеспечиваем безопасность и упрощаем
             управление с помощью передовых технологий
           </Typography>
         </div>
         <div className={styles.hero_buttonsContainer}>
-          <Link href={"/about"}>
+          <Link scroll={false} href={"/about"}>
             <Button label="Подробнее" />
           </Link>
           <Popup
-            button={<Button label="Оставить заявку" color="greenButton" />}
-          >
+            button={<Button label="Оставить заявку" color="greenButton" />}>
             <QuickForm />
           </Popup>
         </div>
@@ -42,8 +40,7 @@ const Hero = () => {
               outline="regular"
               register="18"
               className={styles.hero_advText}
-              variant="span"
-            >
+              variant="span">
               Параметр
             </Typography>
           </li>
@@ -55,8 +52,7 @@ const Hero = () => {
               outline="regular"
               register="18"
               className={styles.hero_advText}
-              variant="span"
-            >
+              variant="span">
               Параметр
             </Typography>
           </li>
@@ -68,8 +64,7 @@ const Hero = () => {
               outline="regular"
               register="18"
               className={styles.hero_advText}
-              variant="span"
-            >
+              variant="span">
               Параметр
             </Typography>
           </li>
