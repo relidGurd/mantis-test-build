@@ -25,13 +25,12 @@ const AboutTeam = () => {
             1240: {
               slidesPerView: 5,
             },
-          }}
-        >
+          }}>
           <SwiperSlide tag="li" className={styles.about_teamItem}>
             <div className={styles.about_teamImageContainer}>
               <Image
                 className={styles.about_teamImage}
-                src={"/employe.png"}
+                src={"/alc/1.jpeg"}
                 width={500}
                 height={500}
                 alt="Employe"
@@ -42,18 +41,17 @@ const AboutTeam = () => {
                 className={styles.about_teamItem_title}
                 variant="span"
                 outline="semibold"
-                register="32"
-              >
-                Иван
+                register="32">
+                Авдеев Антон
               </Typography>
-              <Typography>Иван</Typography>
+              <Typography>Специалист по тремору</Typography>
             </div>
           </SwiperSlide>
           <SwiperSlide tag="li" className={styles.about_teamItem}>
             <div className={styles.about_teamImageContainer}>
               <Image
                 className={styles.about_teamImage}
-                src={"/employe.png"}
+                src={"/alc/2.jpg"}
                 width={500}
                 height={500}
                 alt="Employe"
@@ -64,18 +62,17 @@ const AboutTeam = () => {
                 className={styles.about_teamItem_title}
                 variant="span"
                 outline="semibold"
-                register="32"
-              >
-                Иван
+                register="32">
+                Заверин Алексей
               </Typography>
-              <Typography>Иван</Typography>
+              <Typography>Главный романтик</Typography>
             </div>
           </SwiperSlide>
           <SwiperSlide tag="li" className={styles.about_teamItem}>
             <div className={styles.about_teamImageContainer}>
               <Image
                 className={styles.about_teamImage}
-                src={"/employe.png"}
+                src={"/alc/3.jpg"}
                 width={500}
                 height={500}
                 alt="Employe"
@@ -86,18 +83,17 @@ const AboutTeam = () => {
                 className={styles.about_teamItem_title}
                 variant="span"
                 outline="semibold"
-                register="32"
-              >
-                Иван
+                register="32">
+                Любятов Эдуард
               </Typography>
-              <Typography>Иван</Typography>
+              <Typography>Ведущий дизайнер</Typography>
             </div>
           </SwiperSlide>
           <SwiperSlide tag="li" className={styles.about_teamItem}>
             <div className={styles.about_teamImageContainer}>
               <Image
                 className={styles.about_teamImage}
-                src={"/employe.png"}
+                src={"/alc/4.jpg"}
                 width={500}
                 height={500}
                 alt="Employe"
@@ -108,18 +104,17 @@ const AboutTeam = () => {
                 className={styles.about_teamItem_title}
                 variant="span"
                 outline="semibold"
-                register="32"
-              >
-                Иван
+                register="32">
+                Ждунов Николай
               </Typography>
-              <Typography>Иван</Typography>
+              <Typography>Коммерческий директор</Typography>
             </div>
           </SwiperSlide>
           <SwiperSlide tag="li" className={styles.about_teamItem}>
             <div className={styles.about_teamImageContainer}>
               <Image
                 className={styles.about_teamImage}
-                src={"/employe.png"}
+                src={"/alc/5.webp"}
                 width={500}
                 height={500}
                 alt="Employe"
@@ -130,11 +125,10 @@ const AboutTeam = () => {
                 className={styles.about_teamItem_title}
                 variant="span"
                 outline="semibold"
-                register="32"
-              >
-                Иван
+                register="32">
+                Джеймс Ауф
               </Typography>
-              <Typography>Иван</Typography>
+              <Typography>Советник по иностранному рынку</Typography>
             </div>
           </SwiperSlide>
         </Swiper>
