@@ -17,6 +17,7 @@ interface ICartStore {
   increaseQuantity: (id: number) => void;
   decreaseQuantity: (id: number) => void;
   getTotalPrice: () => number;
+  isInCart: (id: number) => boolean;
 }
 
 export const useCart = create<ICartStore>()(
@@ -63,6 +64,9 @@ export const useCart = create<ICartStore>()(
           (sum, item) => sum + item.price * item.quantity,
           0
         );
+      },
+      isInCart: (id) => {
+        return get().items.some((item) => item.id === id);
       },
     }),
 
