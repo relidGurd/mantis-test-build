@@ -2,8 +2,15 @@
   background: var(--gray-gradient);
   border-radius: 24px;
   padding: 24px;
+  background-color: rgb(17, 17, 17);
 }
 
 .filters_btn {
   width: 100%;
+}
+
+@media screen and (max-width: 1480px) {
+  .filters_container {
+    margin-top: 40px;
+  }
 }

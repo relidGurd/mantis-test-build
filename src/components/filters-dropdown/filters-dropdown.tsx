@@ -1,14 +1,15 @@
 "use client";
-import styles from "./dropdown.module.css";
+import styles from "./filters-dropdown.module.css";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
+import classNames from "classnames";
 
 interface IDropdown {
   button: React.ReactNode;
   children: React.ReactNode;
 }
 
-const Dropdown: React.FC<IDropdown> = ({ button, children }) => {
+const FiltersDropdown: React.FC<IDropdown> = ({ button, children }) => {
   const [visible, setIsVisible] = useState(false);
   const refElement = useRef<HTMLDivElement>(null);
 
@@ -45,18 +46,14 @@ const Dropdown: React.FC<IDropdown> = ({ button, children }) => {
   }, []);
 
   return (
-    <div
-      ref={refElement}
-      className={styles.dropdownContainer}
-      onMouseLeave={() => setIsVisible(false)}
-    >
-      <div onMouseEnter={() => setIsVisible(!visible)}>{button}</div>
+    <div ref={refElement} className={styles.dropdownContainer}>
+      <div onClick={() => setIsVisible(!visible)}>{button}</div>
       {true && (
         <motion.div
           variants={motionDropdown}
           initial="hidden"
           animate={visible ? "visible" : "hidden"}
-          className={styles.dropdown_content}
+          className={classNames(styles.dropdown_content, "main-container")}
         >
           {children}
         </motion.div>
@@ -65,4 +62,4 @@ const Dropdown: React.FC<IDropdown> = ({ button, children }) => {
   );
 };
 
-export default Dropdown;
+export default FiltersDropdown;

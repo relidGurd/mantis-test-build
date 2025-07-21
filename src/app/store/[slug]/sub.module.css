@@ -15,6 +15,9 @@
   text-align: center;
   margin: 80px 0;
 }
+.mobile_filters {
+  display: none;
+}
 
 @media screen and (max-width: 1480px) {
   .product_grid {
@@ -23,6 +26,15 @@
 
   .subcategory_page_grid {
     gap: 42px;
+  }
+
+  .desktop_filters {
+    display: none;
+  }
+
+  .mobile_filters {
+    display: flex;
+    justify-content: space-between;
   }
 }
 

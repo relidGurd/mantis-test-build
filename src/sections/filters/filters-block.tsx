@@ -22,7 +22,7 @@ const FIlters: React.FC<any> = ({ filter_list }) => {
   return (
     <div className={styles.filters_container}>
       <Formik
-        initialValues={{ selected: [] }}
+        initialValues={{ selected: [], price: 0 }}
         onSubmit={(values) => handleSearch(JSON.stringify(values.selected))}
       >
         {() => (
@@ -31,9 +31,7 @@ const FIlters: React.FC<any> = ({ filter_list }) => {
               <strong>Стоимость</strong>
               <div>
                 <label>
-                  <Field type="range" min={0} max={10} />
-
-                  <br />
+                  <Field name="price" type="range" min={0} step="" max={10} />
                 </label>
               </div>
             </div>

@@ -6,6 +6,8 @@ import Pagination from "@/components/pagination/pagination";
 import Link from "next/link";
 import Typography from "@/ui-kit/typography/typography";
 import FIlters from "@/sections/filters/filters-block";
+import FiltersDropdown from "@/components/filters-dropdown/filters-dropdown";
+import { FiltersIcon, SortingIcon } from "@/icons/icons";
 
 type Params = Promise<{ slug: string }>;
 type SearchParams = Promise<{ query?: string; page?: string }>;
@@ -86,7 +88,24 @@ const Computers = async ({
         {category.title}
       </Typography>
       <div className={styles.subcategory_page_grid}>
-        <FIlters filter_list={category.filters} />
+        <div className={styles.desktop_filters}>
+          <FIlters filter_list={category.filters} />
+        </div>
+
+        <div className={styles.mobile_filters}>
+          <FiltersDropdown
+            button={
+              <div>
+                <FiltersIcon />
+              </div>
+            }
+          >
+            <FIlters filter_list={category.filters} />
+          </FiltersDropdown>
+          <div>
+            <SortingIcon />
+          </div>
+        </div>
         <div>
           <div className={styles.product_grid}>
             {data.map((el: any) => (

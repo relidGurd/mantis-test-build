@@ -5,7 +5,8 @@ const Logo = () => {
       height="2434"
       viewBox="0 0 2698 2434"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg">
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path
         d="M1868.5 1333L1885 1090L1360.5 1457.5L1350 1509L1868.5 1333Z"
         fill="#29812A"
@@ -67,7 +68,8 @@ const Logo = () => {
           y1="1691.21"
           x2="207.01"
           y2="2236.96"
-          gradientUnits="userSpaceOnUse">
+          gradientUnits="userSpaceOnUse"
+        >
           <stop stop-color="#21591C" />
           <stop offset="1" stop-color="#122C0F" />
         </linearGradient>
@@ -77,7 +79,8 @@ const Logo = () => {
           y1="1231.5"
           x2="2695"
           y2="2063"
-          gradientUnits="userSpaceOnUse">
+          gradientUnits="userSpaceOnUse"
+        >
           <stop stop-color="#21591C" />
           <stop offset="1" stop-color="#122C0F" />
         </linearGradient>
@@ -94,7 +97,8 @@ const BreadcrumbsArrow = ({ className }: { className?: string }) => {
       height="9"
       viewBox="0 0 7 9"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg">
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path
         d="M6.72 4.89142L0 8.89142V7.32342L4.672 4.49142L0 1.61142V0.107422L6.72 4.15542V4.89142Z"
         fill="#9FA1AA"
@@ -111,7 +115,8 @@ const EyeIcon = ({ className }: { className?: string }) => {
       height="18"
       viewBox="0 0 18 18"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg">
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path
         d="M0.75 9C0.75 9 3.75 3 9 3C14.25 3 17.25 9 17.25 9C17.25 9 14.25 15 9 15C3.75 15 0.75 9 0.75 9Z"
         stroke="#8F8F8F"
@@ -145,7 +150,8 @@ const CloseIcon = ({
       height={`${height}`}
       viewBox="0 0 26 26"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg">
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path
         d="M2.33325 2.33398L23.6666 23.6673M23.6666 2.33398L2.33325 23.6673"
         stroke="#878B90"
@@ -165,7 +171,8 @@ const Arrow = ({ className }: { className?: string }) => {
       height="24"
       viewBox="0 0 24 24"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg">
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path
         d="M5 9L12 14.9998L19 9"
         stroke="#595959"
@@ -183,7 +190,8 @@ const PreloaderGear = ({ className }: { className?: string }) => {
       height="50"
       fill="rgba(36, 210, 57, 1)"
       viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg">
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path d="M10.72,19.9a8,8,0,0,1-6.5-9.79A7.77,7.77,0,0,1,10.4,4.16a8,8,0,0,1,9.49,6.52A1.54,1.54,0,0,0,21.38,12h.13a1.37,1.37,0,0,0,1.38-1.54,11,11,0,1,0-12.7,12.39A1.54,1.54,0,0,0,12,21.34h0A1.47,1.47,0,0,0,10.72,19.9Z">
         <animateTransform
           attributeName="transform"
@@ -197,4 +205,54 @@ const PreloaderGear = ({ className }: { className?: string }) => {
   );
 };
 
-export { Logo, BreadcrumbsArrow, EyeIcon, CloseIcon, Arrow, PreloaderGear };
+const FiltersIcon = ({ className }: { className?: string }) => {
+  return (
+    <svg
+      className={className}
+      width="48"
+      height="48"
+      viewBox="0 0 48 48"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect width="48" height="48" rx="24" fill="white" fillOpacity="0.06" />
+      <path
+        d="M30.089 15.666H17.912C16.7907 15.666 15.8561 16.5919 16.1331 17.6805C16.4282 18.8341 16.9715 19.9089 17.725 20.8296C18.4784 21.7502 19.4237 22.4943 20.4945 23.0097C21.3297 23.4105 21.971 24.198 21.971 25.1259V31.3158C21.9711 31.4892 22.0154 31.6596 22.0996 31.811C22.1839 31.9624 22.3053 32.0897 22.4524 32.1808C22.5995 32.2719 22.7674 32.3239 22.9401 32.3317C23.1128 32.3395 23.2847 32.3029 23.4393 32.2254L25.4688 31.208C25.6374 31.1235 25.7791 30.9937 25.8782 30.8331C25.9773 30.6724 26.0299 30.4873 26.03 30.2984V25.1259C26.03 24.198 26.6713 23.4105 27.5054 23.0097C28.5766 22.4946 29.5223 21.7505 30.2761 20.8299C31.0299 19.9092 31.5736 18.8343 31.8688 17.6805C32.1438 16.5919 31.2082 15.666 30.089 15.666Z"
+        stroke="#A0A0A0"
+        strokeWidth="2"
+      />
+    </svg>
+  );
+};
+
+const SortingIcon = ({ className }: { className?: string }) => {
+  return (
+    <svg
+      width="48"
+      height="48"
+      viewBox="0 0 48 48"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect width="48" height="48" rx="24" fill="white" fillOpacity="0.06" />
+      <path
+        d="M19.7143 32.3333V21.9166M19.7143 32.3333L16.5 29.2083M19.7143 32.3333L22.9286 29.2083M28.2857 15.6666V26.0833M28.2857 15.6666L31.5 18.7916M28.2857 15.6666L25.0714 18.7916"
+        stroke="#A0A0A0"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
+
+export {
+  Logo,
+  BreadcrumbsArrow,
+  EyeIcon,
+  CloseIcon,
+  Arrow,
+  PreloaderGear,
+  FiltersIcon,
+  SortingIcon,
+};
