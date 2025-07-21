@@ -32,6 +32,7 @@ const Tags: React.FC<ITags> = ({ tags }) => {
     } else {
       params.delete("query");
     }
+    params.set("page", "1");
     replace(`${pathname}?${params.toString()}`);
   }
 
@@ -48,14 +49,16 @@ const Tags: React.FC<ITags> = ({ tags }) => {
         1240: {
           slidesPerView: 4,
         },
-      }}>
+      }}
+    >
       <SwiperSlide className={styles.swiper_slide} tag="li">
         <button
           className={classNames(
             styles.tag_button,
             currentQuery === null ? styles.tag_button_active : ""
           )}
-          onClick={() => handleSearch("")}>
+          onClick={() => handleSearch("")}
+        >
           Все
         </button>
       </SwiperSlide>
@@ -66,7 +69,8 @@ const Tags: React.FC<ITags> = ({ tags }) => {
               styles.tag_button,
               currentQuery === el.title ? styles.tag_button_active : ""
             )}
-            onClick={() => handleSearch(el.title)}>
+            onClick={() => handleSearch(el.title)}
+          >
             {el.title}
           </button>
         </SwiperSlide>

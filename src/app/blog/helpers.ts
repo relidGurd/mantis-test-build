@@ -7,7 +7,7 @@ export function buildBlogQuery(query: string, page: number) {
     },
     pagination: {
       page,
-      pageSize: 10,
+      pageSize: 4,
     },
   };
 
