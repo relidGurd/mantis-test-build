@@ -60,7 +60,7 @@
 
 .blog_container {
   display: grid;
-  grid-template-columns: 1fr 0.5fr;
+  grid-template-columns: 1fr 0.4fr;
   grid-template-rows: 1fr;
   gap: 80px;
 }
@@ -81,6 +81,13 @@
 
 .blog_body__container {
   padding-top: 0;
+}
+
+.post_relationProduct {
+  height: auto;
+  display: block;
+  position: sticky;
+  top: 120px;
 }
 
 @media screen and (max-width: 1300px) {

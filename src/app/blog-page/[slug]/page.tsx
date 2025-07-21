@@ -1,4 +1,4 @@
-import { getBlogPage } from "@/api/blog/blog";
+import { getBlogPage, getBlogPagRelations } from "@/api/blog/blog";
 import Breadcrumbs from "@/components/breadcrumbs/breadcrumbs";
 import Typography from "@/ui-kit/typography/typography";
 import type { Metadata, ResolvingMetadata } from "next";
@@ -8,6 +8,9 @@ import styles from "./blog-page.module.css";
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 import remarkGfm from "remark-gfm";
+import ProductCard from "@/components/product-card/product-card";
+import Link from "next/link";
+import RelatedPosts from "@/sections/related-posts/related-posts";
 
 type Params = Promise<{ slug: string }>;
 
@@ -31,7 +34,6 @@ export async function generateMetadata(
   });
 
   const { data } = await getBlogPage(slug, blogPageQwery);
-  const { data: product } = await getBlogPage(slug, blogPageQwery);
 
   return {
     title: data.title,
@@ -69,6 +71,21 @@ const BlogPage = async ({ params }: { params: Params }) => {
       url: "#",
     },
   ];
+
+  const blogPageRealtionsQwery = qs.stringify({
+    populate: {
+      blogs: {
+        populate: "*",
+      },
+      product: {
+        populate: "*",
+      },
+    },
+  });
+
+  const {
+    data: { product, blogs },
+  } = await getBlogPagRelations(blogPageRealtionsQwery);
 
   return (
     <div className="main-container">
@@ -134,9 +151,21 @@ const BlogPage = async ({ params }: { params: Params }) => {
             />
           </div>
 
-          <div></div>
+          <div>
+            <Link
+              className={styles.post_relationProduct}
+              href={`/product/${product.slug}`}
+            >
+              <ProductCard
+                name={product.title}
+                description={product.description}
+                image={product.preview_image.url}
+              />
+            </Link>
+          </div>
         </div>
       </section>
+      <RelatedPosts className="swiper-container" posts_list={blogs} />
     </div>
   );
 };
