@@ -7,6 +7,7 @@ import Header from "@/layouts/header/header";
 import "swiper/css";
 import { getSiteMenu } from "@/api/site-menu/site-menu";
 import qs from "qs";
+import ScrollManager from "@/components/scroll-to-top/scroll-to-top";
 export const metadata: Metadata = {
   title: "Mantis",
   description:
@@ -48,6 +49,7 @@ export default async function RootLayout({
     <html lang="ru">
       <body className={jura.className}>
         <Header menu_list={data.MenuBLocks} />
+        <ScrollManager />
         <main>{children}</main>
         <Footer />
       </body>
