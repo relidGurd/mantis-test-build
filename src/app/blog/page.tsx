@@ -10,6 +10,7 @@ import type { Metadata } from "next";
 import Tags from "@/components/tags/tags";
 import { buildBlogQuery } from "./helpers";
 import classNames from "classnames";
+import Button from "@/ui-kit/button/button";
 
 export const metadata: Metadata = {
   title: `Мантис | Блог | Все необходимое для Вашего бизнеса!`,
@@ -74,22 +75,33 @@ export default async function Page(props: {
       </section>
       <section className="main-container-blog">
         <ul className={styles.news_list}>
-          {data.map((el: any) => (
-            <li key={el.id} className={styles.list_item}>
-              <Link href={`/blog-page/${el.slug}`}>
-                <NewsCard
-                  tag={el.tag}
-                  title={el.title}
-                  description={el.seo_description[0].children[0].text}
-                  date={el.date}
-                  img={el.image.url}
-                />
+          {data.length > 0 ? (
+            data.map((el: any) => (
+              <li key={el.id} className={styles.list_item}>
+                <Link href={`/blog-page/${el.slug}`}>
+                  <NewsCard
+                    tag={el.tag}
+                    title={el.title}
+                    description={el.seo_description[0].children[0].text}
+                    date={el.date}
+                    img={el.image.url}
+                  />
+                </Link>
+              </li>
+            ))
+          ) : (
+            <div>
+              <div>Ничего не найдено</div>
+              <Link href={"/blog"} className={styles.pagination_btn}>
+                <Button label="Обратно" color="greenButton" />
               </Link>
-            </li>
-          ))}
+            </div>
+          )}
         </ul>
 
-        <Pagination totalPages={meta.pagination.pageCount} variant={"blog"} />
+        {data.length > 0 ? (
+          <Pagination totalPages={meta.pagination.pageCount} variant={"blog"} />
+        ) : null}
       </section>
     </>
   );
