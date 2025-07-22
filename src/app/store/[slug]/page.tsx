@@ -8,7 +8,12 @@ import FIlters from "@/sections/filters/filters-block";
 import { StoreFiltersQuery } from "./helper";
 
 type Params = Promise<{ slug: string }>;
-type SearchParams = Promise<{ query?: string; sort?: string; page?: string }>;
+type SearchParams = Promise<{
+  query?: string;
+  sort?: string;
+  price?: string;
+  page?: string;
+}>;
 
 const Computers = async ({
   params,
@@ -21,6 +26,8 @@ const Computers = async ({
 
   const query = resolvedSearchParams?.query || "";
   const sort = resolvedSearchParams?.sort || "";
+  const price = resolvedSearchParams?.price || "";
+
   const slug = (await params).slug;
   const page =
     query && query.length > 0 ? 1 : Number(resolvedSearchParams.page) || 1;

@@ -14,12 +14,14 @@ const FIlters: React.FC<any> = ({ filter_list }) => {
 
   const [open, setIsOpen] = useState(false);
 
-  function handleSearch(term: string) {
+  function handleSearch(term: string, price: string) {
     const params = new URLSearchParams(searchParams);
     if (term) {
       params.set("query", term);
+      params.set("price", price);
     } else {
       params.delete("query");
+      params.delete("price");
     }
     replace(`${pathname}?${params.toString()}`);
   }
@@ -39,7 +41,12 @@ const FIlters: React.FC<any> = ({ filter_list }) => {
         <div className={styles.filters_container}>
           <Formik
             initialValues={{ selected: [], price: 0 }}
-            onSubmit={(values) => handleSearch(JSON.stringify(values.selected))}
+            onSubmit={(values) =>
+              handleSearch(
+                JSON.stringify(values.selected),
+                JSON.stringify(values.price)
+              )
+            }
           >
             {() => (
               <Form>
@@ -98,7 +105,10 @@ const FIlters: React.FC<any> = ({ filter_list }) => {
             <Formik
               initialValues={{ selected: [], price: 0 }}
               onSubmit={(values) =>
-                handleSearch(JSON.stringify(values.selected))
+                handleSearch(
+                  JSON.stringify(values.selected),
+                  JSON.stringify(values.price)
+                )
               }
             >
               {() => (

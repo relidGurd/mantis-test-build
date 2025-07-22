@@ -4,7 +4,8 @@ export function StoreFiltersQuery(
   slug: string,
   query: any,
   page: any,
-  sorting: string
+  sorting: string,
+  prcie: number
 ) {
   const filters: any = {
     subcategory: {
@@ -51,7 +52,7 @@ export function StoreFiltersQuery(
     sort,
     pagination: {
       page: page,
-      pageSize: 1,
+      pageSize: 10,
     },
   });
 
