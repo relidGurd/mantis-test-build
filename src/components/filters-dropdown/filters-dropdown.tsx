@@ -7,7 +7,7 @@ import classNames from "classnames";
 interface IDropdown {
   button: React.ReactNode;
   children: React.ReactNode;
-  isOpen?: boolean;
+  isOpen: boolean;
   onToggle: () => void;
 }
 
@@ -17,7 +17,6 @@ const FiltersDropdown: React.FC<IDropdown> = ({
   isOpen,
   onToggle,
 }) => {
-  const [visible, setIsVisible] = useState(false);
   const refElement = useRef<HTMLDivElement>(null);
 
   const motionDropdown = {

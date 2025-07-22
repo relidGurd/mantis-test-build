@@ -5,12 +5,10 @@ import Pagination from "@/components/pagination/pagination";
 import Link from "next/link";
 import Typography from "@/ui-kit/typography/typography";
 import FIlters from "@/sections/filters/filters-block";
-import FiltersDropdown from "@/components/filters-dropdown/filters-dropdown";
-import { FiltersIcon, SortingIcon } from "@/icons/icons";
 import { StoreFiltersQuery } from "./helper";
 
 type Params = Promise<{ slug: string }>;
-type SearchParams = Promise<{ query?: string; page?: string }>;
+type SearchParams = Promise<{ query?: string; sort?: string; page?: string }>;
 
 const Computers = async ({
   params,
@@ -22,11 +20,17 @@ const Computers = async ({
   const resolvedSearchParams = searchParams ? await searchParams : {};
 
   const query = resolvedSearchParams?.query || "";
+  const sort = resolvedSearchParams?.sort || "";
   const slug = (await params).slug;
   const page =
     query && query.length > 0 ? 1 : Number(resolvedSearchParams.page) || 1;
 
-  const [qweryProduct, qweryCategory] = StoreFiltersQuery(slug, query, page);
+  const [qweryProduct, qweryCategory] = StoreFiltersQuery(
+    slug,
+    query,
+    page,
+    sort
+  );
 
   const { data, meta } = await getSubProducts(qweryProduct);
   const { data: category } = await getSubCategory(slug, qweryCategory);

@@ -1,6 +1,11 @@
 import qs from "qs";
 
-export function StoreFiltersQuery(slug: string, query: any, page: any) {
+export function StoreFiltersQuery(
+  slug: string,
+  query: any,
+  page: any,
+  sorting: string
+) {
   const filters: any = {
     subcategory: {
       slug: {
@@ -8,6 +13,11 @@ export function StoreFiltersQuery(slug: string, query: any, page: any) {
       },
     },
   };
+
+  const sort: any =
+    typeof sorting === "string" && sorting.trim() !== ""
+      ? { price: sorting }
+      : {};
 
   if (query) {
     try {
@@ -38,9 +48,10 @@ export function StoreFiltersQuery(slug: string, query: any, page: any) {
       },
     },
     filters,
+    sort,
     pagination: {
       page: page,
-      pageSize: 10,
+      pageSize: 1,
     },
   });
 

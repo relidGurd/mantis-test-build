@@ -23,6 +23,16 @@ const FIlters: React.FC<any> = ({ filter_list }) => {
     }
     replace(`${pathname}?${params.toString()}`);
   }
+
+  function handleSort(value: string) {
+    const params = new URLSearchParams(searchParams);
+    if (value) {
+      params.set("sort", value);
+    } else {
+      params.delete("sort");
+    }
+    replace(`${pathname}?${params.toString()}`);
+  }
   return (
     <div>
       <div className={styles.desktop_filters}>
@@ -138,7 +148,7 @@ const FIlters: React.FC<any> = ({ filter_list }) => {
             </Formik>
           </div>
         </FiltersDropdown>
-        <div>
+        <div onClick={() => handleSort("asc")}>
           <SortingIcon />
         </div>
       </div>

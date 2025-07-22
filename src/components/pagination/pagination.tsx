@@ -1,62 +1,47 @@
 "use client";
-import { redirect, useRouter, useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import Button from "@/ui-kit/button/button";
 import styles from "./pagination.module.css";
 
 const Pagination = ({ totalPages, variant }: any) => {
   const searchParams = useSearchParams();
   const router = useRouter();
-  const page = searchParams?.get("page") ?? "1";
+  const currentPage = Number(searchParams?.get("page") ?? "1");
 
   if (totalPages === 1) {
     return null;
   }
 
-  if (Number(page) === 1) {
-    return (
-      <div className={styles.pagination_container}>
-        <Button
-          className={styles.pagination_btn}
-          onClick={() => {
-            router.push(`/${variant}?page=${Number(page) + 1}`);
-          }}
-          label="Далее"
-        />
-      </div>
-    );
-  }
+  const createPageUrl = (page: number) => {
+    // Создаём новый объект URLSearchParams на основе текущих параметров
+    const params = new URLSearchParams(searchParams?.toString());
+    // Обновляем параметр page
+    params.set("page", page.toString());
 
-  if (Number(page) === totalPages) {
-    return (
-      <div className={styles.pagination_container}>
-        <Button
-          className={styles.pagination_btn}
-          onClick={() => {
-            router.push(`/${variant}?page=${Number(page) - 1}`);
-          }}
-          label="Назад"
-        />
-      </div>
-    );
-  }
+    return `/${variant}?${params.toString()}`;
+  };
 
   return (
     <div className={styles.pagination_container}>
-      <Button
-        className={styles.pagination_btn}
-        onClick={() => {
-          router.push(`/${variant}?page=${Number(page) - 1}`);
-        }}
-        label="Назад"
-      />
+      {currentPage > 1 && (
+        <Button
+          className={styles.pagination_btn}
+          onClick={() => {
+            router.push(createPageUrl(currentPage - 1));
+          }}
+          label="Назад"
+        />
+      )}
 
-      <Button
-        className={styles.pagination_btn}
-        onClick={() => {
-          router.push(`/${variant}?page=${Number(page) + 1}`);
-        }}
-        label="Далее"
-      />
+      {currentPage < totalPages && (
+        <Button
+          className={styles.pagination_btn}
+          onClick={() => {
+            router.push(createPageUrl(currentPage + 1));
+          }}
+          label="Далее"
+        />
+      )}
     </div>
   );
 };
