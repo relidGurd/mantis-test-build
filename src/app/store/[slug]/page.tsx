@@ -36,7 +36,8 @@ const Computers = async ({
     slug,
     query,
     page,
-    sort
+    sort,
+    price
   );
 
   const { data, meta } = await getSubProducts(qweryProduct);

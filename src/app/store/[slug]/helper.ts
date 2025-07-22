@@ -5,7 +5,7 @@ export function StoreFiltersQuery(
   query: any,
   page: any,
   sorting: string,
-  prcie: number
+  price: string
 ) {
   const filters: any = {
     subcategory: {
