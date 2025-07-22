@@ -3,7 +3,6 @@ import Breadcrumbs from "@/components/breadcrumbs/breadcrumbs";
 import Typography from "@/ui-kit/typography/typography";
 import type { Metadata, ResolvingMetadata } from "next";
 import Image from "next/image";
-import qs from "qs";
 import styles from "./blog-page.module.css";
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
@@ -11,6 +10,12 @@ import remarkGfm from "remark-gfm";
 import ProductCard from "@/components/product-card/product-card";
 import Link from "next/link";
 import RelatedPosts from "@/sections/related-posts/related-posts";
+import {
+  BlogPageBreadcrumbs,
+  blogPageQwery,
+  blogPageRealtionsQwery,
+  formatDate,
+} from "./helper";
 
 type Params = Promise<{ slug: string }>;
 
@@ -24,14 +29,6 @@ export async function generateMetadata(
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   const slug = (await params).slug;
-
-  const blogPageQwery = qs.stringify({
-    populate: {
-      image: {
-        populate: "*",
-      },
-    },
-  });
 
   const { data } = await getBlogPage(slug, blogPageQwery);
 
@@ -47,41 +44,7 @@ export async function generateMetadata(
 const BlogPage = async ({ params }: { params: Params }) => {
   const { slug } = await params;
 
-  const blogPageQwery = qs.stringify({
-    populate: {
-      image: {
-        populate: "*",
-      },
-    },
-  });
-
   const { data } = await getBlogPage(slug, blogPageQwery);
-
-  const blogPage = [
-    {
-      title: "Главная",
-      url: "/",
-    },
-    {
-      title: "Блог",
-      url: "/blog",
-    },
-    {
-      title: data.title,
-      url: "#",
-    },
-  ];
-
-  const blogPageRealtionsQwery = qs.stringify({
-    populate: {
-      blogs: {
-        populate: "*",
-      },
-      product: {
-        populate: "*",
-      },
-    },
-  });
 
   const {
     data: { product, blogs },
@@ -89,7 +52,7 @@ const BlogPage = async ({ params }: { params: Params }) => {
 
   return (
     <div className="main-container">
-      <Breadcrumbs list={blogPage} />
+      <Breadcrumbs list={BlogPageBreadcrumbs(data.title)} />
 
       <section>
         <div className={styles.blog_page__bunner}>
@@ -112,9 +75,9 @@ const BlogPage = async ({ params }: { params: Params }) => {
                 <div className={styles.blog_page__blog_imageContainer}>
                   <Image
                     className={styles.blog_page__blog_image}
-                    src={"/demo.png"}
-                    width={40}
-                    height={40}
+                    src={"/user.png"}
+                    width={100}
+                    height={100}
                     alt="Author Image"
                   />
                 </div>
@@ -123,11 +86,11 @@ const BlogPage = async ({ params }: { params: Params }) => {
                     Автор статьи
                   </Typography>
                   <Typography className={styles.blog_page__blog_authorTitle}>
-                    Иванов Иван, DevOps-инжинер
+                    Савельев Влад, редактор
                   </Typography>
                 </div>
               </div>
-              <div>30.02.2002</div>
+              <div>{formatDate(data.createdAt)}</div>
             </div>
           </div>
           <div className={styles.blog_page__bannerImageContainer}>

@@ -9,8 +9,22 @@
   width: 100%;
 }
 
+.mobile_filters {
+  display: none;
+}
+
 @media screen and (max-width: 1480px) {
   .filters_container {
     margin-top: 40px;
+  }
+
+  .mobile_filters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .desktop_filters {
+    display: none;
   }
 }

@@ -1,6 +1,5 @@
 import { getSubCategory, getSubProducts } from "@/api/subcategory/subcategory";
 import ProductCard from "@/components/product-card/product-card";
-import qs from "qs";
 import styles from "./sub.module.css";
 import Pagination from "@/components/pagination/pagination";
 import Link from "next/link";
@@ -8,6 +7,7 @@ import Typography from "@/ui-kit/typography/typography";
 import FIlters from "@/sections/filters/filters-block";
 import FiltersDropdown from "@/components/filters-dropdown/filters-dropdown";
 import { FiltersIcon, SortingIcon } from "@/icons/icons";
+import { StoreFiltersQuery } from "./helper";
 
 type Params = Promise<{ slug: string }>;
 type SearchParams = Promise<{ query?: string; page?: string }>;
@@ -20,62 +20,16 @@ const Computers = async ({
   searchParams?: SearchParams;
 }) => {
   const resolvedSearchParams = searchParams ? await searchParams : {};
-  // const page = Number(resolvedSearchParams.page) || 1;
 
   const query = resolvedSearchParams?.query || "";
-
+  const slug = (await params).slug;
   const page =
     query && query.length > 0 ? 1 : Number(resolvedSearchParams.page) || 1;
 
-  const filters: any = {
-    subcategory: {
-      slug: {
-        $eq: (await params).slug,
-      },
-    },
-  };
+  const [qweryProduct, qweryCategory] = StoreFiltersQuery(slug, query, page);
 
-  if (query) {
-    try {
-      const fixed = JSON.parse(query.replace(/'/g, '"')); // строка → массив
-
-      if (Array.isArray(fixed) && fixed.length > 0) {
-        filters.specifications = {
-          tab: {
-            property: {
-              $in: fixed,
-            },
-          },
-        };
-      }
-    } catch (err) {
-      console.error("Ошибка парсинга фильтра:", err);
-    }
-  }
-
-  const qweryP = qs.stringify({
-    populate: {
-      preview_image: {
-        populate: "*",
-      },
-      subcategory: true,
-      specifications: {
-        populate: "*",
-      },
-    },
-    filters,
-    pagination: {
-      page: page,
-      pageSize: 10,
-    },
-  });
-
-  const qweryC = qs.stringify({
-    populate: "*",
-  });
-
-  const { data, meta } = await getSubProducts(qweryP);
-  const { data: category } = await getSubCategory((await params).slug, qweryC);
+  const { data, meta } = await getSubProducts(qweryProduct);
+  const { data: category } = await getSubCategory(slug, qweryCategory);
 
   return (
     <div className={"main-container"}>
@@ -88,24 +42,7 @@ const Computers = async ({
         {category.title}
       </Typography>
       <div className={styles.subcategory_page_grid}>
-        <div className={styles.desktop_filters}>
-          <FIlters filter_list={category.filters} />
-        </div>
-
-        <div className={styles.mobile_filters}>
-          <FiltersDropdown
-            button={
-              <div>
-                <FiltersIcon />
-              </div>
-            }
-          >
-            <FIlters filter_list={category.filters} />
-          </FiltersDropdown>
-          <div>
-            <SortingIcon />
-          </div>
-        </div>
+        <FIlters filter_list={category.filters} />
         <div>
           <div className={styles.product_grid}>
             {data.map((el: any) => (

@@ -205,7 +205,13 @@ const PreloaderGear = ({ className }: { className?: string }) => {
   );
 };
 
-const FiltersIcon = ({ className }: { className?: string }) => {
+const FiltersIcon = ({
+  className,
+  isOpen,
+}: {
+  className?: string;
+  isOpen?: boolean;
+}) => {
   return (
     <svg
       className={className}
@@ -215,10 +221,16 @@ const FiltersIcon = ({ className }: { className?: string }) => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <rect width="48" height="48" rx="24" fill="white" fillOpacity="0.06" />
+      <rect
+        width="48"
+        height="48"
+        rx="24"
+        fill={!isOpen ? "white" : "#24d239"}
+        fillOpacity={!isOpen ? "0.06" : "1"}
+      />
       <path
         d="M30.089 15.666H17.912C16.7907 15.666 15.8561 16.5919 16.1331 17.6805C16.4282 18.8341 16.9715 19.9089 17.725 20.8296C18.4784 21.7502 19.4237 22.4943 20.4945 23.0097C21.3297 23.4105 21.971 24.198 21.971 25.1259V31.3158C21.9711 31.4892 22.0154 31.6596 22.0996 31.811C22.1839 31.9624 22.3053 32.0897 22.4524 32.1808C22.5995 32.2719 22.7674 32.3239 22.9401 32.3317C23.1128 32.3395 23.2847 32.3029 23.4393 32.2254L25.4688 31.208C25.6374 31.1235 25.7791 30.9937 25.8782 30.8331C25.9773 30.6724 26.0299 30.4873 26.03 30.2984V25.1259C26.03 24.198 26.6713 23.4105 27.5054 23.0097C28.5766 22.4946 29.5223 21.7505 30.2761 20.8299C31.0299 19.9092 31.5736 18.8343 31.8688 17.6805C32.1438 16.5919 31.2082 15.666 30.089 15.666Z"
-        stroke="#A0A0A0"
+        stroke={!isOpen ? "#A0A0A0" : "white"}
         strokeWidth="2"
       />
     </svg>
