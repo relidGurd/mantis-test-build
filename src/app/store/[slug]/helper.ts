@@ -15,7 +15,7 @@ export function StoreFiltersQuery(
     },
     price: {
       $gte: 0,
-      $lte: price,
+      $lte: price ? price : 1000000,
     },
   };
 

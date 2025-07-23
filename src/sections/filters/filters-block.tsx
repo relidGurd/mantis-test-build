@@ -17,9 +17,13 @@ const FIlters: React.FC<any> = ({ filter_list }) => {
 
   function handleSearch(term: string, price: string) {
     const params = new URLSearchParams(searchParams);
+
     if (term) {
       params.set("query", term);
-      params.set("price", price);
+
+      if (Number(price) > 0) {
+        params.set("price", price);
+      }
     } else {
       params.delete("query");
       params.delete("price");
