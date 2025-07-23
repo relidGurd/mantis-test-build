@@ -1,9 +1,7 @@
-.dropdownContainer {
-  position: relative;
-}
 .dropdown_content {
   position: absolute;
-  width: auto;
+  width: 1240px;
+  bottom: 0;
   left: 0;
   right: 0;
   margin: auto;

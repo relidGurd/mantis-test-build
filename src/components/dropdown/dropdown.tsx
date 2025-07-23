@@ -51,12 +51,8 @@ const Dropdown: React.FC<IDropdown> = ({ button, children }) => {
   }, []);
 
   return (
-    <div
-      ref={refElement}
-      className={styles.dropdownContainer}
-      onMouseLeave={() => setIsVisible(false)}
-    >
-      <div onMouseEnter={() => setIsVisible(!visible)}>{button}</div>
+    <div ref={refElement} className={styles.dropdownContainer}>
+      <div onClick={() => setIsVisible(!visible)}>{button}</div>
       {true && (
         <motion.div
           variants={motionDropdown}

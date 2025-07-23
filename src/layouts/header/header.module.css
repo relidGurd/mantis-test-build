@@ -20,7 +20,10 @@
   align-items: center;
 }
 .directionsBtn {
+  padding: 14px;
   cursor: pointer;
+  border: 1px solid var(--white-6);
+  border-radius: 14px;
 }
 
 .headerLogoContainer {
@@ -110,7 +113,8 @@
   width: auto;
   position: absolute;
   gap: 24px;
-  transform: translate3d(-150px, 0px, 0);
+  left: 0;
+  right: 0;
 }
 
 .menuTitle {

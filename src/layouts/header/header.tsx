@@ -96,7 +96,6 @@ const Header = ({ menu_list }: any) => {
                         }
                       >
                         <div className={styles.sub_menu_container}>
-                          <div style={{ height: "45px" }}></div>
                           <ul className={styles.subMenu_area}>
                             {menu_list.map((el: any) => (
                               <li key={el.id}>
