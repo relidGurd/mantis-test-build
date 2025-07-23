@@ -6,6 +6,7 @@ import { Formik, Form, Field } from "formik";
 import { useRouter, useSearchParams, usePathname } from "next/navigation";
 import FiltersDropdown from "@/components/filters-dropdown/filters-dropdown";
 import { FiltersIcon, SortingIcon } from "@/icons/icons";
+import FormInput from "./form-inputs/form-slider";
 
 const FIlters: React.FC<any> = ({ filter_list }) => {
   const searchParams: any = useSearchParams();
@@ -35,6 +36,15 @@ const FIlters: React.FC<any> = ({ filter_list }) => {
     }
     replace(`${pathname}?${params.toString()}`);
   }
+
+  function handleClear() {
+    const params = new URLSearchParams(searchParams);
+    params.delete("query");
+    params.delete("price");
+    params.delete("sort"); // если нужно
+    replace(`${pathname}?${params.toString()}`);
+  }
+
   return (
     <div>
       <div className={styles.desktop_filters}>
@@ -48,31 +58,22 @@ const FIlters: React.FC<any> = ({ filter_list }) => {
               )
             }
           >
-            {() => (
+            {({ resetForm }) => (
               <Form>
-                <div>
-                  <strong>Стоимость</strong>
-                  <div>
-                    <label>
-                      <Field
-                        name="price"
-                        type="range"
-                        min={0}
-                        step=""
-                        max={10}
-                      />
-                    </label>
-                  </div>
-                </div>
+                <FormInput />
                 {filter_list.map((el: any) => (
-                  <div key={el.id}>
-                    <strong>{el.title}</strong>
-                    <div>
+                  <div className={styles.input_section} key={el.id}>
+                    <strong className={styles.input_label}>{el.title}</strong>
+                    <div className={styles.checkbox_container}>
                       {el.list.map((item: any, index: number) => (
-                        <label key={index}>
-                          <Field type="checkbox" name="selected" value={item} />
-                          {item}
-                          <br />
+                        <label className={styles.checkbox_item} key={index}>
+                          <Field
+                            className={styles.checkbox_box}
+                            type="checkbox"
+                            name="selected"
+                            value={item}
+                          />
+                          <span>{item}</span>
                         </label>
                       ))}
                     </div>
@@ -85,6 +86,16 @@ const FIlters: React.FC<any> = ({ filter_list }) => {
                   color="greenButton"
                   label="Применить"
                 />
+                <button
+                  type="button"
+                  onClick={() => {
+                    resetForm();
+                    handleClear();
+                  }}
+                  className={styles.clear_query__params}
+                >
+                  Очитсить фильры
+                </button>
               </Form>
             )}
           </Formik>
@@ -111,35 +122,22 @@ const FIlters: React.FC<any> = ({ filter_list }) => {
                 )
               }
             >
-              {() => (
+              {({ resetForm }) => (
                 <Form>
-                  <div>
-                    <strong>Стоимость</strong>
-                    <div>
-                      <label>
-                        <Field
-                          name="price"
-                          type="range"
-                          min={0}
-                          step=""
-                          max={10}
-                        />
-                      </label>
-                    </div>
-                  </div>
+                  <FormInput />
                   {filter_list.map((el: any) => (
-                    <div key={el.id}>
-                      <strong>{el.title}</strong>
-                      <div>
+                    <div className={styles.input_section} key={el.id}>
+                      <strong className={styles.input_label}>{el.title}</strong>
+                      <div className={styles.checkbox_container}>
                         {el.list.map((item: any, index: number) => (
-                          <label key={index}>
+                          <label className={styles.checkbox_item} key={index}>
                             <Field
+                              className={styles.checkbox_box}
                               type="checkbox"
                               name="selected"
                               value={item}
                             />
-                            {item}
-                            <br />
+                            <span>{item}</span>
                           </label>
                         ))}
                       </div>
@@ -151,8 +149,17 @@ const FIlters: React.FC<any> = ({ filter_list }) => {
                     className={styles.filters_btn}
                     color="greenButton"
                     label="Применить"
-                    onClick={() => setIsOpen(false)}
                   />
+                  <button
+                    type="button"
+                    onClick={() => {
+                      resetForm();
+                      handleClear();
+                    }}
+                    className={styles.clear_query__params}
+                  >
+                    Очитсить фильры
+                  </button>
                 </Form>
               )}
             </Formik>

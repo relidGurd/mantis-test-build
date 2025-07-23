@@ -13,6 +13,47 @@
   display: none;
 }
 
+.input_label {
+  display: block;
+  margin-bottom: 12px;
+}
+
+.input_section {
+  margin-bottom: 24px;
+}
+
+.checkbox_container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.checkbox_item {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox_item span {
+  margin-left: 5px;
+}
+
+.checkbox_box[type="checkbox"] {
+  accent-color: rgba(36, 210, 57, 1);
+}
+
+.clear_query__params {
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+  margin-top: 12px;
+  text-decoration: underline;
+  transition: 0.3s ease;
+}
+
+.clear_query__params:hover {
+  color: rgba(36, 210, 57, 1);
+}
+
 @media screen and (max-width: 1480px) {
   .filters_container {
     margin-top: 40px;

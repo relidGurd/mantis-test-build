@@ -13,6 +13,10 @@ export function StoreFiltersQuery(
         $eq: slug,
       },
     },
+    price: {
+      $gte: 0,
+      $lte: price,
+    },
   };
 
   const sort: any =
