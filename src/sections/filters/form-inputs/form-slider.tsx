@@ -15,8 +15,8 @@ const FormInput = () => {
             name="price"
             type="range"
             min={0}
-            step=""
-            max={15000}
+            step="10"
+            max={1000000}
           />
         </label>
       </div>

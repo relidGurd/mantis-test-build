@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { motion } from "framer-motion";
 import { CloseIcon } from "@/icons/icons";
+import { animationOptions } from "./animation-options";
 interface IPopup {
   button: React.ReactElement;
   children: React.ReactNode;
@@ -34,9 +35,8 @@ const Popup = ({ children, isOpen, button }: IPopup) => {
         ? createPortal(
             <motion.div
               key="modal"
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0 }}
+              {...animationOptions}
+              transition={animationOptions.transition}
               className={styles.popupContainer}
             >
               <div ref={ref}>
