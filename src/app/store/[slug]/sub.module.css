@@ -1,7 +1,7 @@
 .subcategory_page_grid {
   display: grid;
   grid-template-columns: 0.2fr 1fr;
-  gap: 72px;
+  gap: 40px;
 }
 
 .product_grid {
