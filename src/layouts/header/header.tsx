@@ -11,7 +11,6 @@ import classNames from "classnames";
 import { motion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
-import { createPortal } from "react-dom";
 import Popup from "@/components/popup/popup";
 import QuickForm from "@/components/quick-form/quick-form";
 
@@ -21,8 +20,21 @@ const Header = ({ menu_list }: any) => {
   const router = usePathname();
   const [mounted, setMounted] = useState(false);
 
+  const menuRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
-    // Срабатывает только на клиенте
+    const handleClick = (e: any) => {
+      if (menuRef.current && menuRef.current.contains(e.target as Node)) {
+        console.log("clicked");
+      }
+    };
+
+    document.addEventListener("click", handleClick);
+
+    return () => document.removeEventListener("click", handleClick);
+  }, [menuRef, clickOnBurger]);
+
+  useEffect(() => {
     setMounted(true);
   }, []);
 
@@ -47,7 +59,7 @@ const Header = ({ menu_list }: any) => {
 
   return (
     <header>
-      <nav className={styles.main_header}>
+      <nav ref={menuRef} className={styles.main_header}>
         <div className="main-container">
           <div>
             <div className={styles.menu_container}>

@@ -149,6 +149,13 @@ main {
   padding-top: 80px;
 }
 
+@media (max-width: 1480px) {
+  .main-container-blog {
+    padding-left: 140px;
+    padding-right: 140px;
+  }
+}
+
 /* Планшеты (768px - 1024px) */
 @media (max-width: 1024px) {
   .main-container {

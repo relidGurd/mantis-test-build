@@ -68,7 +68,7 @@
   gap: 5px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1480px) {
   .news_card_info_container {
     border-radius: 16px;
     grid-template-columns: 1fr;
