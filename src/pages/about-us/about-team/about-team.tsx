@@ -25,7 +25,8 @@ const AboutTeam = () => {
             1240: {
               slidesPerView: 5,
             },
-          }}>
+          }}
+        >
           <SwiperSlide tag="li" className={styles.about_teamItem}>
             <div className={styles.about_teamImageContainer}>
               <Image
@@ -41,7 +42,8 @@ const AboutTeam = () => {
                 className={styles.about_teamItem_title}
                 variant="span"
                 outline="semibold"
-                register="32">
+                register="32"
+              >
                 Авдеев Антон
               </Typography>
               <Typography>Специалист по тремору</Typography>
@@ -62,7 +64,8 @@ const AboutTeam = () => {
                 className={styles.about_teamItem_title}
                 variant="span"
                 outline="semibold"
-                register="32">
+                register="32"
+              >
                 Заверин Алексей
               </Typography>
               <Typography>Главный романтик</Typography>
@@ -83,7 +86,8 @@ const AboutTeam = () => {
                 className={styles.about_teamItem_title}
                 variant="span"
                 outline="semibold"
-                register="32">
+                register="32"
+              >
                 Любятов Эдуард
               </Typography>
               <Typography>Ведущий дизайнер</Typography>
@@ -104,7 +108,8 @@ const AboutTeam = () => {
                 className={styles.about_teamItem_title}
                 variant="span"
                 outline="semibold"
-                register="32">
+                register="32"
+              >
                 Ждунов Николай
               </Typography>
               <Typography>Коммерческий директор</Typography>
@@ -125,7 +130,8 @@ const AboutTeam = () => {
                 className={styles.about_teamItem_title}
                 variant="span"
                 outline="semibold"
-                register="32">
+                register="32"
+              >
                 Джеймс Ауф
               </Typography>
               <Typography>Советник по иностранному рынку</Typography>

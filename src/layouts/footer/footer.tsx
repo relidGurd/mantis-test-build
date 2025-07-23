@@ -36,24 +36,32 @@ const Footer = () => {
             </div>
             <div className={styles.footer_menus}>
               <div className={styles.footer_menuSection}>
-                <Typography register="24" outline="bold">
-                  Оборудование
-                </Typography>
+                <Link href={"/directions/oborudovanie"}>
+                  <Typography register="24" outline="bold">
+                    Оборудование
+                  </Typography>
+                </Link>
               </div>
               <div className={styles.footer_menuSection}>
-                <Typography register="24" outline="bold">
-                  О нас
-                </Typography>
+                <Link href={"/about"}>
+                  <Typography register="24" outline="bold">
+                    О нас
+                  </Typography>
+                </Link>
               </div>
               <div className={styles.footer_menuSection}>
-                <Typography register="24" outline="bold">
-                  Кейсы
-                </Typography>
+                <Link href={"/cases"}>
+                  <Typography register="24" outline="bold">
+                    Кейсы
+                  </Typography>
+                </Link>
               </div>
               <div className={styles.footer_menuSection}>
-                <Typography register="24" outline="bold">
-                  Блог
-                </Typography>
+                <Link href={"/blog"}>
+                  <Typography register="24" outline="bold">
+                    Блог
+                  </Typography>
+                </Link>
               </div>
             </div>
           </div>
