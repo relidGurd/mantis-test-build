@@ -24,8 +24,12 @@ const Header = ({ menu_list }: any) => {
 
   useEffect(() => {
     const handleClick = (e: any) => {
-      if (menuRef.current && menuRef.current.contains(e.target as Node)) {
-        console.log("clicked");
+      if (
+        clickOnBurger &&
+        menuRef.current &&
+        menuRef.current.contains(e.target as Node)
+      ) {
+        isClickedOnBurger(false);
       }
     };
 
@@ -59,8 +63,8 @@ const Header = ({ menu_list }: any) => {
 
   return (
     <header>
-      <nav ref={menuRef} className={styles.main_header}>
-        <div className="main-container">
+      <nav className={styles.main_header}>
+        <div ref={menuRef} className="main-container">
           <div>
             <div className={styles.menu_container}>
               <Link
