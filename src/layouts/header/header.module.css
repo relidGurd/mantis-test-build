@@ -95,8 +95,7 @@
   right: -12px;
 }
 
-.sub_menu_container {
-  width: 1320px;
+.sub_m {
   margin: auto;
 }
 
@@ -105,11 +104,13 @@
   border: 1px solid var(--green-gradient);
   background-color: #1a1a1a;
   padding: 16px 32px;
-  border-radius: 0 0 40px 40px;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 20px;
+  border-radius: 0 0 24px 24px;
+  align-items: start;
+  display: flex;
   width: auto;
+  position: absolute;
+  gap: 24px;
+  transform: translate3d(-150px, 0px, 0);
 }
 
 .menuTitle {

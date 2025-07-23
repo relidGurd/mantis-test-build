@@ -15,14 +15,20 @@ const Dropdown: React.FC<IDropdown> = ({ button, children }) => {
   const motionDropdown = {
     hidden: {
       opacity: 0,
+
       display: "none",
+      transition: {
+        ease: "easeInOut",
+        duration: 0.4,
+      },
     },
     visible: {
       display: "block",
       opacity: 1,
+
       transition: {
         ease: "easeInOut",
-        duration: 0.2,
+        duration: 0.4,
       },
     },
   };
