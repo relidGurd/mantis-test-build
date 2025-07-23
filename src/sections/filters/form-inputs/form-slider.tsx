@@ -6,7 +6,7 @@ const FormInput = () => {
   return (
     <div className={styles.form_slider_container}>
       <strong className={styles.input_label}>
-        Стоимость: {`${field.value}`} р.
+        Стоимость: {`${field.value}`} ₽
       </strong>
       <div>
         <label>

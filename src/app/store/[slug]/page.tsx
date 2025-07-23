@@ -55,24 +55,28 @@ const Computers = async ({
       </Typography>
       <div className={styles.subcategory_page_grid}>
         <FIlters filter_list={category.filters} />
-        <div>
-          <div className={styles.product_grid}>
-            {data.map((el: any) => (
-              <Link key={el.id} href={`/product/${el.slug}`}>
-                <ProductCard
-                  price={el.price}
-                  name={el.title}
-                  description={el.description}
-                  image={el.preview_image.url}
-                />
-              </Link>
-            ))}
+        {data.length === 0 ? (
+          <div>Ничего не найдено</div>
+        ) : (
+          <div>
+            <div className={styles.product_grid}>
+              {data.map((el: any) => (
+                <Link key={el.id} href={`/product/${el.slug}`}>
+                  <ProductCard
+                    price={el.price}
+                    name={el.title}
+                    description={el.description}
+                    image={el.preview_image.url}
+                  />
+                </Link>
+              ))}
+            </div>
+            <Pagination
+              variant={`store/${(await params).slug}`}
+              totalPages={meta.pagination.pageCount}
+            />
           </div>
-          <Pagination
-            variant={`store/${(await params).slug}`}
-            totalPages={meta.pagination.pageCount}
-          />
-        </div>
+        )}
       </div>
     </div>
   );
