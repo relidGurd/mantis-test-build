@@ -115,12 +115,13 @@ const FIlters: React.FC<any> = ({ filter_list }) => {
           <div className={styles.filters_container}>
             <Formik
               initialValues={{ selected: [], price: 0 }}
-              onSubmit={(values) =>
+              onSubmit={(values) => {
                 handleSearch(
                   JSON.stringify(values.selected),
                   JSON.stringify(values.price)
-                )
-              }
+                );
+                setIsOpen(false);
+              }}
             >
               {({ resetForm }) => (
                 <Form>
@@ -155,6 +156,7 @@ const FIlters: React.FC<any> = ({ filter_list }) => {
                     onClick={() => {
                       resetForm();
                       handleClear();
+                      setIsOpen(false);
                     }}
                     className={styles.clear_query__params}
                   >
