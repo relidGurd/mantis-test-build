@@ -39,9 +39,6 @@ const MainForm = () => {
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
                 />
-                {/* {formik.touched.name && formik.errors.name ? (
-                  <div>{formik.errors.name}</div>
-                ) : null} */}
               </div>
 
               <div className={styles.input_phoneContainer}>
@@ -58,9 +55,6 @@ const MainForm = () => {
                   onBlur={() => formik.setFieldTouched("phoneNumber", true)}
                   placeholder="+7"
                 />
-                {/* {formik.touched.phoneNumber && formik.errors.phoneNumber ? (
-                  <div>{formik.errors.phoneNumber}</div>
-                ) : null} */}
               </div>
 
               <Button type="submit" label="Связаться" color="greenButton" />
@@ -71,13 +65,11 @@ const MainForm = () => {
                 className={styles.mainform_checkboxText}
                 variant="span"
                 register="16"
-                outline="regular">
+                outline="regular"
+              >
                 Я даю согласие на обработку моих персональных данных
                 и на получение информационно-рекламных рассылок.
               </Typography>
-              {/* {formik.touched.privacyPolicy && formik.errors.privacyPolicy ? (
-                <div>{formik.errors.privacyPolicy}</div>
-              ) : null} */}
             </div>
           </form>
         </div>

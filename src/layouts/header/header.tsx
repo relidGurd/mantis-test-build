@@ -13,7 +13,7 @@ import { usePathname } from "next/navigation";
 import Popup from "@/components/popup/popup";
 import QuickForm from "@/components/quick-form/quick-form";
 import { Arrow } from "@/icons/icons";
-import { motionDropdown } from "./helper";
+import { animatedMobileMenu, motionDropdown } from "./helper";
 
 const Header = ({ menu_list }: any) => {
   const cartLengrth = useCart((elem: any) => elem.items);
@@ -61,23 +61,6 @@ const Header = ({ menu_list }: any) => {
   }, []);
 
   if (!mounted) return null;
-
-  const handleClick = () => {
-    isClickedOnBurger(!clickOnBurger);
-  };
-
-  const animatedMenu = {
-    initial: {
-      x: -100,
-      opacity: 0,
-      display: "none",
-    },
-    visible: {
-      x: 0,
-      opacity: 1,
-      display: "block",
-    },
-  };
 
   return (
     <header>
@@ -230,7 +213,7 @@ const Header = ({ menu_list }: any) => {
           </div>
           <div className={styles.mobile_menuContainer}>
             <div
-              onClick={() => handleClick()}
+              onClick={() => isClickedOnBurger(!clickOnBurger)}
               className={classNames(
                 !clickOnBurger
                   ? styles.mobile_menuBurgerContainer
@@ -279,10 +262,13 @@ const Header = ({ menu_list }: any) => {
           initial={"hidden"}
           animate={isDropdownOpen ? "visible" : "hidden"}
           transition={motionDropdown.transition}
-          className={styles.sub_menu__container}
+          className={classNames(styles.sub_menu__container)}
         >
           <div>
-            <ul ref={subMenuRefDesktop} className={styles.subMenu_area}>
+            <ul
+              ref={subMenuRefDesktop}
+              className={classNames(styles.subMenu_area)}
+            >
               {menu_list.map((el: any) => (
                 <li key={el.id}>
                   <Link href={`/directions${el.link}`}>
@@ -330,7 +316,7 @@ const Header = ({ menu_list }: any) => {
       )}
 
       <motion.ul
-        variants={animatedMenu}
+        variants={animatedMobileMenu}
         initial={"hidden"}
         animate={clickOnBurger ? "visible" : "initial"}
         className={styles.hidden_mobile_menu}

@@ -14,3 +14,16 @@ export const motionDropdown = {
     duration: 0.3,
   },
 };
+
+export const animatedMobileMenu = {
+  initial: {
+    x: -100,
+    opacity: 0,
+    display: "none",
+  },
+  visible: {
+    x: 0,
+    opacity: 1,
+    display: "block",
+  },
+};

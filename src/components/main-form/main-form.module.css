@@ -10,16 +10,26 @@
   position: relative;
 }
 
+@keyframes spin {
+  from {
+    transform: rotateX(10deg) rotateY(10deg) rotateZ(0deg);
+  }
+  to {
+    transform: rotateX(10deg) rotateY(10deg) rotateZ(360deg);
+  }
+}
+
 .abstractRound {
   content: "";
   position: absolute;
-  right: -10%;
+  top: 0;
   background-image: url("/abstract.png");
-  width: 667px;
-  height: 710px;
+  width: 700px;
+  height: 700px;
   background-repeat: no-repeat;
-  top: -20%;
-  bottom: -20%;
+  right: -10%;
+  transform-style: preserve-3d;
+  animation: spin 60s linear infinite;
 }
 
 .formContainer_inform {
