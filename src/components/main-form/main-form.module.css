@@ -22,13 +22,13 @@
 .abstractRound {
   content: "";
   position: absolute;
-  top: -10%;
+  top: -40%;
   background-image: url("/abstract.png");
   background-size: contain;
   width: 800px;
   height: 800px;
   background-repeat: no-repeat;
-  right: -5%;
+  right: -10%;
   transform-style: preserve-3d;
   animation: spin 80s linear infinite;
 }

@@ -270,7 +270,7 @@ const Header = ({ menu_list }: any) => {
               className={classNames(styles.subMenu_area)}
             >
               {menu_list.map((el: any) => (
-                <li key={el.id}>
+                <li onClick={() => setIsDropdownOpen(false)} key={el.id}>
                   <Link href={`/directions${el.link}`}>
                     <Typography
                       className={styles.menuTitle}
