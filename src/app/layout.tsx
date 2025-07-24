@@ -38,14 +38,6 @@ export default async function RootLayout({
   const siteMenuQwery = qs.stringify({
     populate: {
       MenuBLocks: {
-        populate: "*",
-      },
-    },
-  });
-
-  const siteMenuTest = qs.stringify({
-    populate: {
-      MenuBLocks: {
         on: {
           "menu-block.menu": {
             populate: {
@@ -59,7 +51,7 @@ export default async function RootLayout({
     },
   });
 
-  const { data } = await getSiteMenu(siteMenuTest);
+  const { data } = await getSiteMenu(siteMenuQwery);
 
   return (
     <html lang="ru">
