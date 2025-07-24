@@ -3,9 +3,6 @@ async function getSiteMenu(qwery?: string) {
 
   try {
     const response = await fetch(url, {
-      next: {
-        revalidate: false,
-      },
       cache: "no-store",
     });
 
