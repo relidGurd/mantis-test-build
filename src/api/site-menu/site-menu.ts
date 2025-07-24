@@ -1,4 +1,4 @@
-async function getSiteMenu(qwery: string) {
+async function getSiteMenu(qwery?: string) {
   const url = `https://cms.mantis-185.ru/api/site-menu?${qwery}`;
 
   try {

@@ -292,7 +292,7 @@ const Header = ({ menu_list }: any) => {
                           <div className={styles.link_group_item_imgContainer}>
                             <Image
                               className={styles.link_group_item_img}
-                              src={"/test-icon.svg"}
+                              src={`https://cms.mantis-185.ru${el.icon.url}`}
                               width={24}
                               height={24}
                               alt=""

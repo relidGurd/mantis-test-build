@@ -15,7 +15,12 @@ const CategoryCard: React.FC<ICategory> = ({ title, description, icon }) => {
       <div className={styles.categoryCard_info}>
         {icon && (
           <div>
-            <Image src={"/Subtract.svg"} alt="" width={56} height={56} />
+            <Image
+              src={`https://cms.mantis-185.ru${icon}`}
+              alt=""
+              width={56}
+              height={56}
+            />
           </div>
         )}
 

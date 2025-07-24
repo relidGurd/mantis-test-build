@@ -91,7 +91,7 @@ const DirectionElement = async ({ params }: { params: Params }) => {
                 <CategoryCard
                   title={el.title}
                   description={el.description}
-                  icon="dfsfsdfdsf"
+                  icon={el.icon.url}
                 />
               </Link>
             </li>
