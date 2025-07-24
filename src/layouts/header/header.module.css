@@ -20,10 +20,40 @@
   align-items: center;
 }
 .directionsBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   padding: 14px;
   cursor: pointer;
   border: 1px solid var(--white-6);
   border-radius: 14px;
+  transition: 0.3s ease;
+}
+
+.arrowSVG {
+  width: 18px;
+  height: 18px;
+}
+
+.activeBtn {
+  border: 1px solid var(--main-green);
+  color: var(--main-green);
+}
+.arr {
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.arrowOn {
+  transform: rotate(180deg);
+  transition: 0.3s ease;
+}
+
+.arrowOff {
+  transform: rotate(0deg);
+  transition: 0.3s ease;
 }
 
 .headerLogoContainer {
@@ -102,19 +132,27 @@
   margin: auto;
 }
 
-.subMenu_area {
+.sub_menu__container {
+  position: fixed;
+  bottom: 0;
+  top: 90px;
+  left: 0;
+  right: 0;
+  background-color: rgb(29, 29, 29, 0.3);
   backdrop-filter: blur(10px);
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+}
+
+.subMenu_area {
   border: 1px solid var(--green-gradient);
   background-color: #1a1a1a;
   padding: 16px 32px;
   border-radius: 0 0 24px 24px;
   align-items: start;
   display: flex;
-  width: auto;
-  position: absolute;
   gap: 24px;
-  left: 0;
-  right: 0;
 }
 
 .menuTitle {

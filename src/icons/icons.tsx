@@ -163,7 +163,13 @@ const CloseIcon = ({
   );
 };
 
-const Arrow = ({ className }: { className?: string }) => {
+const Arrow = ({
+  className,
+  color,
+}: {
+  className?: string;
+  color?: string;
+}) => {
   return (
     <svg
       className={className}
@@ -175,7 +181,7 @@ const Arrow = ({ className }: { className?: string }) => {
     >
       <path
         d="M5 9L12 14.9998L19 9"
-        stroke="#595959"
+        stroke={color ? color : "#595959"}
         strokeWidth="2"
         strokeLinecap="round"
       />
