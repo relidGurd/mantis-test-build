@@ -21,6 +21,8 @@ const NewsCard: React.FC<INewsCard> = ({
   date,
   tag,
 }) => {
+  console.log(img);
+
   return (
     <div className={classNames(styles.news_card_container)}>
       <div className={styles.news_card_info_container}>
@@ -49,13 +51,23 @@ const NewsCard: React.FC<INewsCard> = ({
         </div>
       </div>
       <div className={styles.news_card_img_container}>
-        <Image
-          className={styles.news_card_img}
-          src={`https://cms.mantis-185.ru${img}`}
-          width={1800}
-          height={600}
-          alt=""
-        />
+        {img ? (
+          <Image
+            className={styles.news_card_img}
+            src={`https://cms.mantis-185.ru${img}`}
+            width={1800}
+            height={600}
+            alt=""
+          />
+        ) : (
+          <Image
+            className={styles.news_card_img}
+            src={`/demo.png`}
+            width={1800}
+            height={600}
+            alt=""
+          />
+        )}
       </div>
     </div>
   );

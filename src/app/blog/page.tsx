@@ -84,7 +84,7 @@ export default async function Page(props: {
                     title={el.title}
                     description={el.seo_description[0].children[0].text}
                     date={el.date}
-                    img={el.image.url}
+                    img={el.image ? el.image.url : "/demo.png"}
                   />
                 </Link>
               </li>

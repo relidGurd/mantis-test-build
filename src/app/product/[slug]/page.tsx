@@ -30,9 +30,6 @@ export async function generateMetadata(
   return {
     title: data.title,
     description: data.description,
-    openGraph: {
-      images: [`https://cms.mantis-185.ru${data.preview_image.url}`],
-    },
   };
 }
 

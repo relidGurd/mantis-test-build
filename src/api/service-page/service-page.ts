@@ -1,5 +1,7 @@
-async function getService(qwery: string) {
-  const url = `https://cms.mantis-185.ru/api/services/xotrt1hpntpa19shmrldrklk?${qwery}
+async function getService(slug: string, qwery: string) {
+  console.log(qwery);
+
+  const url = `https://cms.mantis-185.ru/api/services/${slug}?${qwery}
 `;
 
   try {
@@ -12,7 +14,7 @@ async function getService(qwery: string) {
     const result = await response.json();
     return result;
   } catch (error: any) {
-    console.error("Ошибка при получении advantages:", error.message);
+    console.error("Ошибка при получении services:", error.message);
     return null;
   }
 }
