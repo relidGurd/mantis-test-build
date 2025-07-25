@@ -4,12 +4,10 @@ import AboutTeam from "@/pages/about-us/about-team/about-team";
 import AboutForWho from "@/pages/about-us/for-who/for-who";
 import TextBlock from "@/sections/text-block/text-block";
 import styles from "./dynamic.module.css";
-import classNames from "classnames";
-import CategoryCard from "../category-card/category-card";
-import Link from "next/link";
+
+import IntrestingProducts from "@/sections/intresting-products/intresting-products";
 
 const Dynamic = ({ component }: any) => {
-  console.log(component);
   return component.map((el: any, index: number) => {
     switch (el.__component) {
       case "case-page.case-task":
@@ -48,19 +46,12 @@ const Dynamic = ({ component }: any) => {
       }
       case "service-page.related-products": {
         return (
-          <ul key={index} className={classNames(styles.direction_categoryList)}>
-            {el.data.subcategories.map((el: any) => (
-              <li key={el.id} className={styles.direction_categoryItem}>
-                <Link href={`/store/${el.slug}`}>
-                  <CategoryCard
-                    title={el.title}
-                    description={el.description}
-                    icon={el.icon.url}
-                  />
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <IntrestingProducts
+            key={index}
+            product_list={el.products}
+            className={"swiper-container"}
+            title={"Вас может заинтересовать"}
+          />
         );
       }
     }

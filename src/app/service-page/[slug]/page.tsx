@@ -38,7 +38,21 @@ export default async function ServicePage({ params }: Props) {
     populate: {
       image: "*",
       components: {
-        populate: "*",
+        on: {
+          "service-page.related-products": {
+            populate: {
+              products: {
+                populate: "*",
+              },
+            },
+          },
+          "service-page.advantages": {
+            populate: "*",
+          },
+          "service-page.about-service": {
+            populate: "*",
+          },
+        },
       },
     },
   });
@@ -61,8 +75,7 @@ export default async function ServicePage({ params }: Props) {
                 className={styles.servicePage_title}
                 outline="bold"
                 register="40"
-                variant="h1"
-              >
+                variant="h1">
                 {data.title}
               </Typography>
               <Typography outline="regular" register="18">
