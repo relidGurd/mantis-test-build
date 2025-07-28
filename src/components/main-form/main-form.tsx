@@ -6,7 +6,8 @@ import { useFormik } from "formik";
 import { validationSchema, initialValues } from "./validation";
 import Typography from "@/ui-kit/typography/typography";
 import Button from "@/ui-kit/button/button";
-const MainForm = () => {
+import classNames from "classnames";
+const MainForm = ({ className }: { className?: string }) => {
   const formik = useFormik({
     initialValues,
     validationSchema,
@@ -16,7 +17,7 @@ const MainForm = () => {
   });
 
   return (
-    <section className="main-container">
+    <section className={classNames("main-container", className)}>
       <div className={styles.formContainer}>
         <div className={styles.formContainer_inform}>
           <Typography variant="p" outline="bold" register="48">

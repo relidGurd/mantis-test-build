@@ -5,6 +5,9 @@ import Typography from "@/ui-kit/typography/typography";
 import Image from "next/image";
 import { Metadata, ResolvingMetadata } from "next";
 import Dynamic from "@/components/dynamic-page/dynamic-page";
+import MainForm from "@/components/main-form/main-form";
+import AboutReviews from "@/pages/about-us/about-reviews/about-reviews";
+import Partners from "@/sections/partners/partners";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -60,7 +63,7 @@ export default async function ServicePage({ params }: Props) {
   const { data } = await getService(slug, qwery);
 
   return (
-    <>
+    <div className={styles.services_blocks__lists}>
       <section className={styles.servicePage_mainContainer}>
         <div className={styles.servicePage_container}>
           <div className={styles.servicePage_textInfo}>
@@ -75,7 +78,8 @@ export default async function ServicePage({ params }: Props) {
                 className={styles.servicePage_title}
                 outline="bold"
                 register="40"
-                variant="h1">
+                variant="h1"
+              >
                 {data.title}
               </Typography>
               <Typography outline="regular" register="18">
@@ -117,6 +121,9 @@ export default async function ServicePage({ params }: Props) {
         </div>
       </section>
       <Dynamic component={data.components} />
-    </>
+      <MainForm className={styles.services_form_child} />
+      <AboutReviews />
+      <Partners />
+    </div>
   );
 }

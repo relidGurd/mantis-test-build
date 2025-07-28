@@ -10,16 +10,18 @@ interface IRelatedProductCard {
   product_list: any;
   slidesView?: number;
   className?: string;
+  classNameMain?: string;
 }
 
 const IntrestingProducts: React.FC<IRelatedProductCard> = ({
   product_list,
   slidesView = 4,
   className,
+  classNameMain,
   title,
 }) => {
   return (
-    <section style={{ overflow: "hidden" }}>
+    <section className={classNameMain} style={{ overflow: "hidden" }}>
       <div className="main-container">
         {title && (
           <div style={{ marginBottom: "40px" }}>

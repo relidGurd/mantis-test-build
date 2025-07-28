@@ -1,3 +1,4 @@
+"use client";
 import Typography from "@/ui-kit/typography/typography";
 import styles from "./partners.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -35,7 +36,7 @@ const Partners = () => {
                 <div className={styles.partners_cardImageContainer}>
                   <Image
                     className={styles.partners_cardImage}
-                    src={"./1c-example.svg"}
+                    src={"/1c-example.svg"}
                     width={70}
                     height={70}
                     alt="1c logo"
@@ -56,7 +57,7 @@ const Partners = () => {
                 <div className={styles.partners_cardImageContainer}>
                   <Image
                     className={styles.partners_cardImage}
-                    src={"./1c-example.svg"}
+                    src={"/1c-example.svg"}
                     width={70}
                     height={70}
                     alt="1c logo"
@@ -77,7 +78,7 @@ const Partners = () => {
                 <div className={styles.partners_cardImageContainer}>
                   <Image
                     className={styles.partners_cardImage}
-                    src={"./1c-example.svg"}
+                    src={"/1c-example.svg"}
                     width={70}
                     height={70}
                     alt="1c logo"
@@ -98,7 +99,7 @@ const Partners = () => {
                 <div className={styles.partners_cardImageContainer}>
                   <Image
                     className={styles.partners_cardImage}
-                    src={"./1c-example.svg"}
+                    src={"/1c-example.svg"}
                     width={70}
                     height={70}
                     alt="1c logo"
@@ -119,7 +120,7 @@ const Partners = () => {
                 <div className={styles.partners_cardImageContainer}>
                   <Image
                     className={styles.partners_cardImage}
-                    src={"./1c-example.svg"}
+                    src={"/1c-example.svg"}
                     width={70}
                     height={70}
                     alt="1c logo"
@@ -140,7 +141,7 @@ const Partners = () => {
                 <div className={styles.partners_cardImageContainer}>
                   <Image
                     className={styles.partners_cardImage}
-                    src={"./1c-example.svg"}
+                    src={"/1c-example.svg"}
                     width={70}
                     height={70}
                     alt="1c logo"
@@ -161,7 +162,7 @@ const Partners = () => {
                 <div className={styles.partners_cardImageContainer}>
                   <Image
                     className={styles.partners_cardImage}
-                    src={"./1c-example.svg"}
+                    src={"/1c-example.svg"}
                     width={70}
                     height={70}
                     alt="1c logo"
@@ -182,7 +183,7 @@ const Partners = () => {
                 <div className={styles.partners_cardImageContainer}>
                   <Image
                     className={styles.partners_cardImage}
-                    src={"./1c-example.svg"}
+                    src={"/1c-example.svg"}
                     width={70}
                     height={70}
                     alt="1c logo"
@@ -203,7 +204,7 @@ const Partners = () => {
                 <div className={styles.partners_cardImageContainer}>
                   <Image
                     className={styles.partners_cardImage}
-                    src={"./1c-example.svg"}
+                    src={"/1c-example.svg"}
                     width={70}
                     height={70}
                     alt="1c logo"
@@ -224,7 +225,7 @@ const Partners = () => {
                 <div className={styles.partners_cardImageContainer}>
                   <Image
                     className={styles.partners_cardImage}
-                    src={"./1c-example.svg"}
+                    src={"/1c-example.svg"}
                     width={70}
                     height={70}
                     alt="1c logo"
@@ -245,7 +246,7 @@ const Partners = () => {
                 <div className={styles.partners_cardImageContainer}>
                   <Image
                     className={styles.partners_cardImage}
-                    src={"./1c-example.svg"}
+                    src={"/1c-example.svg"}
                     width={70}
                     height={70}
                     alt="1c logo"
