@@ -8,6 +8,7 @@ import Dynamic from "@/components/dynamic-page/dynamic-page";
 import MainForm from "@/components/main-form/main-form";
 import AboutReviews from "@/pages/about-us/about-reviews/about-reviews";
 import Partners from "@/sections/partners/partners";
+import PricesTable from "@/sections/prices-table/prices-table";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -123,6 +124,7 @@ export default async function ServicePage({ params }: Props) {
       <Dynamic component={data.components} />
       <MainForm className={styles.services_form_child} />
       <AboutReviews />
+      <PricesTable />
       <Partners />
     </div>
   );
