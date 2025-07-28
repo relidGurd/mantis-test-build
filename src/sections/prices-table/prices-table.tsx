@@ -1,3 +1,4 @@
+"use client";
 import Typography from "@/ui-kit/typography/typography";
 import styles from "./prices-table.module.css";
 import Popup from "@/components/popup/popup";
