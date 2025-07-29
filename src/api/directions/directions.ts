@@ -1,3 +1,5 @@
+import { notFound } from "next/navigation";
+
 async function getCategories(qwery?: string) {
   const url = `https://cms.mantis-185.ru/api/categories?${qwery}`;
 
@@ -11,8 +13,7 @@ async function getCategories(qwery?: string) {
     const result = await response.json();
     return result;
   } catch (error: any) {
-    console.error("Ошибка при получении categories:", error.message);
-    return null;
+    notFound();
   }
 }
 
@@ -32,8 +33,7 @@ async function getCategory(slug: string, qwery?: string) {
     const result = await response.json();
     return result;
   } catch (error: any) {
-    console.error("Ошибка при получении category:", error.message);
-    return null;
+    notFound();
   }
 }
 
