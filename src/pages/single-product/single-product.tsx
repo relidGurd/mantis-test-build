@@ -12,6 +12,8 @@ import Image from "next/image";
 import { Product } from "@/types/product-types";
 import { useCart } from "@/store/cart";
 import classNames from "classnames";
+import Popup from "@/components/popup/popup";
+import QuickForm from "@/components/quick-form/quick-form";
 
 const SinglePrdouct: React.FC<Product> = ({
   id,
@@ -137,8 +139,11 @@ const SinglePrdouct: React.FC<Product> = ({
               ) : (
                 <Button label="Добавлено" color="greenButton" />
               )}
-
-              <Button label="Купить в 1 клик" color="blackButton" />
+              <Popup
+                button={<Button label="Купить в 1 клик" color="blackButton" />}
+              >
+                <QuickForm />
+              </Popup>
             </div>
           )}
 
