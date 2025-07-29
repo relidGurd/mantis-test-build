@@ -8,6 +8,8 @@ import "swiper/css";
 import { getSiteMenu } from "@/api/site-menu/site-menu";
 import qs from "qs";
 import ScrollManager from "@/components/scroll-to-top/scroll-to-top";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+
 export const metadata: Metadata = {
   title: "Mantis",
   description:
@@ -60,6 +62,7 @@ export default async function RootLayout({
         <ScrollManager />
         <main>{children}</main>
         <Footer />
+        <SpeedInsights />
       </body>
     </html>
   );
