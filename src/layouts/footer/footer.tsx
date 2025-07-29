@@ -63,6 +63,13 @@ const Footer = () => {
                   </Typography>
                 </Link>
               </div>
+              <div className={styles.footer_menuSection}>
+                <Link href={"/service"}>
+                  <Typography register="24" outline="bold">
+                    Услуги
+                  </Typography>
+                </Link>
+              </div>
             </div>
           </div>
           <div className={styles.footer_socials}>
