@@ -158,7 +158,7 @@ section {
 
 .err-image-container {
   width: 100%;
-  height: 50dvh;
+  height: 50vh;
   display: flex;
   justify-content: end;
 }
