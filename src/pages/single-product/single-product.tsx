@@ -5,7 +5,7 @@ import Typography from "@/ui-kit/typography/typography";
 import { Swiper, SwiperSlide } from "swiper/react";
 import styles from "./single-product.module.css";
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import type { Swiper as SwiperType } from "swiper";
 import Image from "next/image";
@@ -28,7 +28,14 @@ const SinglePrdouct: React.FC<Product> = ({
   const [tabInfo, setTabInfo] = useState(true);
   const { addItem, isInCart } = useCart((elem: any) => elem);
 
-  console.log(isInCart(id));
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  const isInCartCheck = !isInCart(id);
+
   return (
     <div className="main-container">
       <div className={styles.prdouct_grid}>
@@ -113,7 +120,7 @@ const SinglePrdouct: React.FC<Product> = ({
           </Typography>
           {availability && (
             <div className={styles.productButtonsContainer}>
-              {!isInCart(id) ? (
+              {isInCartCheck && isMounted ? (
                 <Button
                   onClick={() =>
                     addItem({
