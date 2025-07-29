@@ -36,7 +36,7 @@ export async function generateMetadata(
     title: data.title,
     description: data.seo_description[0].children[0].text,
     openGraph: {
-      images: [`https://cms.mantis-185.ru${data.image.url}`],
+      images: [`https://cms.mantis-185.ru${data.image?.url}`],
     },
   };
 }
@@ -94,13 +94,23 @@ const BlogPage = async ({ params }: { params: Params }) => {
             </div>
           </div>
           <div className={styles.blog_page__bannerImageContainer}>
-            <Image
-              className={styles.blog_page__bannerImage}
-              src={`https://cms.mantis-185.ru${data.image.url}`}
-              width={800}
-              height={900}
-              alt=""
-            />
+            {data.image ? (
+              <Image
+                className={styles.blog_page__bannerImage}
+                src={`https://cms.mantis-185.ru${data.image.url}`}
+                width={800}
+                height={900}
+                alt=""
+              />
+            ) : (
+              <Image
+                className={styles.blog_page__bannerImage}
+                src={`/demo.png`}
+                width={800}
+                height={900}
+                alt=""
+              />
+            )}
           </div>
         </div>
       </section>
