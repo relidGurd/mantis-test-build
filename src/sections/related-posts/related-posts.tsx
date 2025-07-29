@@ -53,7 +53,7 @@ const RelatedPosts: React.FC<IRelatedPosts> = ({
                   tag={el.tag}
                   title={el.title}
                   description={el.seo_description[0].children[0].text}
-                  image={el.image.url}
+                  image={el.image ? el.image.url : "/demo.png"}
                 />
               </Link>
             </SwiperSlide>
