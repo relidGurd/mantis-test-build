@@ -13,8 +13,7 @@ async function getBlog(qwery?: string) {
     const result = await response.json();
     return result;
   } catch (error: any) {
-    console.error("Ошибка при получении advantages:", error.message);
-    return null;
+    notFound();
   }
 }
 
@@ -32,7 +31,7 @@ async function getBlogPage(slug: string, qwery?: string) {
     return result;
   } catch (error: any) {
     console.error("Ошибка при получении advantages:", error.message);
-    return null;
+    notFound();
   }
 }
 
@@ -50,7 +49,7 @@ async function getBlogPagRelations(qwery?: string) {
     return result;
   } catch (error: any) {
     console.error("Ошибка при получении relations:", error.message);
-    return null;
+    notFound();
   }
 }
 

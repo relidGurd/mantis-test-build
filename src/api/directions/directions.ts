@@ -24,7 +24,9 @@ async function getCategory(slug: string, qwery?: string) {
     const response = await fetch(url);
 
     if (!response.ok) {
-      throw new Error(`Ошибка HTTP: ${response.status} ${response.statusText}`);
+      throw new Error(
+        `Ошибка HTTPdasdsad: ${response.status} ${response.statusText}`
+      );
     }
 
     const result = await response.json();

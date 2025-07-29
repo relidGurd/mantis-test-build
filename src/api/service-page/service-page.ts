@@ -1,3 +1,5 @@
+import { notFound } from "next/navigation";
+
 async function getService(slug: string, qwery: string) {
   const url = `https://cms.mantis-185.ru/api/services/${slug}?${qwery}
 `;
@@ -16,8 +18,7 @@ async function getService(slug: string, qwery: string) {
     const result = await response.json();
     return result;
   } catch (error: any) {
-    console.error("Ошибка при получении services:", error.message);
-    return null;
+    notFound();
   }
 }
 
@@ -39,8 +40,7 @@ async function getServiceCategory(qwery?: string) {
     const result = await response.json();
     return result;
   } catch (error: any) {
-    console.error("Ошибка при получении services:", error.message);
-    return null;
+    notFound();
   }
 }
 

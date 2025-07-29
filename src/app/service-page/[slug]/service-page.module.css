@@ -3,6 +3,12 @@
   margin: 0 auto;
   padding-left: 80px;
   padding-right: 80px;
+  display: flex;
+  flex-direction: column;
+}
+
+.services_blocks__lists section:nth-child(8) {
+  order: 2;
 }
 
 .servicePage_tag {

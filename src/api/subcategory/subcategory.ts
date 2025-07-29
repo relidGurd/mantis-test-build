@@ -1,3 +1,5 @@
+import { notFound } from "next/navigation";
+
 async function getSubProducts(qwery?: string) {
   const url = `https://cms.mantis-185.ru/api/products?${qwery}`;
 
@@ -5,14 +7,13 @@ async function getSubProducts(qwery?: string) {
     const response = await fetch(url);
 
     if (!response.ok) {
-      throw new Error(`Ошибка HTTP: ${response.status} ${response.statusText}`);
+      throw notFound();
     }
 
     const result = await response.json();
     return result;
   } catch (error: any) {
-    console.error("Ошибка при получении подкатегории:", error.message);
-    return null;
+    notFound();
   }
 }
 
@@ -29,8 +30,7 @@ async function getSubCategory(slug: string, qwery: string) {
     const result = await response.json();
     return result;
   } catch (error: any) {
-    console.error("Ошибка при получении подкатегории:", error.message);
-    return null;
+    notFound();
   }
 }
 

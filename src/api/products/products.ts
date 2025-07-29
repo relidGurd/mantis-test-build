@@ -1,3 +1,5 @@
+import { notFound } from "next/navigation";
+
 async function getProduct(slug: string, qwery?: string) {
   const url = `https://cms.mantis-185.ru/api/product/${slug}?${qwery}`;
 
@@ -11,8 +13,7 @@ async function getProduct(slug: string, qwery?: string) {
     const result = await response.json();
     return result;
   } catch (error: any) {
-    console.error("Ошибка при получении products:", error.message);
-    return null;
+    notFound();
   }
 }
 
@@ -29,8 +30,7 @@ async function getRelatedProducts(qwery?: string) {
     const result = await response.json();
     return result;
   } catch (error: any) {
-    console.error("Ошибка при получении products:", error.message);
-    return null;
+    notFound();
   }
 }
 

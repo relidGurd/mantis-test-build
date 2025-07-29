@@ -73,7 +73,6 @@ export default async function ServicePage({ params }: Props) {
 
   const { data } = await getService(slug, qwery);
 
-  console.log(data);
   return (
     <div className={styles.services_blocks__lists}>
       <section className={styles.servicePage_mainContainer}>
@@ -134,9 +133,8 @@ export default async function ServicePage({ params }: Props) {
       </section>
       <Dynamic component={data.components} />
       <MainForm className={styles.services_form_child} />
-      <AboutReviews />
-
       <Partners />
+      <AboutReviews />
     </div>
   );
 }

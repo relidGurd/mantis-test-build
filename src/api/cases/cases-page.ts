@@ -1,3 +1,5 @@
+import { notFound } from "next/navigation";
+
 async function getCases(qwery?: string) {
   const url = `https://cms.mantis-185.ru/api/cases?${qwery}`;
 
@@ -11,8 +13,7 @@ async function getCases(qwery?: string) {
     const result = await response.json();
     return result;
   } catch (error: any) {
-    console.error("Ошибка при получении advantages:", error.message);
-    return null;
+    notFound();
   }
 }
 
@@ -31,8 +32,7 @@ async function getCase(slug: string, qwery?: string) {
     const result = await response.json();
     return result;
   } catch (error: any) {
-    console.error("Ошибка при получении advantages:", error.message);
-    return null;
+    notFound();
   }
 }
 
