@@ -1,11 +1,13 @@
 async function getService(slug: string, qwery: string) {
-  console.log(qwery);
-
   const url = `https://cms.mantis-185.ru/api/services/${slug}?${qwery}
 `;
 
   try {
-    const response = await fetch(url);
+    const response = await fetch(url, {
+      next: {
+        revalidate: 60,
+      },
+    });
 
     if (!response.ok) {
       throw new Error(`Ошибка HTTP: ${response.status} ${response.statusText}`);

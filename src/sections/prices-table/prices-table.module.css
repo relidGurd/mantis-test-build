@@ -30,6 +30,22 @@
   align-items: center;
 }
 
+.prices_item__title {
+  font-weight: bold;
+  color: var(--white-80);
+}
+
+.prices_item__description {
+  font-weight: 400;
+  color: var(--white-80);
+}
+
+.prices_item__price {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--white-100);
+}
+
 @media screen and (max-width: 980px) {
   .prices_list__item {
     display: flex;
@@ -49,5 +65,9 @@
     flex-direction: row-reverse;
     justify-content: space-between;
     width: 100%;
+  }
+
+  .prices_item__description {
+    margin: 16px 0;
   }
 }

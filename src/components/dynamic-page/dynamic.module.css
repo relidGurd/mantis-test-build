@@ -1,0 +1,24 @@
+.related_cases__container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+@media screen and (max-width: 1280px) {
+  .related_cases__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .related_cases__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .related_cases__container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
