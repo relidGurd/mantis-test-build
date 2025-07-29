@@ -222,4 +222,8 @@ main {
   section {
     padding: 40px 0;
   }
+
+  .error_container_grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
