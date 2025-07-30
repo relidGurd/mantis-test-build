@@ -25,11 +25,9 @@ const Hero = () => {
         </div>
         <div className={styles.hero_buttonsContainer}>
           <Link scroll={false} href={"/about"}>
-            Подробнее
+            <Button label="Подробнее" />
           </Link>
-          <Popup
-            button={<Button label="Оставить заявку" color="greenButton" />}
-          >
+          <Popup button={<div>Оставить заявку</div>}>
             <QuickForm />
           </Popup>
         </div>
