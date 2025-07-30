@@ -40,7 +40,7 @@ const NewsCard: React.FC<INewsCard> = ({
             <Typography variant="span">{date}</Typography>
             <div className={styles.news_card_views}>
               <EyeIcon />
-              <Typography>720</Typography>
+              <Typography>120</Typography>
             </div>
           </div>
         </div>
