@@ -4,7 +4,6 @@ import AboutTeam from "@/pages/about-us/about-team/about-team";
 import AboutForWho from "@/pages/about-us/for-who/for-who";
 import TextBlock from "@/sections/text-block/text-block";
 import styles from "./dynamic.module.css";
-
 import IntrestingProducts from "@/sections/intresting-products/intresting-products";
 import PricesTable from "@/sections/prices-table/prices-table";
 import ProductCard from "../product-card/product-card";
