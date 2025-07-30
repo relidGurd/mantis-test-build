@@ -79,30 +79,3 @@ const Tags: React.FC<ITags> = ({ tags }) => {
 };
 
 export default Tags;
-
-{
-  /* <ul className={styles.tags_container}>
-        <li>
-          <button
-            className={classNames(
-              styles.tag_button,
-              currentQuery === null ? styles.tag_button_active : ""
-            )}
-            onClick={() => handleSearch("")}>
-            Все
-          </button>
-        </li>
-        {tags.map((el: ITagItem, index: number) => (
-          <li key={index}>
-            <button
-              className={classNames(
-                styles.tag_button,
-                currentQuery === el.title ? styles.tag_button_active : ""
-              )}
-              onClick={() => handleSearch(el.title)}>
-              {el.title}
-            </button>
-          </li>
-        ))}
-      </ul> */
-}

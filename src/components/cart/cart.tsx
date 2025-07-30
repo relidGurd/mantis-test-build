@@ -4,7 +4,6 @@ import Typography from "@/ui-kit/typography/typography";
 import styles from "./cart.module.css";
 import { useCart } from "@/store/cart";
 import Image from "next/image";
-import Button from "@/ui-kit/button/button";
 import Link from "next/link";
 const Cart = () => {
   const {
@@ -140,12 +139,8 @@ const Cart = () => {
               </div>
             </div>
 
-            <Link href={"/order"}>
-              <Button
-                className={styles.saleBtn}
-                color="greenButton"
-                label="Оформить заказ"
-              />
+            <Link className={styles.saleBtn} href={"/order"}>
+              Оформить заказ
             </Link>
           </div>
         </div>
