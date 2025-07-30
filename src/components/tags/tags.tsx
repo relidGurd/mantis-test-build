@@ -24,7 +24,6 @@ const Tags: React.FC<ITags> = ({ tags }) => {
   const { replace } = useRouter();
   const currentQuery = searchParams.get("query");
 
-  console.log(currentQuery);
   function handleSearch(term: string) {
     const params = new URLSearchParams(searchParams);
     if (term) {

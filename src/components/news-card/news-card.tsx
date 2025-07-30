@@ -21,8 +21,6 @@ const NewsCard: React.FC<INewsCard> = ({
   date,
   tag,
 }) => {
-  console.log(img);
-
   return (
     <div className={classNames(styles.news_card_container)}>
       <div className={styles.news_card_info_container}>

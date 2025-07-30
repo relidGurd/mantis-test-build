@@ -120,6 +120,21 @@ const Header = ({ menu_list }: any) => {
                   </Link>
                 </li>
                 <li className={styles.header_linkItem}>
+                  <Link href={staticUrl.service}>
+                    <Typography
+                      className={classNames(
+                        styles.item_link,
+                        router === staticUrl.service && styles.active_menu
+                      )}
+                      variant="span"
+                      outline="bold"
+                      register="18"
+                    >
+                      Услуги
+                    </Typography>
+                  </Link>
+                </li>
+                <li className={styles.header_linkItem}>
                   <Link href={staticUrl.cases}>
                     <Typography
                       className={classNames(
@@ -286,7 +301,7 @@ const Header = ({ menu_list }: any) => {
                       <Link
                         key={el.id}
                         className={styles.link_group}
-                        href={el.link}
+                        href={`/store${el.link}`}
                       >
                         <div className={styles.link_group_item}>
                           <div className={styles.link_group_item_imgContainer}>
