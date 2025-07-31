@@ -32,7 +32,7 @@
 .size-small {
   padding: 36px;
   background: var(--gray-gradient);
-  border-radius: 40px;
+  border-radius: 24px;
 }
 
 @media screen and (max-width: 680px) {

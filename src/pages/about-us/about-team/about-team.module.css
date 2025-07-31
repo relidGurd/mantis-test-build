@@ -5,7 +5,7 @@
 
 .about_teamItem {
   background: var(--linear-40);
-  border-radius: 40px;
+  border-radius: 24px;
   overflow: hidden;
   height: auto;
 }
