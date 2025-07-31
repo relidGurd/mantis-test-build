@@ -7,19 +7,12 @@ import Button from "@/ui-kit/button/button";
 import { IMaskInput } from "react-imask";
 import classNames from "classnames";
 import Typography from "@/ui-kit/typography/typography";
-import { useCart } from "@/store/cart";
-import { redirect } from "next/navigation";
+
 import { useState } from "react";
 const QuickForm: React.FC<any> = () => {
-  const { items } = useCart((elem: any) => elem);
-
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formMessage, setFormMessage] = useState<string | null>(null);
   const [isError, setIsError] = useState(false);
-
-  if (items.length === 0) {
-    redirect("/cart");
-  }
 
   return (
     <div className={styles.form_container}>
@@ -114,12 +107,12 @@ const QuickForm: React.FC<any> = () => {
                 </label>
               </div>
               <Button
-                type="submit"
-                label={isSubmitting ? "Отправка..." : "Отправить"}
-                color="greenButton"
                 className={classNames(
                   isSubmitting ? styles.submittingButton : ""
                 )}
+                color="greenButton"
+                type="submit"
+                label={isSubmitting ? "Отправка..." : "Отправить"}
               />
             </div>
           </Form>

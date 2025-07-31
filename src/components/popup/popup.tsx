@@ -14,24 +14,28 @@ interface IPopup {
 const Popup = ({ children, isOpen, button }: IPopup) => {
   const ref = useRef<HTMLDivElement>(null);
 
-  const [open, setOpen] = useState(isOpen ? isOpen : false);
+  const [modalOpen, setOpen] = useState(false);
 
   useEffect(() => {
-    const handleOpen = (e: MouseEvent) => {
-      if (ref.current && !ref.current.contains(e.target as Node)) {
-        setOpen(false);
-      }
-    };
-
-    document.addEventListener("click", handleOpen);
-
-    return () => document.removeEventListener("click", handleOpen);
-  }, [open]);
+    // const handleOpen = (e: MouseEvent) => {
+    //   if (ref.current && !ref.current.contains(e.target as Node)) {
+    //     setOpen(false);
+    //   }
+    // };
+    // document.addEventListener("click", handleOpen);
+    // return () => document.removeEventListener("click", handleOpen);
+  }, [modalOpen]);
 
   return (
     <div>
-      <div onClick={() => setOpen(!open)}>{button}</div>
-      {open
+      <div
+        onClick={() => {
+          setOpen(!modalOpen);
+        }}
+      >
+        {button}
+      </div>
+      {modalOpen
         ? createPortal(
             <motion.div
               key="modal"
