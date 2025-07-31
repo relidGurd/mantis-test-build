@@ -286,7 +286,7 @@ const Header = ({ menu_list }: any) => {
                       <Link
                         key={el.id}
                         className={styles.link_group}
-                        href={el.link}
+                        href={`/store${el.link}`}
                       >
                         <div className={styles.link_group_item}>
                           <div className={styles.link_group_item_imgContainer}>

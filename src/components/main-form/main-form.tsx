@@ -58,9 +58,7 @@ const MainForm = ({ className }: { className?: string }) => {
                 />
               </div>
 
-              <button type="submit" color="greenButton">
-                Связаться
-              </button>
+              <Button type="submit" label="Связаться" color="greenButton" />
             </div>
             <div className={styles.mainform_checkbox}>
               <input className={styles.mainform_checkboxItem} type="checkbox" />
