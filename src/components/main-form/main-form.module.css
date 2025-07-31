@@ -5,7 +5,7 @@
 .formContainer {
   padding: 40px 75px 80px 75px;
   background: var(--gray-gradient);
-  border-radius: 40px;
+  border-radius: 24px;
   overflow: hidden;
   position: relative;
 }

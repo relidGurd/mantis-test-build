@@ -7,7 +7,7 @@
 
 .tab_informationContainer {
   background: var(--gray-gradient);
-  border-radius: 50px;
+  border-radius: 24px;
   padding: 50px;
   position: relative;
   z-index: 1;
