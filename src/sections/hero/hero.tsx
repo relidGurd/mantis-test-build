@@ -37,7 +37,7 @@ const Hero = () => {
         <ul className={styles.hero_advContainer}>
           <li className={styles.hero_advItem}>
             <Typography register="40" outline="bold" variant="span">
-              200+
+              150+
             </Typography>
             <Typography
               outline="regular"
@@ -45,12 +45,12 @@ const Hero = () => {
               className={styles.hero_advText}
               variant="span"
             >
-              Параметр
+              Реализованных проектов
             </Typography>
           </li>
           <li className={styles.hero_advItem}>
             <Typography register="40" outline="bold" variant="span">
-              200+
+              325+
             </Typography>
             <Typography
               outline="regular"
@@ -58,12 +58,12 @@ const Hero = () => {
               className={styles.hero_advText}
               variant="span"
             >
-              Параметр
+              Партнеров
             </Typography>
           </li>
           <li className={styles.hero_advItem}>
             <Typography register="40" outline="bold" variant="span">
-              200+
+              100+
             </Typography>
             <Typography
               outline="regular"
@@ -71,7 +71,7 @@ const Hero = () => {
               className={styles.hero_advText}
               variant="span"
             >
-              Параметр
+              Оказанных услуг
             </Typography>
           </li>
         </ul>
