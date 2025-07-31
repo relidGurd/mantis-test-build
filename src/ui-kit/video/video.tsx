@@ -3,34 +3,23 @@ import styles from "./video.module.css";
 import { useRef, useState } from "react";
 
 const Video = ({ url }: any) => {
-  const refElement = useRef<HTMLVideoElement>(null);
-  const [isActive, setIsActive] = useState(false);
+  // const refElement = useRef<HTMLVideoElement>(null);
+  // const [isActive, setIsActive] = useState(false);
 
-  const playButtonHandler = () => {
-    setIsActive(!isActive);
-    isActive ? refElement.current?.pause() : refElement.current?.play();
-  };
+  // const playButtonHandler = () => {
+  //   setIsActive(!isActive);
+  //   isActive ? refElement.current?.pause() : refElement.current?.play();
+  // };
 
   return (
-    <div onClick={playButtonHandler} className={styles.videoContainer}>
-      <div
-        style={isActive ? { display: "none" } : { display: "block" }}
-        className={styles.videoPlayContainer}
-      >
-        <Image
-          className={styles.videoPlayImage}
-          src={"/play.svg"}
-          width={50}
-          height={50}
-          alt=""
-        />
-      </div>
+    <div className={styles.videoContainer}>
       <video
-        ref={refElement}
         className={styles.videoContainerItem}
         width="100%"
         controls={false}
         loop={true}
+        autoPlay={true}
+        muted={true}
       >
         <source src={url} type="video/mp4" />
       </video>
