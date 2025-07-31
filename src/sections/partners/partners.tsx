@@ -29,6 +29,10 @@ const Partners = () => {
             slidesPerView={1.2}
             spaceBetween={20}
             wrapperTag="ul"
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
             className="swiper-container"
           >
             <SwiperSlide tag="li">
@@ -44,10 +48,10 @@ const Partners = () => {
                 </div>
                 <div className={styles.partners_info}>
                   <Typography variant="span" register="14" outline="semibold">
-                    Name
+                    «1С» Компания
                   </Typography>
                   <Typography variant="span" register="12" outline="regular">
-                    description
+                    Официальный партнер
                   </Typography>
                 </div>
               </div>
