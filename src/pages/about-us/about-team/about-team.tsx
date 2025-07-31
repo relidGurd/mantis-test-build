@@ -31,7 +31,7 @@ const AboutTeam = () => {
             <div className={styles.about_teamImageContainer}>
               <Image
                 className={styles.about_teamImage}
-                src={"/alc/1.jpeg"}
+                src={"/employers/1.jpg"}
                 width={500}
                 height={500}
                 alt="Employe"
@@ -44,16 +44,16 @@ const AboutTeam = () => {
                 outline="semibold"
                 register="32"
               >
-                Авдеев Антон
+                Свидригайлов Аркадий
               </Typography>
-              <Typography>Специалист по тремору</Typography>
+              <Typography>Руководитель проекта</Typography>
             </div>
           </SwiperSlide>
           <SwiperSlide tag="li" className={styles.about_teamItem}>
             <div className={styles.about_teamImageContainer}>
               <Image
                 className={styles.about_teamImage}
-                src={"/alc/2.jpg"}
+                src={"/employers/2.jpg"}
                 width={500}
                 height={500}
                 alt="Employe"
@@ -66,16 +66,16 @@ const AboutTeam = () => {
                 outline="semibold"
                 register="32"
               >
-                Заверин Алексей
+                Раскольников Родион
               </Typography>
-              <Typography>Главный романтик</Typography>
+              <Typography>Frontend-разработчик</Typography>
             </div>
           </SwiperSlide>
           <SwiperSlide tag="li" className={styles.about_teamItem}>
             <div className={styles.about_teamImageContainer}>
               <Image
                 className={styles.about_teamImage}
-                src={"/alc/3.jpg"}
+                src={"/employers/3.jpg"}
                 width={500}
                 height={500}
                 alt="Employe"
@@ -88,7 +88,7 @@ const AboutTeam = () => {
                 outline="semibold"
                 register="32"
               >
-                Любятов Эдуард
+                Мармеладова София
               </Typography>
               <Typography>Ведущий дизайнер</Typography>
             </div>
@@ -97,7 +97,7 @@ const AboutTeam = () => {
             <div className={styles.about_teamImageContainer}>
               <Image
                 className={styles.about_teamImage}
-                src={"/alc/4.jpg"}
+                src={"/employers/1.jpg"}
                 width={500}
                 height={500}
                 alt="Employe"
@@ -110,7 +110,7 @@ const AboutTeam = () => {
                 outline="semibold"
                 register="32"
               >
-                Ждунов Николай
+                Дмитрий Разумихин
               </Typography>
               <Typography>Коммерческий директор</Typography>
             </div>
@@ -119,7 +119,7 @@ const AboutTeam = () => {
             <div className={styles.about_teamImageContainer}>
               <Image
                 className={styles.about_teamImage}
-                src={"/alc/5.webp"}
+                src={"/employers/3.jpg"}
                 width={500}
                 height={500}
                 alt="Employe"
@@ -132,7 +132,7 @@ const AboutTeam = () => {
                 outline="semibold"
                 register="32"
               >
-                Джеймс Ауф
+                Пульхерия Раскольникова
               </Typography>
               <Typography>Советник по иностранному рынку</Typography>
             </div>
