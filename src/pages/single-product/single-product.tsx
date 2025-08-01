@@ -24,6 +24,7 @@ const SinglePrdouct: React.FC<Product> = ({
   gallery,
   preview_image,
   specifications,
+  sale_percent = 0,
 }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
 
@@ -113,13 +114,25 @@ const SinglePrdouct: React.FC<Product> = ({
             </Typography>
           </div>
 
-          <Typography
-            className={styles.product_price}
-            register="32"
-            outline="bold"
-          >
-            {price} ₽
-          </Typography>
+          <div className={styles.prices_block}>
+            <Typography
+              className={styles.product_price}
+              register="32"
+              outline="bold"
+            >
+              {Number(price) - (Number(price) * Number(sale_percent)) / 100} ₽
+            </Typography>
+            {Number(sale_percent) === 0 ? null : (
+              <Typography
+                className={styles.product_old_price}
+                register="16"
+                outline="regular"
+              >
+                {Number(price)} ₽
+              </Typography>
+            )}
+          </div>
+
           {availability && (
             <div className={styles.productButtonsContainer}>
               {isInCartCheck && isMounted ? (

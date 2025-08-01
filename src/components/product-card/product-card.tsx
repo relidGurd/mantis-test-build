@@ -10,6 +10,7 @@ interface IProdctCard {
   tag?: string;
   image: string;
   price?: number;
+  sale_percent?: number;
   className?: string;
 }
 
@@ -19,6 +20,7 @@ const ProductCard: React.FC<IProdctCard> = ({
   tag,
   image,
   price,
+  sale_percent = 0,
   className,
 }) => {
   return (
@@ -40,14 +42,25 @@ const ProductCard: React.FC<IProdctCard> = ({
       </div>
       <div className={styles.card_info}>
         {price && (
-          <Typography
-            variant="span"
-            outline="bold"
-            register="20"
-            className={styles.product_card_price}
-          >
-            {price} ₽
-          </Typography>
+          <div className={styles.prices_block}>
+            <Typography
+              className={styles.product_card_price}
+              register="20"
+              outline="bold"
+              variant="span"
+            >
+              {Number(price) - (Number(price) * Number(sale_percent)) / 100} ₽
+            </Typography>
+            {Number(sale_percent) === 0 ? null : (
+              <Typography
+                className={styles.product_card_old_price}
+                register="16"
+                outline="regular"
+              >
+                {Number(price)} ₽
+              </Typography>
+            )}
+          </div>
         )}
         <Typography
           outline="bold"

@@ -66,6 +66,9 @@ export default async function ServicePage({ params }: Props) {
               },
             },
           },
+          "service-page.tab-container": {
+            populate: "*",
+          },
         },
       },
     },

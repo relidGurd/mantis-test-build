@@ -30,7 +30,7 @@ const Partners = () => {
             spaceBetween={20}
             wrapperTag="ul"
             autoplay={{
-              delay: 2500,
+              delay: 3500,
               disableOnInteraction: false,
             }}
             className="swiper-container"

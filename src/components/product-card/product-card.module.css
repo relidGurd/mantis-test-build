@@ -46,6 +46,11 @@
   transform: scale(1.1);
 }
 
+.prices_block {
+  display: flex;
+  gap: 8px;
+}
+
 @media screen and (max-width: 870px) {
   .product_cardImageContainer {
     height: 220px;

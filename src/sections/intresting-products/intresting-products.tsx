@@ -56,6 +56,7 @@ const IntrestingProducts: React.FC<IRelatedProductCard> = ({
                   name={el.title}
                   description={el.description}
                   image={`${el.preview_image.url}`}
+                  sale_percent={el.sale_percent}
                 />
               </Link>
             </SwiperSlide>

@@ -9,6 +9,7 @@ import PricesTable from "@/sections/prices-table/prices-table";
 import ProductCard from "../product-card/product-card";
 import classNames from "classnames";
 import Typography from "@/ui-kit/typography/typography";
+import Questions from "@/sections/questions/questions";
 
 const Dynamic = ({ component }: any) => {
   return component.map((el: any, index: number) => {
@@ -78,6 +79,9 @@ const Dynamic = ({ component }: any) => {
             </div>
           </section>
         );
+      }
+      case "service-page.questions": {
+        return <Questions key={index} data={el.item} />;
       }
     }
 

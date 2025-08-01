@@ -90,6 +90,7 @@ const ProductPage = async ({
         description={data.description}
         availability={data.availability}
         price={data.price}
+        sale_percent={data.sale_percent}
         gallery={data.gallery}
         id={data.id}
         preview_image={data.preview_image.url}
