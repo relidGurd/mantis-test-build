@@ -9,6 +9,7 @@ import { getCategory } from "@/api/directions/directions";
 import qs from "qs";
 import Link from "next/link";
 import type { Metadata, ResolvingMetadata } from "next";
+import Breadcrumbs from "@/components/breadcrumbs/breadcrumbs";
 
 type Params = Promise<{ slug: string }>;
 
@@ -59,8 +60,20 @@ const DirectionElement = async ({ params }: { params: Params }) => {
 
   const { data } = await getCategory(slug, qweryP);
 
+  const directionsBreadcrumbs = [
+    {
+      url: "/",
+      title: "Главная",
+    },
+    {
+      url: "#",
+      title: data.title,
+    },
+  ];
+
   return (
     <div>
+      <Breadcrumbs className="main-container" list={directionsBreadcrumbs} />
       <div className="main-container">
         <Typography
           className={styles.category_page_title}

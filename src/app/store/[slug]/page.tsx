@@ -6,6 +6,7 @@ import Link from "next/link";
 import Typography from "@/ui-kit/typography/typography";
 import FIlters from "@/sections/filters/filters-block";
 import { StoreFiltersQuery } from "./helper";
+import Breadcrumbs from "@/components/breadcrumbs/breadcrumbs";
 
 type Params = Promise<{ slug: string }>;
 type SearchParams = Promise<{
@@ -43,8 +44,24 @@ const Computers = async ({
   const { data, meta } = await getSubProducts(qweryProduct);
   const { data: category } = await getSubCategory(slug, qweryCategory);
 
+  const storeBreadcrumbs = [
+    {
+      url: "/",
+      title: "Главная",
+    },
+    {
+      url: `/directions/${category.category.slug}`,
+      title: category.category.title,
+    },
+    {
+      url: "#",
+      title: category.title,
+    },
+  ];
+
   return (
     <div className={"main-container"}>
+      <Breadcrumbs list={storeBreadcrumbs} />
       <Typography
         className={styles.subcategory_page_title}
         variant="h1"
