@@ -26,8 +26,8 @@ const Breadcrumbs: React.FC<IBreadcrumbs> = ({ list, className }) => {
           className={styles.breadcrumbs_main_container}
         >
           {list.map((el, index: number) => (
-            <li className={styles.breadcrumbs_item_container}>
-              <Link key={index} href={el.url}>
+            <li key={index} className={styles.breadcrumbs_item_container}>
+              <Link href={el.url}>
                 <Typography
                   className={styles.breadcrumbs_item_title}
                   variant="span"
