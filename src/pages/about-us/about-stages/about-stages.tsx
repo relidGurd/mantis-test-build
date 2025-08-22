@@ -23,11 +23,12 @@ const AboutStages: React.FC<IAboutStages> = ({ title, data }) => {
         <Typography variant="h2" outline="semibold" register="32">
           {title}
         </Typography>
-        <ul className={styles.stages_list}>
-          {Array.isArray(data) && data.length > 0 ? (
-            data.map((el, index: number) => (
-              <RiseUpAnimation key={el.id} delay={0.2 + index / 10}>
-                <li className={styles.stages_listItem}>
+        <RiseUpAnimation delay={0.2}>
+          <ul className={styles.stages_list}>
+            {Array.isArray(data) && data.length > 0 ? (
+              data.map((el, index: number) => (
+                // <RiseUpAnimation key={el.id} delay={0.2 + index / 10}>
+                <li key={el.id} className={styles.stages_listItem}>
                   {el.image ? (
                     <div className={styles.stages_listItem__imageContainer}>
                       <Image
@@ -58,12 +59,13 @@ const AboutStages: React.FC<IAboutStages> = ({ title, data }) => {
                     <Typography>{el.description}</Typography>
                   </div>
                 </li>
-              </RiseUpAnimation>
-            ))
-          ) : (
-            <li>Нет данных для отображения</li>
-          )}
-        </ul>
+                // </RiseUpAnimation>
+              ))
+            ) : (
+              <li>Нет данных для отображения</li>
+            )}
+          </ul>
+        </RiseUpAnimation>
       </div>
     </section>
   );

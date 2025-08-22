@@ -14,6 +14,7 @@ import { useCart } from "@/store/cart";
 import classNames from "classnames";
 import Popup from "@/components/popup/popup";
 import QuickForm from "@/components/quick-form/quick-form";
+import Link from "next/link";
 
 const SinglePrdouct: React.FC<Product> = ({
   id,
@@ -150,7 +151,9 @@ const SinglePrdouct: React.FC<Product> = ({
                   color="greenButton"
                 />
               ) : (
-                <Button label="Добавлено" color="greenButton" />
+                <Link className={styles.buyProductBtn} href={"/cart"}>
+                  Оформить заказ
+                </Link>
               )}
               <Popup
                 button={<Button label="Купить в 1 клик" color="blackButton" />}

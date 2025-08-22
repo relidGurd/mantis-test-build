@@ -112,6 +112,16 @@
   border-radius: 16px;
 }
 
+.buyProductBtn {
+  padding: 16px;
+  border: 1px solid transparent;
+  background: var(--green-gradient);
+  display: block;
+  margin-right: 10px;
+  border-radius: 16px;
+  color: black;
+}
+
 @media screen and (max-width: 1200px) {
   .prdouct_grid {
     display: flex;
