@@ -104,7 +104,10 @@ export default function AboutPage() {
         title="Преимущества покупки у нас"
         data={exampleAdvantages}
       />
-      <AboutSteps />
+      <RiseUpAnimation>
+        <AboutSteps />
+      </RiseUpAnimation>
+
       <RiseUpAnimation>
         <AboutTeam />
       </RiseUpAnimation>
