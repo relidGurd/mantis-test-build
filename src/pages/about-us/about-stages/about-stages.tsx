@@ -19,11 +19,12 @@ interface IAboutStages {
 const AboutStages: React.FC<IAboutStages> = ({ title, data }) => {
   return (
     <section>
-      <div className="main-container">
-        <Typography variant="h2" outline="semibold" register="32">
-          {title}
-        </Typography>
-        <RiseUpAnimation delay={0.2}>
+      <RiseUpAnimation delay={0.2}>
+        <div className="main-container">
+          <Typography variant="h2" outline="semibold" register="32">
+            {title}
+          </Typography>
+
           <ul className={styles.stages_list}>
             {Array.isArray(data) && data.length > 0 ? (
               data.map((el, index: number) => (
@@ -65,8 +66,8 @@ const AboutStages: React.FC<IAboutStages> = ({ title, data }) => {
               <li>Нет данных для отображения</li>
             )}
           </ul>
-        </RiseUpAnimation>
-      </div>
+        </div>
+      </RiseUpAnimation>
     </section>
   );
 };
