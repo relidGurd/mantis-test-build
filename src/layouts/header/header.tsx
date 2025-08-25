@@ -7,7 +7,7 @@ import Button from "@/ui-kit/button/button";
 import { staticUrl } from "@/utils/static-urls";
 import { useCart } from "@/store/cart";
 import classNames from "classnames";
-import { motion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import Popup from "@/components/popup/popup";
@@ -256,64 +256,69 @@ const Header = ({ menu_list }: any) => {
         </div>
       </nav>
 
-      {isDropdownOpen && (
-        <motion.div
-          variants={motionDropdown.variants}
-          initial={"hidden"}
-          animate={isDropdownOpen ? "visible" : "hidden"}
-          transition={motionDropdown.transition}
-          className={classNames(styles.sub_menu__container)}
-        >
-          <div>
-            <ul
-              ref={subMenuRefDesktop}
-              className={classNames(styles.subMenu_area)}
-            >
-              {menu_list.map((el: any) => (
-                <li onClick={() => setIsDropdownOpen(false)} key={el.id}>
-                  <Link href={`/directions${el.link}`}>
-                    <Typography
-                      className={styles.menuTitle}
-                      outline="semibold"
-                      register="18"
-                    >
-                      {el.title}
-                    </Typography>
-                  </Link>
-
-                  <div>
-                    {el.list.map((el: any) => (
-                      <Link
-                        key={el.id}
-                        className={styles.link_group}
-                        href={`/store${el.link}`}
+      <AnimatePresence>
+        {isDropdownOpen && (
+          <motion.div
+            variants={motionDropdown.variants}
+            initial={"hidden"}
+            animate={isDropdownOpen ? "visible" : "hidden"}
+            transition={motionDropdown.transition}
+            className={classNames(styles.sub_menu__container)}
+            exit={{ opacity: 0 }}
+          >
+            <div>
+              <ul
+                ref={subMenuRefDesktop}
+                className={classNames(styles.subMenu_area)}
+              >
+                {menu_list.map((el: any) => (
+                  <li onClick={() => setIsDropdownOpen(false)} key={el.id}>
+                    <Link href={`/directions${el.link}`}>
+                      <Typography
+                        className={styles.menuTitle}
+                        outline="semibold"
+                        register="18"
                       >
-                        <div className={styles.link_group_item}>
-                          <div className={styles.link_group_item_imgContainer}>
-                            <Image
-                              className={styles.link_group_item_img}
-                              src={`https://cms.mantis-185.ru${el.icon.url}`}
-                              width={24}
-                              height={24}
-                              alt=""
-                            />
+                        {el.title}
+                      </Typography>
+                    </Link>
+
+                    <div>
+                      {el.list.map((el: any) => (
+                        <Link
+                          key={el.id}
+                          className={styles.link_group}
+                          href={`/store${el.link}`}
+                        >
+                          <div className={styles.link_group_item}>
+                            <div
+                              className={styles.link_group_item_imgContainer}
+                            >
+                              <Image
+                                className={styles.link_group_item_img}
+                                src={`https://cms.mantis-185.ru${el.icon.url}`}
+                                width={24}
+                                height={24}
+                                alt=""
+                              />
+                            </div>
+                            <div>
+                              <Typography register="14" outline="bold">
+                                {el.title}
+                              </Typography>
+                              <div>{el.description}</div>
+                            </div>
                           </div>
-                          <div>
-                            <Typography register="14" outline="bold">
-                              {el.title}
-                            </Typography>
-                            <div>{el.description}</div>
-                          </div>
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </motion.div>
-      )}
+                        </Link>
+                      ))}
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <motion.ul
         variants={animatedMobileMenu}

@@ -2,7 +2,7 @@
 import styles from "./popup.module.css";
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { CloseIcon } from "@/icons/icons";
 import { animationOptions } from "./animation-options";
 interface IPopup {
@@ -37,18 +37,20 @@ const Popup = ({ children, isOpen, button }: IPopup) => {
       >
         {button}
       </div>
-      {open
-        ? createPortal(
+      {createPortal(
+        <AnimatePresence>
+          {open && (
             <motion.div
               key="modal"
               {...animationOptions}
               transition={animationOptions.transition}
+              exit={{ opacity: 0 }}
               className={styles.popupContainer}
             >
               <div ref={ref}>
                 <div className={styles.containerPop}>
                   <div
-                    onClick={() => setOpen(!open)}
+                    onClick={() => setOpen(false)}
                     className={styles.CloseIconS}
                   >
                     <CloseIcon width={20} height={20} />
@@ -56,11 +58,11 @@ const Popup = ({ children, isOpen, button }: IPopup) => {
                   {children}
                 </div>
               </div>
-            </motion.div>,
-
-            document.body
-          )
-        : null}
+            </motion.div>
+          )}
+        </AnimatePresence>,
+        document.body
+      )}
     </div>
   );
 };
